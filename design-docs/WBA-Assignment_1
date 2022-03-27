@@ -40,7 +40,7 @@ REQ3: Enemies
     Class Diagram:
     Interaction Diagram:
     Design Rationale:
-    Date to be completed:
+    Date to be completed: 6-Mar-2022
     Review:
         - (1) Fluoryynx Lim
         - (2) Kuah Jia Chen
@@ -75,7 +75,7 @@ REQ6: Monologue
     Class Diagram:
     Interaction Diagram:
     Design Rationale:
-    Date to be completed:
+    Date to be completed: 1-Mar-2022
     Review:
         - (1) Fluoryynx Lim
         - (2) Kuah Jia Chen
@@ -87,11 +87,14 @@ REQ7: Reset Game
     Class Diagram:
     Interaction Diagram:
     Design Rationale:
-    Date to be completed:
+    Date to be completed: 6-Mar-2022
     Review:
         - (1) Guoyueyang Huang
         - (2) Kuah Jia Chen
-    - (3) Lim Fluoryynx
+        - (3) Lim Fluoryynx
+
+HuangGuoYueYang 32022891: I accept this WBA
+
 
 
 
