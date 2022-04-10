@@ -13,9 +13,9 @@ Tasks:
 REQ1: Let it grow!
 
     Responsible person(s): Kuah Jia Chen
-    Class Diagram:
-    Interaction Diagram:
-    Design Rationale:
+    Class Diagram: DONE
+    Interaction Diagram: DONE
+    Design Rationale: DONE
     Date to be completed: 6-Apr-2022
     Review:
         - (1) Guoyueyang Huang Done
@@ -43,7 +43,7 @@ REQ3: Enemies
     Date to be completed: 6-Apr-2022
     Review:
         - (1) Fluoryynx Lim
-        - (2) Kuah Jia Chen
+        - (2) Kuah Jia Chen DONE
 
 REQ4: Magical Items
 
@@ -54,7 +54,7 @@ REQ4: Magical Items
     Date to be completed: 1-Apr-2022
     Review:
         - (1) Guoyueyang Huang Done
-        - (2) Kuah Jia Chen
+        - (2) Kuah Jia Chen DONE
 
 
 REQ5: Trading
@@ -66,7 +66,7 @@ REQ5: Trading
     Date to be completed: 6-Apr-2022
     Review:
         - (1) Guoyueyang Huang Done
-        - (2) Kuah Jia Chen
+        - (2) Kuah Jia Chen DONE
 
 
 REQ6: Monologue
@@ -78,19 +78,19 @@ REQ6: Monologue
     Date to be completed: 1-Apr-2022
     Review:
         - (1) Fluoryynx Lim
-        - (2) Kuah Jia Chen
+        - (2) Kuah Jia Chen DONE
 
 
 REQ7: Reset Game
 
     Responsible person(s):  ALL
-    Class Diagram:
-    Interaction Diagram:
-    Design Rationale:
+    Class Diagram: DONE
+    Interaction Diagram: DONE
+    Design Rationale: DONE
     Date to be completed: 9-Apr-2022
     Review:
         - (1) Guoyueyang Huang Done
-        - (2) Kuah Jia Chen
+        - (2) Kuah Jia Chen DONE
         - (3) Lim Fluoryynx
 
 HuangGuoYueYang 32022891: I accept this WBA
