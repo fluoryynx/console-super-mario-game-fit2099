@@ -48,9 +48,9 @@ REQ3: Enemies
 REQ4: Magical Items
 
     Responsible person(s): Lim Fluoryynx
-    Class Diagram:
-    Interaction Diagram:
-    Design Rationale:
+    Class Diagram: DONE
+    Interaction Diagram: DONE
+    Design Rationale: DONE
     Date to be completed: 1-Apr-2022
     Review:
         - (1) Guoyueyang Huang Done
@@ -60,9 +60,9 @@ REQ4: Magical Items
 REQ5: Trading
 
     Responsible person(s): Lim Fluoryynx
-    Class Diagram:
-    Interaction Diagram:
-    Design Rationale:
+    Class Diagram: DONE
+    Interaction Diagram:DONE
+    Design Rationale: DONE 
     Date to be completed: 6-Apr-2022
     Review:
         - (1) Guoyueyang Huang Done
