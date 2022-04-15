@@ -11,133 +11,135 @@ Tasks:
 
 REQ1: Let it grow!
 
-Responsible person(s): Kuah Jia Chen
+    Responsible person(s): Kuah Jia Chen
 
-Implementation:
--  Date to be completed: 21-Apr-2022
-      -     Debug:
-	-  Kuah Jia Chen
+    Implementation:
+    -  Date to be completed: 21-Apr-2022
+          -     Debug:
+        -  Kuah Jia Chen
 
-Update Class Diagram:
-Update Interaction Diagram:
-Update Design Rationale:
--  Date to be completed: 29-Apr-2022
+    Update Class Diagram:
+    Update Interaction Diagram:
+    Update Design Rationale:
+    -  Date to be completed: 29-Apr-2022
 
-Review:
-- (1) Guoyueyang Huang
-- (2) Lim Fluoryynx
+    Review:
+    - (1) Guoyueyang Huang
+    - (2) Lim Fluoryynx
 
 
 REQ2: Jump Up, Super star
 
-Responsible person(s): Kuah Jia Chen
+    Responsible person(s): Kuah Jia Chen
 
-Implementation:
--  Date to be completed: 21-Apr-2022
-      -     Debug:
-	-  Kuah Jia Chen
+    Implementation:
+    -  Date to be completed: 21-Apr-2022
+          -     Debug:
+        -  Kuah Jia Chen
 
-Update Class Diagram:
-Update Interaction Diagram:
-Update Design Rationale:
--  Date to be completed: 29-Apr-2022
+    Update Class Diagram:
+    Update Interaction Diagram:
+    Update Design Rationale:
+    -  Date to be completed: 29-Apr-2022
 
-Review:
-- (1) Guoyueyang Huang
-- (2) Lim Fluoryynx
+    Review:
+    - (1) Guoyueyang Huang
+    - (2) Lim Fluoryynx
 
 
 REQ3: Enemies
 
-Responsible person(s): Guoyueyang Huang
+    Responsible person(s): Guoyueyang Huang
 
-Implementation:
--  Date to be completed: 21-Apr-2022
-      -     Debug:
-	-  Guoyueyang Huang
+    Implementation:
+    -  Date to be completed: 21-Apr-2022
+          -     Debug:
+        -  Guoyueyang Huang
 
-Update Class Diagram:
-Update Interaction Diagram:
-Update Design Rationale:
--  Date to be completed: 29-Apr-2022
+    Update Class Diagram:
+    Update Interaction Diagram:
+    Update Design Rationale:
+    -  Date to be completed: 29-Apr-2022
 
-Review:
-- (1) Kuah Jia Chen
-- (2) Lim Fluoryynx
+    Review:
+    - (1) Kuah Jia Chen
+    - (2) Lim Fluoryynx
 
 
 REQ4: Magical Items
 
-Responsible person(s): Lim Fluoryynx
+    Responsible person(s): Lim Fluoryynx
 
-Implementation:
-Date to complete: 21/4/2022
-Debug: Lim Fluoryynx
+    Implementation:
+    Date to complete: 21/4/2022
+    Debug: Lim Fluoryynx
 
-Update Class Diagram:
-Update Interaction Diagram:
-Update Design Rationale:
-Date to be completed: 29/4/2022
+    Update Class Diagram:
+    Update Interaction Diagram:
+    Update Design Rationale:
+    Date to be completed: 29/4/2022
 
-Review:
-- (1) Guoyueyang Huang
-- (2) Kuah Jia Chen
+    Review:
+    - (1) Guoyueyang Huang
+    - (2) Kuah Jia Chen
 
 
 REQ5: Trading
 
-Responsible person(s): Lim Fluoryynx
+    Responsible person(s): Lim Fluoryynx
 
-Implementation:
-Date to complete: 21/4/2022
-Debug: Lim Fluoryynx
+    Implementation:
+    Date to complete: 21/4/2022
+    Debug: Lim Fluoryynx
 
-Update Class Diagram:
-Update Interaction Diagram:
-Update Design Rationale:
-Date to be completed: 29/4/2022
+    Update Class Diagram:
+    Update Interaction Diagram:
+    Update Design Rationale:
+    Date to be completed: 29/4/2022
 
-Review:
-- (1) Guoyueyang Huang
-- (2) Kuah Jia Chen
+    Review:
+    - (1) Guoyueyang Huang
+    - (2) Kuah Jia Chen
 
 
 REQ6: Monologue
 
-Responsible person(s): Guoyueyang Huang
+    Responsible person(s): Guoyueyang Huang
 
-Implementation:
--  Date to be completed: 21-Apr-2022
-      -     Debug:
-	-  Guoyueyang Huang
+    Implementation:
+    -  Date to be completed: 21-Apr-2022
+          -     Debug:
+        -  Guoyueyang Huang
 
-Update Class Diagram:
-Update Interaction Diagram:
-Update Design Rationale:
--  Date to be completed: 29-Apr-2022
+    Update Class Diagram:
+    Update Interaction Diagram:
+    Update Design Rationale:
+    -  Date to be completed: 29-Apr-2022
 
-Review:
-- (1) Kuah Jia Chen
-- (2) Lim Fluoryynx
+    Review:
+    - (1) Kuah Jia Chen
+    - (2) Lim Fluoryynx
 
 
 REQ7: Reset Game
 
-Responsible person(s): All
+    Responsible person(s): All
 
-Implementation:
-- Kuah Jia Chen
-- Date to be completed: 21-Apr-2022
-      -     Debug:
-	-  Guoyueyang Huang
-            -  Lim Fluoryynx
+    Implementation:
+    - Kuah Jia Chen
+    - Date to be completed: 21-Apr-2022
+          -     Debug:
+        -  Guoyueyang Huang
+                -  Lim Fluoryynx
 
-Update Class Diagram:
-Update Interaction Diagram:
-Update Design Rationale:
--  Date to be completed: 29-Apr-2022
+    Update Class Diagram:
+    Update Interaction Diagram:
+    Update Design Rationale:
+    -  Date to be completed: 29-Apr-2022
 
-Review:
-- (1) Guoyueyang Huang
-- (2) Kuah Jia Chen
-- (3) Lim Fluoryynx
+    Review:
+    - (1) Guoyueyang Huang
+    - (2) Kuah Jia Chen
+    - (3) Lim Fluoryynx
+
+Kuah Jia Chen 32286988: I accept this WBA
