@@ -15,13 +15,12 @@ REQ1: Let it grow!
 
     Implementation:
     -  Date to be completed: 21-Apr-2022
-          -     Debug:
-        -  Kuah Jia Chen
+        - Debug: Kuah Jia Chen
 
-    Update Class Diagram:
-    Update Interaction Diagram:
-    Update Design Rationale:
-    -  Date to be completed: 29-Apr-2022
+    -  Update Class Diagram:
+    -  Update Interaction Diagram:
+    -  Update Design Rationale:
+        -  Date to be completed: 29-Apr-2022
 
     Review:
     - (1) Guoyueyang Huang
@@ -34,13 +33,12 @@ REQ2: Jump Up, Super star
 
     Implementation:
     -  Date to be completed: 21-Apr-2022
-          -     Debug:
-        -  Kuah Jia Chen
+        -  Debug: Kuah Jia Chen
 
-    Update Class Diagram:
-    Update Interaction Diagram:
-    Update Design Rationale:
-    -  Date to be completed: 29-Apr-2022
+    -  Update Class Diagram:
+    -  Update Interaction Diagram:
+    -  Update Design Rationale:
+        -  Date to be completed: 29-Apr-2022
 
     Review:
     - (1) Guoyueyang Huang
@@ -53,13 +51,12 @@ REQ3: Enemies
 
     Implementation:
     -  Date to be completed: 21-Apr-2022
-          -     Debug:
-        -  Guoyueyang Huang
+        -  Debug: Guoyueyang Huang
 
-    Update Class Diagram:
-    Update Interaction Diagram:
-    Update Design Rationale:
-    -  Date to be completed: 29-Apr-2022
+    -  Update Class Diagram:
+    -  Update Interaction Diagram:
+    -  Update Design Rationale:
+        -  Date to be completed: 29-Apr-2022
 
     Review:
     - (1) Kuah Jia Chen
@@ -71,13 +68,13 @@ REQ4: Magical Items
     Responsible person(s): Lim Fluoryynx
 
     Implementation:
-    Date to complete: 21/4/2022
-    Debug: Lim Fluoryynx
+    -  Date to complete: 21/4/2022
+        -   Debug: Lim Fluoryynx
 
-    Update Class Diagram:
-    Update Interaction Diagram:
-    Update Design Rationale:
-    Date to be completed: 29/4/2022
+    -  Update Class Diagram:
+    -  Update Interaction Diagram:
+    -  Update Design Rationale:
+        -  Date to be completed: 29/4/2022
 
     Review:
     - (1) Guoyueyang Huang
@@ -89,13 +86,13 @@ REQ5: Trading
     Responsible person(s): Lim Fluoryynx
 
     Implementation:
-    Date to complete: 21/4/2022
-    Debug: Lim Fluoryynx
+    -  Date to complete: 21/4/2022
+        -  Debug: Lim Fluoryynx
 
-    Update Class Diagram:
-    Update Interaction Diagram:
-    Update Design Rationale:
-    Date to be completed: 29/4/2022
+    -  Update Class Diagram:
+    -  Update Interaction Diagram:
+    -  Update Design Rationale:
+        -  Date to be completed: 29/4/2022
 
     Review:
     - (1) Guoyueyang Huang
@@ -108,13 +105,12 @@ REQ6: Monologue
 
     Implementation:
     -  Date to be completed: 21-Apr-2022
-          -     Debug:
-        -  Guoyueyang Huang
+        -  Debug: Guoyueyang Huang
 
-    Update Class Diagram:
-    Update Interaction Diagram:
-    Update Design Rationale:
-    -  Date to be completed: 29-Apr-2022
+    -  Update Class Diagram:
+    -  Update Interaction Diagram:
+    -  Update Design Rationale:
+        -  Date to be completed: 29-Apr-2022
 
     Review:
     - (1) Kuah Jia Chen
@@ -128,14 +124,13 @@ REQ7: Reset Game
     Implementation:
     - Kuah Jia Chen
     - Date to be completed: 21-Apr-2022
-          -     Debug:
-        -  Guoyueyang Huang
-                -  Lim Fluoryynx
+        -  Debug: -  Guoyueyang Huang
+                  -  Lim Fluoryynx
 
-    Update Class Diagram:
-    Update Interaction Diagram:
-    Update Design Rationale:
-    -  Date to be completed: 29-Apr-2022
+    -  Update Class Diagram:
+    -  Update Interaction Diagram:
+    -  Update Design Rationale:
+        -  Date to be completed: 29-Apr-2022
 
     Review:
     - (1) Guoyueyang Huang
