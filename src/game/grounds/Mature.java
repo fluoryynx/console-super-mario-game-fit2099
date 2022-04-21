@@ -52,7 +52,7 @@ public class Mature extends Tree{
 
     public void spawnKoopa(Location currentLocation){
         Koopa koopa = new Koopa();
-        // currentLocation.addActor(koopa);
+        currentLocation.addActor(koopa);
     }
 
     public int numberOfFertile(Location currentLocation){

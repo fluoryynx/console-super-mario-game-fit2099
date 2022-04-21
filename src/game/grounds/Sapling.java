@@ -13,7 +13,7 @@ public class Sapling extends Tree{
     private static final int SAPLING_FALL_DAMAGE = 20;
     private static final String SAPLING_TYPE = "Sapling tree";
     private static final int REACHED_MATURE_AGE = 10;
-    private static final int SPAWN_COIN_RATE = 100;
+    private static final int SPAWN_COIN_RATE = 10;
 
     public Sapling() {
         super(SAPLING_CHAR, SAPLING_JUMP_RATE, SAPLING_FALL_DAMAGE, SAPLING_TYPE);

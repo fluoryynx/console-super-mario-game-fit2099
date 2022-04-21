@@ -7,22 +7,29 @@ import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.actions.DoNothingAction;
 import edu.monash.fit2099.engine.positions.GameMap;
+import java.util.Random;
 
-import java.util.HashMap;
-import java.util.Map;
 /**
  * A little fungus guy.
  */
-public class Goomba extends Actor {
-	private final Map<Integer, Behaviour> behaviours = new HashMap<>(); // priority, behaviour
+public class Goomba extends Enemy {
+	private static final String GOOMBA_NAME = "Goomba";
+	private static final char GOOMBA_CHAR = 'g';
+	private static final int HIT_POINT = 20;
+	private static final int HIT_RATE = 50;
+	private static final int SUICIDE_RATE = 10;
+	private static final int DAMAGE = 10;
+	private static final String HIT_VERB = "kick";
+
+	/**
+	 * Random number generator
+	 */
+	protected Random rand = new Random();
 
 	/**
 	 * Constructor.
 	 */
-	public Goomba() {
-		super("Goomba", 'g', 50);
-		this.behaviours.put(10, new WanderBehaviour());
-	}
+	public Goomba() { super(GOOMBA_NAME,GOOMBA_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE); }
 
 	/**
 	 * At the moment, we only make it can be attacked by Player.
@@ -35,12 +42,7 @@ public class Goomba extends Actor {
 	 */
 	@Override
 	public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
-		ActionList actions = new ActionList();
-		// it can be attacked only by the HOSTILE opponent, and this action will not attack the HOSTILE enemy back.
-		if(otherActor.hasCapability(Status.HOSTILE_TO_ENEMY)) {
-			actions.add(new AttackAction(this,direction));
-		}
-		return actions;
+		return super.allowableActions(otherActor,direction,map);
 	}
 
 	/**
@@ -49,12 +51,11 @@ public class Goomba extends Actor {
 	 */
 	@Override
 	public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
-		for(Behaviour Behaviour : behaviours.values()) {
-			Action action = Behaviour.getAction(this, map);
-			if (action != null)
-				return action;
+		if (rand.nextInt(100)<=SUICIDE_RATE){
+			map.removeActor(this);
+			return new DoNothingAction();
 		}
-		return new DoNothingAction();
+		return super.playTurn(actions, lastAction, map, display);
 	}
 
 }
