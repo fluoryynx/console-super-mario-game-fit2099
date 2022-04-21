@@ -4,11 +4,13 @@ import edu.monash.fit2099.engine.actions.ActionList;
 import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.positions.Ground;
 import edu.monash.fit2099.engine.positions.Location;
+import game.JumpAction;
+import game.Jumpable;
 import game.Status;
 
 import java.util.Random;
 
-public abstract class Tree extends Ground {
+public abstract class Tree extends Ground implements Jumpable {
 
     private final Random rand = new Random();
     private int age;
@@ -44,12 +46,30 @@ public abstract class Tree extends Ground {
         return actor.hasCapability(Status.CAN_JUMP) || actor.hasCapability(Status.POWER_STAR) ;
     }
 
+    @Override
+    public int getJumpRate() {
+        return jumpRate;
+    }
+
+    @Override
+    public int getFallDamage() {
+        return fallDamage;
+    }
+
+    @Override
+    public String getJumpableType() {
+        return treeType;
+    }
+
     public int getAge() {
         return age;
     }
 
     @Override
     public ActionList allowableActions(Actor actor, Location location, String direction) {
+        if (!location.containsAnActor() && !actor.hasCapability(Status.POWER_STAR)) {
+            return new ActionList(new JumpAction(location, direction, this));
+        }
         return new ActionList();
     }
 

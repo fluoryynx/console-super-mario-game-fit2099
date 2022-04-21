@@ -9,5 +9,6 @@ public enum Status {
     TALL, // use this status to tell that current instance has "grown".
     CAN_JUMP,
     POWER_STAR,
-    IS_FERTILE
+    IS_FERTILE,
+    SUPER_MUSHROOM,
 }
