@@ -16,5 +16,6 @@ public enum Status {
     IS_ENEMY,
     ATTACKED_BY_ENEMY,
     INVINCIBLE,
-    CONSUMABLE
+    CONSUMABLE,
+    BUY,
 }

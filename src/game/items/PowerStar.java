@@ -10,11 +10,18 @@ public class PowerStar extends MagicalItem{
 
     private int turn;
     private static int HEALED_HP=200;
+    private static final String ITEM_NAME="Power Star";
+    private static final char ITEM_CHAR='*';
+    private static final boolean ITEM_PORTABLE=true;
+    private static final boolean ITEM_DROPPABLE=false;
+    private static final int ONE_TURN=1;
+    private static final int ZERO_TURN=0;
+    private static final int INITIAL_TURN=10;
 
     public PowerStar() {
-        super("Power Star", '*', true, false);
+        super(ITEM_NAME, ITEM_CHAR, ITEM_PORTABLE, ITEM_DROPPABLE);
         this.addCapability(Status.INVINCIBLE);
-        this.turn = 10;
+        this.turn = INITIAL_TURN;
     }
 
     @Override
@@ -22,7 +29,7 @@ public class PowerStar extends MagicalItem{
         super.tick(currentLocation);
         turn--;
 
-        if (turn == 0){
+        if (turn == ZERO_TURN){
             currentLocation.removeItem(this);
         }
     }
@@ -31,17 +38,17 @@ public class PowerStar extends MagicalItem{
     public void tick(Location currentLocation, Actor actor) {
         super.tick(currentLocation, actor);
         turn--;
-        this.toString();
-        if (turn == 0){
+        if (turn == ZERO_TURN){
             actor.removeItemFromInventory(this);
             actor.removeCapability(Status.INVINCIBLE);
         }
+
     }
 
     @Override
     public void updateStatus(Actor actor) {
         super.updateStatus(actor);
-        turn = 10;
+        turn = INITIAL_TURN;
         actor.heal(HEALED_HP);
         actor.addCapability(Status.INVINCIBLE);
     }
@@ -49,15 +56,18 @@ public class PowerStar extends MagicalItem{
     @Override
     public void currentStatus(Location location) {
         turn --;
-        if (turn == 0){
+        if (turn == ZERO_TURN){
             consumer.removeCapability(Status.INVINCIBLE);
             this.setIsExpired(true);
+        }
+        else{
+            consumer.addCapability(Status.INVINCIBLE);
         }
     }
 
     @Override
     public String toString() {
-        if (turn == 1){
+        if (turn == ONE_TURN){
             return "PowerStar - " + turn + " turn remaining";
         }
         return "PowerStar - " + turn + " turns remaining";

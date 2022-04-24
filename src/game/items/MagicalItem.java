@@ -9,7 +9,7 @@ import game.Status;
 
 public abstract class MagicalItem extends Item {
 
-    private boolean dropable;
+    private boolean droppable;
     private ConsumeAction consumeAction = new ConsumeAction(this);
     private boolean isExpired;
     protected Actor consumer;
@@ -19,9 +19,9 @@ public abstract class MagicalItem extends Item {
      * @param displayChar the character to use to represent this item if it is on the ground
      * @param portable true if and only if the Item can be picked up
      */
-    public MagicalItem(String name, char displayChar, boolean portable, boolean dropable) {
+    public MagicalItem(String name, char displayChar, boolean portable, boolean droppable) {
         super(name, displayChar, portable);
-        this.dropable = dropable;
+        this.droppable = droppable;
         this.addCapability(Status.CONSUMABLE);
         this.isExpired = false;
     }
@@ -53,7 +53,7 @@ public abstract class MagicalItem extends Item {
 
     @Override
     public DropItemAction getDropAction(Actor actor) {
-        if (dropable){
+        if (droppable){
             return new DropItemAction(this);
         }
         return null;

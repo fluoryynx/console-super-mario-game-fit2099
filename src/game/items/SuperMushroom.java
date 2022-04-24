@@ -8,11 +8,16 @@ public class SuperMushroom extends MagicalItem {
 
     private static int EXTRA_HP=50;
 
+    private static final String ITEM_NAME="Super Mushroom";
+    private static final char ITEM_CHAR='^';
+    private static final boolean ITEM_PORTABLE=true;
+    private static final boolean ITEM_DROPPABLE=false;
+
     /***
      * Constructor.
      */
     public SuperMushroom() {
-        super("Super Mushroom",'^',true, false);
+        super(ITEM_NAME,ITEM_CHAR,ITEM_PORTABLE, ITEM_DROPPABLE);
     }
 
     @Override
@@ -28,7 +33,6 @@ public class SuperMushroom extends MagicalItem {
         if (consumer.hasCapability(Status.ATTACKED_BY_ENEMY)){
             consumer.removeCapability(Status.TALL);
             consumer.removeCapability(Status.ATTACKED_BY_ENEMY);
-            // actor.removeItemFromInventory(this);
             consumer.removeCapability(Status.SUPER_MUSHROOM);
             this.setIsExpired(true);
         }
