@@ -1,4 +1,4 @@
-package game.actors.enemies;
+package game.actors;
 
 import edu.monash.fit2099.engine.actions.Action;
 import edu.monash.fit2099.engine.actions.ActionList;
@@ -7,7 +7,8 @@ import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.positions.GameMap;
 import game.Status;
 import game.actions.AttackShellAction;
-import game.actors.enemies.Enemy;
+import game.actors.Enemy;
+
 
 public class Koopa extends Enemy {
 

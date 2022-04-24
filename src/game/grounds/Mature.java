@@ -3,8 +3,8 @@ package game.grounds;
 import edu.monash.fit2099.engine.positions.Exit;
 import edu.monash.fit2099.engine.positions.Ground;
 import edu.monash.fit2099.engine.positions.Location;
-import game.actors.enemies.Koopa;
 import game.Status;
+import game.actors.Koopa;
 
 import java.util.Random;
 
