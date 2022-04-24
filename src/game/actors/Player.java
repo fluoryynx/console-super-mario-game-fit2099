@@ -1,4 +1,4 @@
-package game;
+package game.actors;
 
 import edu.monash.fit2099.engine.actions.Action;
 import edu.monash.fit2099.engine.actions.ActionList;
@@ -6,13 +6,19 @@ import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.displays.Menu;
+import game.Resettable;
+import game.Status;
+import game.items.Wallet;
+import game.actions.ResetAction;
+import game.managers.BuffManager;
 
 /**
  * Class representing the Player.
  */
-public class Player extends Actor  {
+public class Player extends Actor implements Resettable {
 
 	private final Menu menu = new Menu();
+	private boolean oneReset = false;
 
 	/**
 	 * Constructor.
@@ -26,6 +32,7 @@ public class Player extends Actor  {
 		this.addCapability(Status.HOSTILE_TO_ENEMY);
 		this.addCapability(Status.BUY);
 		this.addCapability(Status.SPEAK);
+		this.registerInstance();
 	}
 
 	@Override
@@ -36,6 +43,11 @@ public class Player extends Actor  {
 			display.println("Mario is INVINCIBLE!");
 		}
 		BuffManager.getInstance().run(map.locationOf(this));
+
+		if (!oneReset){
+			ResetAction resetAction = new ResetAction();
+			actions.add(resetAction);
+		}
 
 		// Handle multi-turn Actions
 		if (lastAction.getNextAction() != null)
@@ -48,5 +60,24 @@ public class Player extends Actor  {
 	@Override
 	public char getDisplayChar(){
 		return this.hasCapability(Status.TALL) ? Character.toUpperCase(super.getDisplayChar()): super.getDisplayChar();
+	}
+
+	@Override
+	public void resetInstance() {
+		// Reset player status
+		for (Status status: Status.values()){
+			if (this.hasCapability(status) && !status.equals(Status.HOSTILE_TO_ENEMY) && !status.equals(Status.SPEAK) && !status.equals(Status.BUY)){
+				this.removeCapability(status);
+			}
+		}
+
+		// Heal the player to maximum
+		this.heal(this.getMaxHp());
+
+		this.setOneReset(true);
+	}
+
+	public void setOneReset(boolean oneReset) {
+		this.oneReset = oneReset;
 	}
 }

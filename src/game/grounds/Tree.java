@@ -4,14 +4,12 @@ import edu.monash.fit2099.engine.actions.ActionList;
 import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.positions.Ground;
 import edu.monash.fit2099.engine.positions.Location;
-import game.Destroyable;
-import game.JumpAction;
-import game.Jumpable;
-import game.Status;
+import game.*;
+import game.actions.JumpAction;
 
 import java.util.Random;
 
-public abstract class Tree extends Ground implements Jumpable, Destroyable {
+public abstract class Tree extends Ground implements Jumpable, Destroyable, Resettable {
 
     private final Random rand = new Random();
     private int age;
@@ -32,7 +30,7 @@ public abstract class Tree extends Ground implements Jumpable, Destroyable {
         this.jumpRate = jumpRate;
         this.fallDamage = fallDamage;
         this.treeType = treeType;
-
+        this.registerInstance(); // add to resetManager
     }
 
     @Override
@@ -44,6 +42,12 @@ public abstract class Tree extends Ground implements Jumpable, Destroyable {
             if (actor.hasCapability(Status.INVINCIBLE)){
                 breakToDirt(location);
                 convertCoin(location);
+            }
+        }
+
+        if (this.hasCapability(Status.RESET_CALLED)){
+            if ((rand.nextInt(100) <= CONVERT_DIRT_RATE)){
+                convertToDirt(location);
             }
         }
 
@@ -79,6 +83,11 @@ public abstract class Tree extends Ground implements Jumpable, Destroyable {
             return new ActionList(new JumpAction(location, direction, this));
         }
         return new ActionList();
+    }
+
+    @Override
+    public void resetInstance() {
+        this.addCapability(Status.RESET_CALLED);
     }
 
     public void convertToDirt(Location currentLocation){

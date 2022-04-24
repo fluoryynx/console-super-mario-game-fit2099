@@ -1,4 +1,4 @@
-package game;
+package game.actors.enemies;
 
 import edu.monash.fit2099.engine.actions.Action;
 import edu.monash.fit2099.engine.actions.ActionList;
@@ -9,11 +9,19 @@ import edu.monash.fit2099.engine.positions.Exit;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.Location;
 import edu.monash.fit2099.engine.weapons.IntrinsicWeapon;
+import game.Resettable;
+import game.Status;
+import game.actions.AttackAction;
+import game.behaviours.AttackBehaviour;
+import game.behaviours.Behaviour;
+import game.behaviours.FollowBehaviour;
+import game.behaviours.WanderBehaviour;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public abstract class Enemy extends Actor {
+public abstract class Enemy extends Actor implements Resettable {
     // Attribute
     private int damage;
     protected final Map<Integer, Behaviour> behaviours = new HashMap<>();
@@ -41,11 +49,18 @@ public abstract class Enemy extends Actor {
         this.verb = verb;
         this.addCapability(Status.IS_ENEMY);
         this.hitRate = hitRate;
+        this.registerInstance();
     }
 
 
     @Override
     public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
+
+        if (this.hasCapability(Status.RESET_CALLED)){
+            map.removeActor(this);
+            return new DoNothingAction();
+        }
+
         for (Exit exit : map.locationOf(this).getExits()) {
             Location destination = exit.getDestination();
             if (destination.getActor()!=null && destination.getActor().hasCapability(Status.HOSTILE_TO_ENEMY)){
@@ -76,5 +91,10 @@ public abstract class Enemy extends Actor {
     @Override
     protected IntrinsicWeapon getIntrinsicWeapon() {
         return new IntrinsicWeapon(damage,verb);
+    }
+
+    @Override
+    public void resetInstance() {
+        this.addCapability(Status.RESET_CALLED);
     }
 }

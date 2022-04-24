@@ -5,10 +5,9 @@ import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.positions.Ground;
 import edu.monash.fit2099.engine.positions.Location;
 import game.Destroyable;
-import game.JumpAction;
+import game.actions.JumpAction;
 import game.Jumpable;
 import game.Status;
-import jdk.jshell.DeclarationSnippet;
 
 public class Wall extends Ground implements Jumpable, Destroyable {
 
