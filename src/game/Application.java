@@ -9,6 +9,8 @@ import edu.monash.fit2099.engine.positions.FancyGroundFactory;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.World;
 import game.grounds.*;
+import game.items.PowerStar;
+import game.items.SuperMushroom;
 
 /**
  * The main class for the Mario World game.
@@ -48,9 +50,11 @@ public class Application {
 
 			Actor mario = new Player("Player", 'm', 100);
 			world.addPlayer(mario, gameMap.at(42, 10));
+		gameMap.at(44, 10).addItem(new SuperMushroom());
 
 			// FIXME: the Goomba should be generated from the Tree
 			gameMap.at(35, 10).addActor(new Goomba());
+
 
 			world.run();
 

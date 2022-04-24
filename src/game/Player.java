@@ -29,6 +29,11 @@ public class Player extends Actor  {
 	@Override
 	public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
 		display.println(this.printHp());
+		if (this.hasCapability(Status.INVINCIBLE)){
+			display.println("Mario is INVINCIBLE!");
+		}
+		BuffManager.getInstance().run(map.locationOf(this));
+
 		// Handle multi-turn Actions
 		if (lastAction.getNextAction() != null)
 			return lastAction.getNextAction();

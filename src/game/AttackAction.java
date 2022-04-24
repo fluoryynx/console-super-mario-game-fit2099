@@ -17,21 +17,21 @@ public class AttackAction extends Action {
 	/**
 	 * The Actor that is to be attacked
 	 */
-	private Actor target;
+	protected Actor target;
 
 	/**
 	 * The direction of incoming attack.
 	 */
-	private String direction;
+	protected String direction;
 
 	/**
 	 * Random number generator
 	 */
-	private Random rand = new Random();
+	protected Random rand = new Random();
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param target the Actor to attack
 	 */
 	public AttackAction(Actor target, String direction) {
@@ -48,9 +48,27 @@ public class AttackAction extends Action {
 			return actor + " misses " + target + ".";
 		}
 
-		int damage = weapon.damage();
+		// instantly kill enemy
+		if (actor.hasCapability(Status.INVINCIBLE)){
+			map.removeActor(target);
+			return target + " is killed.";
+		}
+
+		// enemy attack become useless
+		int damage;
+		if (target.hasCapability(Status.INVINCIBLE)){
+			damage = 0;
+		} else{
+			damage = weapon.damage();
+		}
+
 		String result = actor + " " + weapon.verb() + " " + target + " for " + damage + " damage.";
 		target.hurt(damage);
+		if (target.hasCapability(Status.HOSTILE_TO_ENEMY)){
+			if(target.hasCapability(Status.TALL)){
+				target.removeCapability(Status.TALL);
+			}
+		}
 		if (!target.isConscious()) {
 			ActionList dropActions = new ActionList();
 			// drop all items
