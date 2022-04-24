@@ -23,14 +23,17 @@ public class Toad extends Actor {
     private static final int POWER_STAR_INDEX = 1;
     private static final int WRENCH_INDEX = 0;
     private Random rand = new Random();
-    private static int SUPER_MUSHROOM_PRICE=400;
-    private static int POWER_STAR_PRICE=600;
-    private static int WRENCH_PRICE=200;
+    private static final int SUPER_MUSHROOM_PRICE=400;
+    private static final int POWER_STAR_PRICE=600;
+    private static final int WRENCH_PRICE=200;
     private HashMap<Item,Integer> saleItem=new HashMap<>();
+    private static final String ACTOR_NAME = "toad";
+    private static final char DISPLAY_CHAR = 'O';
+    private static final int HIT_POINT = 0;
 
 
     public Toad() {
-        super("toad", 'O', 0);
+        super(ACTOR_NAME, DISPLAY_CHAR, HIT_POINT);
         toadTalk.add("You might need a wrench to smash Koopa's hard shells.");
         toadTalk.add("You better get back to finding the Power Stars.");
         toadTalk.add("The Princess is depending on you! You are our only hope.");
