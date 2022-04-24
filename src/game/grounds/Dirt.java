@@ -8,8 +8,10 @@ import game.Status;
  */
 public class Dirt extends Ground {
 
+	private static final char DIRT_CHAR = '.';
+
 	public Dirt() {
-		super('.');
+		super(DIRT_CHAR);
 		this.addCapability(Status.IS_FERTILE);
 	}
 }

@@ -8,6 +8,7 @@ import edu.monash.fit2099.engine.positions.Location;
 
 
 public class AttackBehaviour implements Behaviour {
+
     public AttackBehaviour (){
     }
 

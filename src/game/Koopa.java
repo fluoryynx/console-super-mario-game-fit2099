@@ -7,6 +7,7 @@ import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.positions.GameMap;
 
 public class Koopa extends Enemy {
+
     private boolean isDefeated = false;
     private static final String KOOPA_NAME = "Koopa";
     private static final char KOOPA_CHAR = 'K';

@@ -8,8 +8,11 @@ import game.Status;
  * A class that represents the floor inside a building.
  */
 public class Floor extends Ground {
+
+    private static final char FLOOR_CHAR = '_';
+
     public Floor() {
-        super('_');
+        super(FLOOR_CHAR);
     }
     private boolean canEnter = false;
 

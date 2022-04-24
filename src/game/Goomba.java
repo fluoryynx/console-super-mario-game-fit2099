@@ -13,6 +13,7 @@ import java.util.Random;
  * A little fungus guy.
  */
 public class Goomba extends Enemy {
+
 	private static final String GOOMBA_NAME = "Goomba";
 	private static final char GOOMBA_CHAR = 'g';
 	private static final int HIT_POINT = 20;
@@ -24,7 +25,7 @@ public class Goomba extends Enemy {
 	/**
 	 * Random number generator
 	 */
-	protected Random rand = new Random();
+	private Random rand = new Random();
 
 	/**
 	 * Constructor.

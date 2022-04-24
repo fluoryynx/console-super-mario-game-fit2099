@@ -11,11 +11,11 @@ public class JumpAction extends Action {
     /**
      * Target location
      */
-    protected Location moveToLocation;
+    private Location moveToLocation;
     /**
      * One of the 8-d navigation
      */
-    protected String direction;
+    private String direction;
 
     private final Random rand = new Random();
 
