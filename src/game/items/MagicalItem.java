@@ -11,7 +11,7 @@ public abstract class MagicalItem extends Item {
 
     private boolean droppable;
     private ConsumeAction consumeAction = new ConsumeAction(this);
-    private boolean isExpired;
+    protected boolean isExpired;
     protected Actor consumer;
     /***
      * Constructor.

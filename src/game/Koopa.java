@@ -12,7 +12,7 @@ public class Koopa extends Enemy {
     private static final String KOOPA_NAME = "Koopa";
     private static final char KOOPA_CHAR = 'K';
     private static final char SHELL_CHAR = 'D';
-    private static final int HIT_POINT = 1;
+    private static final int HIT_POINT = 100;
     private static final int HIT_RATE = 50;
     private static final int DAMAGE = 30;
     private static final String HIT_VERB = "punch";

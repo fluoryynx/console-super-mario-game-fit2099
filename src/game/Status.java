@@ -18,4 +18,5 @@ public enum Status {
     INVINCIBLE,
     CONSUMABLE,
     BUY,
+    SPEAK
 }

@@ -10,7 +10,7 @@ public class Wrench extends WeaponItem {
 
     private static final String ITEM_NAME="Wrench";
     private static final char ITEM_CHAR='w';
-    private static final int HIT_RATE=0;
+    private static final int HIT_RATE=80;
     private static final int DAMAGE=50;
     private static final String VERB="smashes";
 

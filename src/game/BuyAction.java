@@ -26,7 +26,7 @@ public class BuyAction extends Action {
             output+= actor + " purchased a " + this.item;
         }
         else{
-            output+="you don't have enough coins!";
+            output+="You don't have enough coins!";
         }
         return output;
     }

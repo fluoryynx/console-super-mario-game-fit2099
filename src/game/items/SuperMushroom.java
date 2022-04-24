@@ -34,8 +34,7 @@ public class SuperMushroom extends MagicalItem {
             consumer.removeCapability(Status.TALL);
             consumer.removeCapability(Status.ATTACKED_BY_ENEMY);
             consumer.removeCapability(Status.SUPER_MUSHROOM);
-            this.setIsExpired(true);
+            this.isExpired = true;
         }
     }
-
 }

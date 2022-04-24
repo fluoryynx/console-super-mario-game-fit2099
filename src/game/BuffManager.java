@@ -45,11 +45,13 @@ public class BuffManager {
         for (MagicalItem magicalItem: magicalItemList){
             magicalItem.currentStatus(currentLocation);
         }
+        List<MagicalItem> temp = new ArrayList<>();
         for (MagicalItem magicalItem: magicalItemList){
-            if (magicalItem.getIsExpired()){
-                this.cleanUp(magicalItem);
+            if (!magicalItem.getIsExpired()){
+                temp.add(magicalItem);
             }
         }
+        magicalItemList = temp;
         // debug purpose
 //        String result = "";
 //        for (MagicalItem magicalItem: magicalItemListList){
@@ -64,12 +66,5 @@ public class BuffManager {
      */
     public void appendResetInstance(MagicalItem magicalItem){
         magicalItemList.add(magicalItem);
-    }
-
-
-    public void cleanUp(MagicalItem magicalItem){
-        if (magicalItemList.contains(magicalItem)){
-            magicalItemList.remove(magicalItem);
-        }
     }
 }

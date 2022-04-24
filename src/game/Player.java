@@ -25,11 +25,13 @@ public class Player extends Actor  {
 		super(name, displayChar, hitPoints);
 		this.addCapability(Status.HOSTILE_TO_ENEMY);
 		this.addCapability(Status.BUY);
+		this.addCapability(Status.SPEAK);
 	}
 
 	@Override
 	public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
-		display.println(this.printHp());
+		display.println("Mario " + this.printHp() + " at (" + map.locationOf(this).x() + "," + map.locationOf(this).y() + ")");
+		display.println("Wallet balance: $" + Wallet.getInstance().getBalance());
 		if (this.hasCapability(Status.INVINCIBLE)){
 			display.println("Mario is INVINCIBLE!");
 		}

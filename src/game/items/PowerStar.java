@@ -20,7 +20,6 @@ public class PowerStar extends MagicalItem{
 
     public PowerStar() {
         super(ITEM_NAME, ITEM_CHAR, ITEM_PORTABLE, ITEM_DROPPABLE);
-        this.addCapability(Status.INVINCIBLE);
         this.turn = INITIAL_TURN;
     }
 
@@ -58,7 +57,7 @@ public class PowerStar extends MagicalItem{
         turn --;
         if (turn == ZERO_TURN){
             consumer.removeCapability(Status.INVINCIBLE);
-            this.setIsExpired(true);
+            this.isExpired = true;
         }
         else{
             consumer.addCapability(Status.INVINCIBLE);
