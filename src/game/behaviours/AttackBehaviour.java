@@ -15,6 +15,12 @@ public class AttackBehaviour implements Behaviour {
     public AttackBehaviour (){
     }
 
+    /**
+     * For each exits in this game, if the player is around the enemy, enemy will attack the player automatically
+     * @param actor the Actor acting
+     * @param map the GameMap containing the Actor
+     * @return an Action that actor can perform, or null if actor can't do this.
+     */
     // TODO: develop and use it to attack the player automatically.
     @Override
     public Action getAction(Actor actor, GameMap map) {
