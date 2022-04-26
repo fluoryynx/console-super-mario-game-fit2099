@@ -16,7 +16,7 @@ import java.util.Random;
  * A little fungus guy.
  */
 public class Goomba extends Enemy {
-
+    // Attributes
     private static final String GOOMBA_NAME = "Goomba";
     private static final char GOOMBA_CHAR = 'g';
     private static final int HIT_POINT = 20;
@@ -36,8 +36,7 @@ public class Goomba extends Enemy {
     public Goomba() { super(GOOMBA_NAME,GOOMBA_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE); }
 
     /**
-     * At the moment, we only make it can be attacked by Player.
-     * You can do something else with this method.
+     * Make Goomba can be attacked by Player.
      * @param otherActor the Actor that might perform an action.
      * @param direction  String representing the direction of the other Actor
      * @param map        current GameMap
@@ -50,16 +49,21 @@ public class Goomba extends Enemy {
     }
 
     /**
-     * Figure out what to do next.
-     * @see Actor#playTurn(ActionList, Action, GameMap, Display)
+     * Select and return an action to perform on the current turn.
+     * Goomba has 10% suicide rate in each turn of this game.
+     * @param actions    collection of possible Actions for this Actor
+     * @param lastAction The Action this Actor took last turn. Can do interesting things in conjunction with Action.getNextAction()
+     * @param map        the map containing the Actor
+     * @param display    the I/O object to which messages may be written
+     * @return the Action to be performed
      */
     @Override
     public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
         if (rand.nextInt(100)<=SUICIDE_RATE){
+            // goomba suicide
             map.removeActor(this);
             return new DoNothingAction();
         }
         return super.playTurn(actions, lastAction, map, display);
     }
-
 }
