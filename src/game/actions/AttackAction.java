@@ -1,7 +1,6 @@
 package game.actions;
 
 import java.util.Random;
-
 import edu.monash.fit2099.engine.actions.Action;
 import edu.monash.fit2099.engine.actions.ActionList;
 import edu.monash.fit2099.engine.actors.Actor;
@@ -32,14 +31,23 @@ public class AttackAction extends Action {
 
 	/**
 	 * Constructor.
-	 *
 	 * @param target the Actor to attack
+	 * @param direction the direction of incoming attack
 	 */
 	public AttackAction(Actor target, String direction) {
 		this.target = target;
 		this.direction = direction;
 	}
 
+	/**
+	 * Perform the Action.
+	 * This method is used to attack targets under different hit rate depends on different weapons.
+	 * When actor has certain capability(INVINCIBLE), actor can attack any target with full hit rate and
+	 * the damage caused by the target will become zero.
+	 * @param actor The actor performing the action.
+	 * @param map The map the actor is on.
+	 * @return a description of what happened that can be displayed to the user.
+	 */
 	@Override
 	public String execute(Actor actor, GameMap map) {
 
@@ -87,6 +95,11 @@ public class AttackAction extends Action {
 		return result;
 	}
 
+	/**
+	 * Returns a descriptive string: Actor attacks target at certain direction.
+	 * @param actor The actor performing the action.
+	 * @return the text we put on the menu
+	 */
 	@Override
 	public String menuDescription(Actor actor) {
 		return actor + " attacks " + target + " at " + direction;
