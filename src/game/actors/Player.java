@@ -12,6 +12,9 @@ import game.managers.Wallet;
 import game.actions.ResetAction;
 import game.managers.BuffManager;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Class representing the Player.
  */
@@ -19,6 +22,7 @@ public class Player extends Actor implements Resettable {
 
 	private final Menu menu = new Menu();
 	private boolean oneReset = false;
+	private Set<Enum<?>> statusPermanent = new HashSet<>();
 
 	/**
 	 * Constructor.
@@ -33,16 +37,28 @@ public class Player extends Actor implements Resettable {
 		this.addCapability(Status.BUY);
 		this.addCapability(Status.SPEAK);
 		this.registerInstance();
+		statusPermanent.add(Status.HOSTILE_TO_ENEMY);
+		statusPermanent.add(Status.BUY);
+		statusPermanent.add(Status.SPEAK);
 	}
 
 	@Override
 	public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
 		display.println("Mario " + this.printHp() + " at (" + map.locationOf(this).x() + "," + map.locationOf(this).y() + ")");
 		display.println("Wallet balance: $" + Wallet.getInstance().getBalance());
+
 		if (this.hasCapability(Status.INVINCIBLE)){
 			display.println("Mario is INVINCIBLE!");
 		}
 		BuffManager.getInstance().run(map.locationOf(this));
+
+		for (Enum<?> currentStatus: this.capabilitiesList()){
+			display.println(currentStatus+"");
+		}
+
+		if (this.hasCapability(Status.RESET_CALLED)){
+			this.removeCapability(Status.RESET_CALLED);
+		}
 
 		if (!oneReset){
 			ResetAction resetAction = new ResetAction();
@@ -65,11 +81,13 @@ public class Player extends Actor implements Resettable {
 	@Override
 	public void resetInstance() {
 		// Reset player status
-		for (Status status: Status.values()){
-			if (this.hasCapability(status) && !status.equals(Status.HOSTILE_TO_ENEMY) && !status.equals(Status.SPEAK) && !status.equals(Status.BUY)){
-				this.removeCapability(status);
+		for (Enum<?> currentStatus: this.capabilitiesList()){
+			if (!statusPermanent.contains(currentStatus)){
+				this.removeCapability(currentStatus);
 			}
 		}
+
+		this.addCapability(Status.RESET_CALLED);
 
 		// Heal the player to maximum
 		this.heal(this.getMaxHp());

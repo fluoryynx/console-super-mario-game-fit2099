@@ -55,9 +55,9 @@ public class PowerStar extends MagicalItem{
     @Override
     public void currentStatus(Location location) {
         turn --;
-        if (turn == ZERO_TURN){
+        if (turn == ZERO_TURN || consumer.hasCapability(Status.RESET_CALLED)){
             consumer.removeCapability(Status.INVINCIBLE);
-            this.isExpired = true;
+            this.setIsExpired(true);
         }
         else{
             consumer.addCapability(Status.INVINCIBLE);

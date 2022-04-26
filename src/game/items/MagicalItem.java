@@ -48,7 +48,7 @@ public abstract class MagicalItem extends Item {
     }
 
     public void setIsExpired(boolean IsExpired) {
-        this.isExpired = isExpired;
+        this.isExpired = IsExpired;
     }
 
     @Override

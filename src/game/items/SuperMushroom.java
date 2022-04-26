@@ -30,7 +30,7 @@ public class SuperMushroom extends MagicalItem {
 
     @Override
     public void currentStatus(Location location) {
-        if (consumer.hasCapability(Status.ATTACKED_BY_ENEMY)){
+        if (consumer.hasCapability(Status.ATTACKED_BY_ENEMY) || consumer.hasCapability(Status.RESET_CALLED)){
             consumer.removeCapability(Status.TALL);
             consumer.removeCapability(Status.ATTACKED_BY_ENEMY);
             consumer.removeCapability(Status.SUPER_MUSHROOM);
