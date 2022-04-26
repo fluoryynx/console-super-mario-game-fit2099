@@ -10,14 +10,13 @@ public enum Status {
     CAN_JUMP,
     IS_FERTILE,
     SUPER_MUSHROOM,
-    POWER_STAR_BUFF, // use this status to tell toad the player have power star buff now, so don't need the conversation about power star.
-    HAVE_WRENCH, // use this status to tell toad the player have wrench now, so don't need the conversation about wrench.
+    HAVE_WRENCH, // use this status to indicate the player have wrench now
     HIDE_IN_SHELL, // use this status to determine actor is a Koopa
-    IS_ENEMY,
+    IS_ENEMY, // use this status to determine all enemies
     ATTACKED_BY_ENEMY,
-    INVINCIBLE,
+    INVINCIBLE, // use this status to determine player has consumed the Power star
     CONSUMABLE,
     BUY,
-    SPEAK,
+    SPEAK, // use this status to indicate that can speak to toad
     RESET_CALLED,
 }
