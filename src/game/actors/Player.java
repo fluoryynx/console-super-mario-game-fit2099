@@ -52,9 +52,10 @@ public class Player extends Actor implements Resettable {
 		}
 		BuffManager.getInstance().run(map.locationOf(this));
 
-		for (Enum<?> currentStatus: this.capabilitiesList()){
-			display.println(currentStatus+"");
-		}
+		// debug purpose
+//		for (Enum<?> currentStatus: this.capabilitiesList()){
+//			display.println(currentStatus+"");
+//		}
 
 		if (this.hasCapability(Status.RESET_CALLED)){
 			this.removeCapability(Status.RESET_CALLED);
