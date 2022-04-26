@@ -5,7 +5,7 @@ import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.items.Item;
 import edu.monash.fit2099.engine.positions.GameMap;
 import game.Status;
-import game.items.Wallet;
+import game.managers.Wallet;
 
 public class BuyAction extends Action {
     private Item item;

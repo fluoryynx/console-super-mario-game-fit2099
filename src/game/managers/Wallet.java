@@ -1,4 +1,4 @@
-package game.items;
+package game.managers;
 
 public class Wallet {
 
