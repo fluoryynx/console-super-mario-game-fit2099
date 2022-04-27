@@ -19,19 +19,45 @@ import java.util.HashMap;
 import java.util.Random;
 
 /**
- * Class representing the Toad.
+ * Toad is a class that represents the NPC Toad in the game map. It is a class that extends from the Actor class.
+ * Toad is a NPC is friendly (0 hits point) and it will have a conversation with the actor when
+ * the actor is beside it.
  */
 public class Toad extends Actor {
-    // Attributes
+    /**
+     * ArrayList of string to store the sentences
+     */
     private ArrayList<String> toadTalk = new ArrayList<>();
+
     private HashMap<Item,Integer> saleItem=new HashMap<>();
+
+    /**
+     * Index of the sentence about power star
+     */
     private static final int POWER_STAR_INDEX = 1;
+
+    /**
+     * Index of the sentence about wrench
+     */
     private static final int WRENCH_INDEX = 0;
+
     private static final int SUPER_MUSHROOM_PRICE=400;
     private static final int POWER_STAR_PRICE=600;
     private static final int WRENCH_PRICE=200;
+
+    /**
+     * Name of toad
+     */
     private static final String ACTOR_NAME = "toad";
+
+    /**
+     * Character of toad
+     */
     private static final char DISPLAY_CHAR = 'O';
+
+    /**
+     * HitPoint of toad
+     */
     private static final int HIT_POINT = 0;
 
     /**

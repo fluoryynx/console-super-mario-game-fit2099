@@ -13,16 +13,47 @@ import game.actors.Enemy;
 import java.util.Random;
 
 /**
- * A little fungus guy.
+ * Goomba class is a class represents the enemies in this game. It is a class that extends from the Enemy class.
+ * Goomba can move around in the game map but cannot enter floor.
+ * Once goomba is engaged in a fight (the Player attacks the enemy or the enemy attacks player --
+ * when the player stands in the enemy's surroundings), it will follow the Player.
+ * It causes 10 damages to player with 50% hit rate.
+ * To make sure the map is clean and not too overcrowded, goomba will has a 10% chance to suicide each round of this game.
  */
 public class Goomba extends Enemy {
-    // Attributes
+    /**
+     * Name of Goomba
+     */
     private static final String GOOMBA_NAME = "Goomba";
+
+    /**
+     * Character of Goomba
+     */
     private static final char GOOMBA_CHAR = 'g';
+
+    /**
+     * HitPoint of Goomba
+     */
     private static final int HIT_POINT = 20;
+
+    /**
+     * HitRate of Goomba
+     */
     private static final int HIT_RATE = 50;
+
+    /**
+     * Suicide rate of Goomba
+     */
     private static final int SUICIDE_RATE = 10;
+
+    /**
+     * Damage of Goomba
+     */
     private static final int DAMAGE = 10;
+
+    /**
+     * Hit verb of Goomba
+     */
     private static final String HIT_VERB = "kick";
 
     /**

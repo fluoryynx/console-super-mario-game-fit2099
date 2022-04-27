@@ -22,15 +22,24 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * An entity that is alive by having hit points. It also holds inventory that stores items.
+ * Enemy is an abstract class represents the enemies in the game. It is a class that extends from the Actor.
+ * There are two types of enemies in this game, which is Goomba and Koopa.
  */
 public abstract class Enemy extends Actor implements Resettable {
-    // Attribute
-    private int damage;  // deduct in hit point of enemy
+
+    /**
+     * Hashmap to store behaviors.
+     */
     protected final Map<Integer, Behaviour> behaviours = new HashMap<>();  // list of behaviours store in hashmap
+
+    /**
+     * KEY of the hashmap which also indicates the order of 3 behaviors.
+     */
     protected static final int FIRST_PRIORITY = 1; // key of hashmap
     protected static final int SECOND_PRIORITY = 2; // key of hashmap
     protected static final int THIRD_PRIORITY = 3; // key of hashmap
+
+    private int damage;  // deduct in hit point of enemy
     private String verb; // Attack verb
     private int hitRate; // Possibility of enemy hit actor
 
@@ -61,7 +70,7 @@ public abstract class Enemy extends Actor implements Resettable {
 
     /**
      * Select and return an action to perform on the current turn.
-     * For each exits in this game, if the actor around the enemy has capability HOSTILE_TO_ENEMY,
+     * For each exits in this game, if the destination is not null and the actor around the enemy has capability HOSTILE_TO_ENEMY,
      * the enemy will follow the actor in second priority.
      * If the actor is around enemy, enemy will attack actor in first priority.
      * Other than that, enemy will wander around then return do nothing action
