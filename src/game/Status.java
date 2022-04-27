@@ -9,7 +9,7 @@ public enum Status {
     TALL, // use this status to tell that current instance has "grown".
     CAN_JUMP,
     IS_FERTILE,
-    SUPER_MUSHROOM,
+   // SUPER_MUSHROOM,
     HAVE_WRENCH, // use this status to indicate the player have wrench now
     HIDE_IN_SHELL, // use this status to determine actor is a Koopa
     IS_ENEMY, // use this status to determine all enemies

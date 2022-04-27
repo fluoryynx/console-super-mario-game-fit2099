@@ -26,7 +26,8 @@ public class SuperMushroom extends MagicalItem {
     }
 
     /**
-     *
+     * add 200 hp to actor when super mushroom is consumed
+     * add TALL capability to actor
      * @param actor
      */
     @Override
@@ -34,15 +35,19 @@ public class SuperMushroom extends MagicalItem {
         super.updateStatus(actor);
         actor.increaseMaxHp(EXTRA_HP);
         actor.addCapability(Status.TALL);
-        actor.addCapability(Status.SUPER_MUSHROOM);
     }
 
+    /**
+     * update status of the super mushroom
+     * remove effects of super mushroom (TALL capability) from actor after they receive damage
+     * set isExpired to true
+     * @param location
+     */
     @Override
     public void currentStatus(Location location) {
         if (consumer.hasCapability(Status.ATTACKED_BY_ENEMY) || consumer.hasCapability(Status.RESET_CALLED)){
             consumer.removeCapability(Status.TALL);
             consumer.removeCapability(Status.ATTACKED_BY_ENEMY);
-            consumer.removeCapability(Status.SUPER_MUSHROOM);
             this.isExpired = true;
         }
     }

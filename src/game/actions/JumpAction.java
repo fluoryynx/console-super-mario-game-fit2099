@@ -35,7 +35,7 @@ public class JumpAction extends Action {
         String jumpableType = jumpableGround.getJumpableType();
         int fallDamage = jumpableGround.getFallDamage();
         int jumpRate = jumpableGround.getJumpRate();
-        boolean consumedSuperMushroom = actor.hasCapability(Status.SUPER_MUSHROOM);
+        boolean consumedSuperMushroom = actor.hasCapability(Status.TALL);
 
         if (!consumedSuperMushroom && !(rand.nextInt(100) <= jumpRate)) {
             actor.hurt(fallDamage);
