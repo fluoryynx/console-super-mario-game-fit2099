@@ -8,7 +8,10 @@ import game.items.SuperMushroom;
 import java.util.Random;
 
 /**
- * Special Action for attacking Koopa's hard shell.
+ * AttackShellAction is a class which used to smash the koopa’s shell.
+ * It extends from its parent class Action.
+ * When the koopa is defeated and player has capability HAVE_WRENCH,
+ * player can use and only this action to smash koopa’s shell in order to get a super mushroom.
  */
 public class AttackShellAction extends Action {
 
@@ -42,6 +45,7 @@ public class AttackShellAction extends Action {
      * This method is used to attack targets when Koopa is defeated(hide in shell)
      * When actor has certain capability(HAVE_WRENCH), actor can attack the target with corresponding hit rate and
      * the Koopa shell will become a super mushroom.
+     * Return a string: "Koopa is gone, pick up the Super Mushroom!"
      * @param actor The actor performing the action.
      * @param map The map the actor is on.
      * @return a description of what happened that can be displayed to the user.

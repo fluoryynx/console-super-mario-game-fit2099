@@ -10,7 +10,10 @@ import edu.monash.fit2099.engine.weapons.Weapon;
 import game.Status;
 
 /**
- * Special Action for attacking other Actors.
+ * AttackAction is a class which used by player to attack the enemies, it extends from its parent class Action class.
+ * In this class, player can attack enemies with weapon with a corresponding hit rate.
+ * If the target(enemies) no longer conscious, all the item of that target will drop and it will be removed from the map(except Koopa).
+ * In the end, there is a string will be printed to show how much you hurt the enemies.
  */
 public class AttackAction extends Action {
 
