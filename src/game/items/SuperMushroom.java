@@ -6,6 +6,14 @@ import game.Status;
 
 public class SuperMushroom extends MagicalItem {
 
+    /***
+     * Constructor.
+     *  @param name the name of this Item
+     * @param displayChar the character to use to represent this item if it is on the ground
+     * @param portable true if and only if the Item can be picked up
+     * @param droppable true if and only if the Item can be dropped
+     */
+
     private static int EXTRA_HP=50;
 
     private static final String ITEM_NAME="Super Mushroom";
@@ -13,13 +21,14 @@ public class SuperMushroom extends MagicalItem {
     private static final boolean ITEM_PORTABLE=true;
     private static final boolean ITEM_DROPPABLE=false;
 
-    /***
-     * Constructor.
-     */
     public SuperMushroom() {
         super(ITEM_NAME,ITEM_CHAR,ITEM_PORTABLE, ITEM_DROPPABLE);
     }
 
+    /**
+     *
+     * @param actor
+     */
     @Override
     public void updateStatus(Actor actor) {
         super.updateStatus(actor);

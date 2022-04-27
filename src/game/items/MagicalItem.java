@@ -26,6 +26,12 @@ public abstract class MagicalItem extends Item {
         this.isExpired = false;
     }
 
+    /**
+     * allow actor to consume magical item that exists in their inventory
+     * disable actor's consume action after actor consumes the item
+     * @param currentLocation The location of the actor carrying this Item.
+     * @param actor The actor carrying this Item.
+     */
     @Override
     public void tick(Location currentLocation, Actor actor) {
         super.tick(currentLocation, actor);
@@ -37,16 +43,31 @@ public abstract class MagicalItem extends Item {
         }
     }
 
+    /**
+     * update actor's status upon consumption of magical item
+     * @param actor
+     */
     public void updateStatus(Actor actor){
         this.consumer=actor;
     };
 
+    /**
+     *  the current status of magical item in actor's inventory
+     * @param location
+     */
     public abstract void currentStatus( Location location);
 
+    /**
+     * @return true if effect of magical items wear off
+     */
     public boolean getIsExpired(){
         return this.isExpired;
     }
 
+    /**
+     * set isExpired to true if effect of magical items wear off
+     * @param IsExpired
+     */
     public void setIsExpired(boolean IsExpired) {
         this.isExpired = IsExpired;
     }

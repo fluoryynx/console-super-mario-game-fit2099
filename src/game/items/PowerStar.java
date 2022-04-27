@@ -8,6 +8,14 @@ import game.grounds.Dirt;
 
 public class PowerStar extends MagicalItem{
 
+    /***
+     * Constructor.
+     *  @param name the name of this Item
+     * @param displayChar the character to use to represent this item if it is on the ground
+     * @param portable true if and only if the Item can be picked up
+     * @param droppable true if and only if the Item can be dropped
+     */
+
     private int turn;
     private static int HEALED_HP=200;
     private static final String ITEM_NAME="Power Star";
@@ -23,6 +31,12 @@ public class PowerStar extends MagicalItem{
         this.turn = INITIAL_TURN;
     }
 
+    /**
+     * keep track of number of turns the power star is on the ground
+     * decrement the turn value by 1 after every turn
+     * remove power star from the map once value of turn reaches 0
+     * @param currentLocation The location of the ground on which we lie.
+     */
     @Override
     public void tick(Location currentLocation) {
         super.tick(currentLocation);
@@ -33,6 +47,13 @@ public class PowerStar extends MagicalItem{
         }
     }
 
+    /**
+     * keep track of number of turns the power star is in player's inventory
+     * decrement the turn value by 1 after every turn
+     * remove power star from the inventory once value of turn reaches 0
+     * @param currentLocation The location of the actor carrying this Item.
+     * @param actor The actor carrying this Item.
+     */
     @Override
     public void tick(Location currentLocation, Actor actor) {
         super.tick(currentLocation, actor);
@@ -44,6 +65,12 @@ public class PowerStar extends MagicalItem{
 
     }
 
+    /**
+     * add INVINCIBLE capability to actor upon consumption of power star
+     * reset value of turn to INITIAL_TURN, which is 10
+     * heal actor by 200 hp
+     * @param actor
+     */
     @Override
     public void updateStatus(Actor actor) {
         super.updateStatus(actor);
@@ -52,6 +79,10 @@ public class PowerStar extends MagicalItem{
         actor.addCapability(Status.INVINCIBLE);
     }
 
+    /**
+     * remove INVINCIBLE capablity when the power star effect wears off ( turn = 0) or when game is reset
+     * @param location
+     */
     @Override
     public void currentStatus(Location location) {
         turn --;
@@ -64,6 +95,10 @@ public class PowerStar extends MagicalItem{
         }
     }
 
+    /**
+     * returns string to indicate number of remaining turn before power star disappear from the ground or inventory
+     * @return
+     */
     @Override
     public String toString() {
         if (turn == ONE_TURN){
