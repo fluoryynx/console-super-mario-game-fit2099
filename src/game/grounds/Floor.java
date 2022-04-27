@@ -9,8 +9,14 @@ import game.Status;
  */
 public class Floor extends Ground {
 
+    /**
+     * Character of floor
+     */
     private static final char FLOOR_CHAR = '_';
 
+    /**
+     * Constructor
+     */
     public Floor() {
         super(FLOOR_CHAR);
     }
