@@ -32,10 +32,10 @@ public class JumpAction extends Action {
     @Override
     public String execute(Actor actor, GameMap map) {
         // TODO: create variables to hold the values for each return of methods
+        boolean consumedSuperMushroom = actor.hasCapability(Status.TALL);
+        int jumpRate = highGround.getJumpRate();
         String highGroundType = highGround.getGroundType();
         int fallDamage = highGround.getFallDamage();
-        int jumpRate = highGround.getJumpRate();
-        boolean consumedSuperMushroom = actor.hasCapability(Status.TALL);
 
         if (!consumedSuperMushroom && !(rand.nextInt(100) <= jumpRate)) {
             actor.hurt(fallDamage);
