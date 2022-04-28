@@ -12,12 +12,14 @@ public class Wall extends HighGround implements Destroyable {
 
 	private static final char WALL_CHAR = '#';
 
+	private static final boolean BLOCK_THROWN_OBJECT = true;
+
 	public Wall() {
 		super(WALL_CHAR,JUMP_RATE,FALL_DAMAGE,GROUND_TYPE);
 	}
 
 	@Override
 	public boolean blocksThrownObjects() {
-		return true;
+		return BLOCK_THROWN_OBJECT;
 	}
 }
