@@ -8,10 +8,12 @@ import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.displays.Menu;
 import game.Resettable;
 import game.Status;
+import game.items.MagicalItem;
 import game.managers.Wallet;
 import game.actions.ResetAction;
 import game.managers.BuffManager;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -45,6 +47,8 @@ public class Player extends Actor implements Resettable {
 	public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
 		display.println("Mario " + this.printHp() + " at (" + map.locationOf(this).x() + "," + map.locationOf(this).y() + ")");
 		display.println("Wallet balance: $" + Wallet.getInstance().getBalance());
+
+		display.println("inventory: "+this.capabilitiesList());
 
 		if (this.hasCapability(Status.INVINCIBLE)){
 			display.println("Mario is INVINCIBLE!");

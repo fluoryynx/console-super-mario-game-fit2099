@@ -41,7 +41,6 @@ public class PowerStar extends MagicalItem{
     public void tick(Location currentLocation) {
         super.tick(currentLocation);
         turn--;
-
         if (turn == ZERO_TURN){
             currentLocation.removeItem(this);
         }
@@ -62,7 +61,6 @@ public class PowerStar extends MagicalItem{
             actor.removeItemFromInventory(this);
             actor.removeCapability(Status.INVINCIBLE);
         }
-
     }
 
     /**
