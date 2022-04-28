@@ -13,6 +13,7 @@ public abstract class HighGround extends Ground implements Destroyable {
     private int jumpRate;
     private int fallDamage;
     private String groundType;
+    private static final int COIN_VALUE_WHEN_DESTROYED = 5;
 
     /**
      * Constructor.
@@ -33,7 +34,7 @@ public abstract class HighGround extends Ground implements Destroyable {
         if (actor != null){
             if (actor.hasCapability(Status.INVINCIBLE)){
                 breakToDirt(location);
-                convertCoin(location);
+                convertCoin(location,COIN_VALUE_WHEN_DESTROYED);
             }
         }
     }
