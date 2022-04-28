@@ -10,7 +10,7 @@ import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.Location;
 import game.behaviours.Behaviour;
 
-public class WanderBehaviour extends Action implements Behaviour {
+public class WanderBehaviour implements Behaviour {
 	
 	private final Random random = new Random();
 
@@ -40,15 +40,5 @@ public class WanderBehaviour extends Action implements Behaviour {
 			return null;
 		}
 
-	}
-
-	@Override
-	public String execute(Actor actor, GameMap map) {
-		return menuDescription(actor);
-	}
-
-	@Override
-	public String menuDescription(Actor actor) {
-		return "Raagrh...";
 	}
 }
