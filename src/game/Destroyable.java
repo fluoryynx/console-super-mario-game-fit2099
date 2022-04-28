@@ -8,9 +8,9 @@ public interface Destroyable {
 
     default void breakToDirt(Location currentLocation){
         currentLocation.setGround(new Dirt());
-    };
+    }
 
-    default void convertCoin(Location currentLocation){
-        currentLocation.addItem(new Coin(5));
-    };
+    default void convertCoin(Location currentLocation, int coinValue){
+        currentLocation.addItem(new Coin(coinValue));
+    }
 }

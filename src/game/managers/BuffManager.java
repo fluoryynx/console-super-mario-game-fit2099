@@ -8,19 +8,18 @@ import java.util.List;
 
 public class BuffManager {
     /**
-     * A list of resettable instances (any classes that implements Resettable,
-     * such as Player implements Resettable will be stored in here)
+     * A list of magicalItem instances
      */
     private List<MagicalItem> magicalItemList;
 
     /**
-     * A singleton reset manager instance
+     * A singleton buff manager instance
      */
     private static BuffManager instance;
 
     /**
-     * Get the singleton instance of reset manager
-     * @return ResetManager singleton instance
+     * Get the singleton instance of buff manager
+     * @return BuffManager singleton instance
      */
     public static BuffManager getInstance(){
         if(instance == null){
@@ -37,7 +36,7 @@ public class BuffManager {
     }
 
     /**
-     * Reset the game by traversing through all the list
+     * Remove expired magicalItems by traversing through all the list
      * By doing this way, it will avoid using `instanceof` all over the place.
      */
     public void run(Location currentLocation){

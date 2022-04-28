@@ -12,10 +12,10 @@ public enum Status {
     HAVE_WRENCH, // use this status to indicate the player have wrench now
     HIDE_IN_SHELL, // use this status to determine actor is a Koopa
     IS_ENEMY, // use this status to determine all enemies
-    ATTACKED_BY_ENEMY,
+    ATTACKED_BY_ENEMY, // use this status to indicate actor is attacked by enemy
     INVINCIBLE, // use this status to determine player has consumed the Power star
-    CONSUMABLE,
-    BUY,
+    CONSUMABLE, // use this status to indicate that the item can be consumed by player
+    BUY, // use this status to indicate that the actor is able to buy
     SPEAK, // use this status to indicate that can speak to toad
-    RESET_CALLED,
+    RESET_CALLED, // use this status to indicate that player enters the reset hotkey
 }
