@@ -2,7 +2,7 @@ package game.grounds;
 
 import game.Destroyable;
 
-public class Wall extends HighGround implements Destroyable {
+public class Wall extends HighGround {
 
 	private static final int JUMP_RATE = 80; // 80% chance to jump successfully
 

@@ -5,7 +5,7 @@ import game.*;
 
 import java.util.Random;
 
-public abstract class Tree extends HighGround implements Destroyable, Resettable {
+public abstract class Tree extends HighGround implements Resettable {
 
     private final Random rand = new Random();
     private int age;
