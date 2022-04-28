@@ -17,8 +17,10 @@ public class Wall extends Ground implements Jumpable, Destroyable {
 
 	private static final String JUMP_TYPE = "Wall";
 
+		private static final char WALL_CHAR = '#';
+
 	public Wall() {
-		super('#');
+		super(WALL_CHAR);
 	}
 
 	@Override
