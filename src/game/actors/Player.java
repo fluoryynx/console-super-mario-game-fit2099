@@ -25,6 +25,7 @@ public class Player extends Actor implements Resettable {
 	private final Menu menu = new Menu();
 	private boolean oneReset = false;
 	private Set<Enum<?>> statusPermanent = new HashSet<>();
+	private BuffManager buffManager;
 
 	/**
 	 * Constructor.
@@ -41,6 +42,7 @@ public class Player extends Actor implements Resettable {
 		statusPermanent.add(Status.HOSTILE_TO_ENEMY);
 		statusPermanent.add(Status.BUY);
 		statusPermanent.add(Status.SPEAK);
+		this.buffManager = BuffManager.getInstance();
 	}
 
 	@Override
@@ -48,12 +50,10 @@ public class Player extends Actor implements Resettable {
 		display.println("Mario " + this.printHp() + " at (" + map.locationOf(this).x() + "," + map.locationOf(this).y() + ")");
 		display.println("Wallet balance: $" + Wallet.getInstance().getBalance());
 
-		display.println("inventory: "+this.capabilitiesList());
-
 		if (this.hasCapability(Status.INVINCIBLE)){
 			display.println("Mario is INVINCIBLE!");
 		}
-		BuffManager.getInstance().run(map.locationOf(this));
+		buffManager.run(map.locationOf(this));
 
 		// debug purpose
 //		for (Enum<?> currentStatus: this.capabilitiesList()){
