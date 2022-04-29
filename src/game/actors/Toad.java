@@ -156,7 +156,8 @@ public class Toad extends Actor {
     }
 
     /**
-     * Make Toad can speak to Player.
+     * Make Toad can speak to Player. Besides, this also allow to Player can buy the three item
+     * from Toad.
      * @param otherActor the Actor that might perform an action.
      * @param direction  String representing the direction of the other Actor
      * @param map        current GameMap
@@ -166,9 +167,11 @@ public class Toad extends Actor {
     @Override
     public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
         ActionList actions = new ActionList();
+        // allow player to buy the three item from toad
         for (Item cost:saleItem.keySet()) {
             actions.add(new BuyAction(cost, saleItem.get(cost), cost.toString()));
         }
+        // allow player to speak with toad
         if(otherActor.hasCapability(Status.SPEAK)) {
             actions.add(new SpeakAction(this));
         }
