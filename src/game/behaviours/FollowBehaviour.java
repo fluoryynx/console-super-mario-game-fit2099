@@ -26,6 +26,12 @@ public class FollowBehaviour implements Behaviour {
 		this.target = subject;
 	}
 
+
+	/**
+	 * For each exits in this game, if the player is around the enemy, enemy will follow(move one step close) the player automatically
+	 * @param actor the actor who follow the target
+	 * @param map   Game map of this game
+	 */
 	@Override
 	public Action getAction(Actor actor, GameMap map) {
 		if(!map.contains(target) || !map.contains(actor))
