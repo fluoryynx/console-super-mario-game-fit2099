@@ -29,6 +29,9 @@ public class Toad extends Actor {
      */
     private ArrayList<String> toadTalk = new ArrayList<>();
 
+    /**
+     * Hashmap to store sale items and their price
+     */
     private HashMap<Item,Integer> saleItem=new HashMap<>();
 
     /**
@@ -41,8 +44,19 @@ public class Toad extends Actor {
      */
     private static final int WRENCH_INDEX = 0;
 
+    /**
+     * price of super mushroom
+     */
     private static final int SUPER_MUSHROOM_PRICE=400;
+
+    /**
+     * price of power star
+     */
     private static final int POWER_STAR_PRICE=600;
+
+    /**
+     * price of wrench
+     */
     private static final int WRENCH_PRICE=200;
 
     /**

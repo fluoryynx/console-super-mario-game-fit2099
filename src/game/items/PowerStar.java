@@ -16,16 +16,54 @@ public class PowerStar extends MagicalItem{
      * @param droppable true if and only if the Item can be dropped
      */
 
+    /**
+     * number of turns
+     */
     private int turn;
+
+    /**
+     * amount of hp to heal the player
+     */
     private static int HEALED_HP=200;
+
+    /**
+     * name of the power star
+     */
     private static final String ITEM_NAME="Power Star";
+
+    /**
+     * display character of the power star
+     */
     private static final char ITEM_CHAR='*';
+
+    /**
+     * power star is portable
+     */
     private static final boolean ITEM_PORTABLE=true;
+
+    /**
+     * power star is not droppable
+     */
     private static final boolean ITEM_DROPPABLE=false;
+
+    /**
+     * one turn remaining
+     */
     private static final int ONE_TURN=1;
+
+    /**
+     * zero turn remaining
+     */
     private static final int ZERO_TURN=0;
+
+    /**
+     * initial turn
+     */
     private static final int INITIAL_TURN=10;
 
+    /**
+     * Constructor
+     */
     public PowerStar() {
         super(ITEM_NAME, ITEM_CHAR, ITEM_PORTABLE, ITEM_DROPPABLE);
         this.turn = INITIAL_TURN;

@@ -9,9 +9,21 @@ import game.Status;
 
 public abstract class MagicalItem extends Item {
 
+    /**
+     * to indicate whether item can be drop
+     */
     private boolean droppable;
+    /**
+     * consume action to consume item
+     */
     private ConsumeAction consumeAction = new ConsumeAction(this);
+    /**
+     * to indicate whether item is expired
+     */
     protected boolean isExpired;
+    /**
+     * actor that consumes the item
+     */
     protected Actor consumer;
     /***
      * Constructor.

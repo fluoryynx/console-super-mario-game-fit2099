@@ -8,19 +8,34 @@ import game.Status;
 
 public class Wrench extends WeaponItem {
 
-    /***
-     * Constructor.
-     *  @param name the name of this Item
-     * @param displayChar the character to use to represent this item if it is on the ground
-     * @param portable true if and only if the Item can be picked up
-     * @param droppable true if and only if the Item can be dropped
+    /**
+     * name of the wrench
      */
     private static final String ITEM_NAME="Wrench";
+
+    /**
+     * display character of wrench
+     */
     private static final char ITEM_CHAR='w';
+
+    /**
+     * hit rate of the wrench
+     */
     private static final int HIT_RATE=80;
+
+    /**
+     * damage of the wrench
+     */
     private static final int DAMAGE=50;
+
+    /**
+     * verb of the wrench
+     */
     private static final String VERB="smashes";
 
+    /***
+     * Constructor.
+     */
     public Wrench() {
         super(ITEM_NAME,ITEM_CHAR,DAMAGE,VERB,HIT_RATE);
         this.addCapability(Status.HAVE_WRENCH);

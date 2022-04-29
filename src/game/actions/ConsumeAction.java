@@ -7,6 +7,9 @@ import game.managers.BuffManager;
 import game.items.MagicalItem;
 
 public class ConsumeAction extends Action {
+    /**
+     * items player can consume
+     */
     private MagicalItem magicalItem;
 
     /**
@@ -37,7 +40,7 @@ public class ConsumeAction extends Action {
      * Describe the consume action in a format suitable for displaying in the menu.
      * @see Action#menuDescription(Actor)
      * @param actor The actor performing the action.
-     * @return  a string, e.g. "Player consumes the Power Star"
+     * @return  a string, e.g. "Mario consumes the Power Star"
      */
     @Override
     public String menuDescription(Actor actor) {
