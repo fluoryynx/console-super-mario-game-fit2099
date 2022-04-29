@@ -68,11 +68,13 @@ public class JumpAction extends Action {
         String highGroundType = highGround.getGroundType();
         int fallDamage = highGround.getFallDamage();
 
+        // if a player does not consume super mushroom and the random number generated is greater than
+        // jumpRate, then the jump action will not be successful
         if (!consumedSuperMushroom && !(rand.nextInt(100) <= jumpRate)) {
             actor.hurt(fallDamage);
             return actor + " failed to jump to the " + highGroundType
                     + " and receive " + fallDamage + " damage";
-        } else {
+        } else { // else, a successful jump
             actor.addCapability(Status.CAN_JUMP);
             map.moveActor(actor, moveToLocation);
             actor.removeCapability(Status.CAN_JUMP);
