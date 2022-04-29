@@ -9,6 +9,8 @@ import game.managers.ResetManager;
  * ResetAction is a class that allows the user to reset the game. It is a class
  * that will reset the game when the user selects the reset option on the menu.
  * It is a new class that extends Action class.
+ *
+ * @author Kuah Jia Chen
  */
 public class ResetAction extends Action {
 

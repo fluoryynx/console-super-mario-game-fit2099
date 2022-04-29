@@ -14,6 +14,8 @@ import java.util.Random;
  * It is a new class that extends Action class. When there is a high ground nearby
  * player (i.e., one of the eight exits) , the jump action will be displayed on the
  * console and allow the player to jump.
+ *
+ * @author Kuah Jia Chen
  */
 public class JumpAction extends Action {
 
