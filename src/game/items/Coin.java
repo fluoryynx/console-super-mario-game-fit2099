@@ -11,19 +11,31 @@ import game.Status;
  *  It is currency the player uses to trade for items
  */
 public class Coin extends Item implements Resettable {
-    /***
-     * Constructor.
-     *  @param name the name of this Item
-     * @param displayChar the character to use to represent this item if it is on the ground
-     * @param portable true if and only if the Item can be picked up
-     */
 
+    /**
+     * value of the coin
+     */
     private int value;
 
+    /**
+     * name of the coin
+     */
     private static final String ITEM_NAME="Coin";
+
+    /**
+     * display character of the coin
+     */
     private static final char ITEM_CHAR='$';
+
+    /**
+     * coin is not portable
+     */
     private static final boolean ITEM_PORTABLE=false;
 
+    /***
+     * Constructor.
+     *  @param value - value of the coin
+     */
     public Coin(int value) {
         super(ITEM_NAME, ITEM_CHAR, ITEM_PORTABLE);
         this.value=value;

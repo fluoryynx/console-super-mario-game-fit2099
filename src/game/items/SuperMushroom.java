@@ -6,21 +6,35 @@ import game.Status;
 
 public class SuperMushroom extends MagicalItem {
 
-    /***
-     * Constructor.
-     *  @param name the name of this Item
-     * @param displayChar the character to use to represent this item if it is on the ground
-     * @param portable true if and only if the Item can be picked up
-     * @param droppable true if and only if the Item can be dropped
-     */
 
+    /**
+     * extra hp to be added to player
+     */
     private static int EXTRA_HP=50;
 
+    /**
+     * name of super mushroom
+     */
     private static final String ITEM_NAME="Super Mushroom";
+
+    /**
+     * display character of super mushroom
+     */
     private static final char ITEM_CHAR='^';
+
+    /**
+     * super mushroom is portable
+     */
     private static final boolean ITEM_PORTABLE=true;
+
+    /**
+     * super mushroom is not droppable
+     */
     private static final boolean ITEM_DROPPABLE=false;
 
+    /***
+     * Constructor
+     */
     public SuperMushroom() {
         super(ITEM_NAME,ITEM_CHAR,ITEM_PORTABLE, ITEM_DROPPABLE);
     }

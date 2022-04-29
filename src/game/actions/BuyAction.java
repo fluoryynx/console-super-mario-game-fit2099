@@ -8,8 +8,19 @@ import game.Status;
 import game.managers.Wallet;
 
 public class BuyAction extends Action {
+    /**
+     * item player wants to buy
+     */
     private Item item;
+
+    /**
+     * price of the item
+     */
     private int cost;
+
+    /**
+     * name of the item
+     */
     private String name;
 
     /**

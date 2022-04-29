@@ -7,6 +7,9 @@ import game.managers.Wallet;
 import game.items.Coin;
 
 public class PickCoinAction extends Action {
+    /**
+     * the coin pick up by player
+     */
     private Coin coin;
 
     /**
@@ -24,7 +27,7 @@ public class PickCoinAction extends Action {
      * return the value of coin picked up in the menu description
      * @param actor The actor performing the action.
      * @param map The map the actor is on.
-     * @return
+     * @return a suitable description to display in the UI
      */
     @Override
     public String execute(Actor actor, GameMap map) {
@@ -37,10 +40,10 @@ public class PickCoinAction extends Action {
     /**
      * return the value of coin picked up in the menu description
      * @param actor The actor performing the action.
-     * @return
+     * @return a string, e.g. "Mario picks up 5 coins."
      */
     @Override
     public String menuDescription(Actor actor) {
-        return "Player picks up " + coin.getValue() + " coins.";
+        return actor + " picks up " + coin.getValue() + " coins.";
     }
 }

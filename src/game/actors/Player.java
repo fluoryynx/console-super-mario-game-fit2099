@@ -45,6 +45,14 @@ public class Player extends Actor implements Resettable {
 		this.buffManager = BuffManager.getInstance();
 	}
 
+	/**
+	 * run every turn of the player
+	 * @param actions    collection of possible Actions for this Actor
+	 * @param lastAction The Action this Actor took last turn. Can do interesting things in conjunction with Action.getNextAction()
+	 * @param map        the map containing the Actor
+	 * @param display    the I/O object to which messages may be written
+	 * @return
+	 */
 	@Override
 	public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
 		display.println("Mario " + this.printHp() + " at (" + map.locationOf(this).x() + "," + map.locationOf(this).y() + ")");
@@ -77,6 +85,10 @@ public class Player extends Actor implements Resettable {
 		return menu.showMenu(this, actions, display);
 	}
 
+	/**
+	 * return display character of the player
+	 * @return M if player has TALL capability; m if not
+	 */
 	@Override
 	public char getDisplayChar(){
 		return this.hasCapability(Status.TALL) ? Character.toUpperCase(super.getDisplayChar()): super.getDisplayChar();
@@ -99,6 +111,10 @@ public class Player extends Actor implements Resettable {
 		this.setOneReset(true);
 	}
 
+	/**
+	 * to indicate whether player presses the reset hotkey
+	 * @param oneReset
+	 */
 	public void setOneReset(boolean oneReset) {
 		this.oneReset = oneReset;
 	}
