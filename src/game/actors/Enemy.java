@@ -24,6 +24,8 @@ import java.util.Random;
 /**
  * Enemy is an abstract class represents the enemies in the game. It is a class that extends from the Actor.
  * There are two types of enemies in this game, which is Goomba and Koopa.
+ *
+ * @author Kuah Jia Chen
  */
 public abstract class Enemy extends Actor implements Resettable {
 
@@ -33,14 +35,36 @@ public abstract class Enemy extends Actor implements Resettable {
     protected final Map<Integer, Behaviour> behaviours = new HashMap<>();  // list of behaviours store in hashmap
 
     /**
-     * KEY of the hashmap which also indicates the order of 3 behaviors.
+     * A constant integer that will be used as a key in the hash map to indicate which
+     * behaviour is the first priority
      */
     protected static final int FIRST_PRIORITY = 1; // key of hashmap
+
+    /**
+     * A constant integer that will be used as a key in the hash map to indicate which
+     * behaviour is the second priority
+     */
     protected static final int SECOND_PRIORITY = 2; // key of hashmap
+
+    /**
+     * A constant integer that will be used as a key in the hash map to indicate which
+     * behaviour is the third priority
+     */
     protected static final int THIRD_PRIORITY = 3; // key of hashmap
 
+    /**
+     * Damage done by this enemy instance
+     */
     private int damage;  // deduct in hit point of enemy
+
+    /**
+     * Attack verb
+     */
     private String verb; // Attack verb
+
+    /**
+     * The hit rate of this enemy instance
+     */
     private int hitRate; // Possibility of enemy hit actor
 
     /**
@@ -65,7 +89,7 @@ public abstract class Enemy extends Actor implements Resettable {
         this.verb = verb;
         this.addCapability(Status.IS_ENEMY);
         this.hitRate = hitRate;
-        this.registerInstance();
+        this.registerInstance(); // append to the array list in ResetManager
     }
 
     /**
@@ -83,6 +107,8 @@ public abstract class Enemy extends Actor implements Resettable {
     @Override
     public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
 
+        // when the enemy has this capability, it means the reset action is selected by the user
+        // hence it will be removed from the map
         if (this.hasCapability(Status.RESET_CALLED)){
             map.removeActor(this);
             return new DoNothingAction();
@@ -137,7 +163,9 @@ public abstract class Enemy extends Actor implements Resettable {
         return new IntrinsicWeapon(damage,verb);
     }
 
-
+    /**
+     * Add RESET_CALLED to its capability set
+     */
     @Override
     public void resetInstance() {
         this.addCapability(Status.RESET_CALLED);
