@@ -10,6 +10,8 @@ import game.actors.Toad;
  * SpeakAction class is a class that allows the actor to have a conversation with a toad (friendly NPC) to
  * get some useful information.
  * It is a new class that extends the Action class.
+ *
+ * @author Huang GuoYueYang
  */
 public class SpeakAction extends Action {
 

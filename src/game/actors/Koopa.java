@@ -18,6 +18,8 @@ import game.actors.Enemy;
  * When koopa is not conscious(means it is defeated), it will hide inside its shell, and its
  * character will change from ’K’ to ‘D’.
  * Player cannot attack it anymore, and all the behaviors will removed from koopa(attack/follow/wander).
+ *
+ * @author Huang GuoYueYang
  */
 public class Koopa extends Enemy {
     /**

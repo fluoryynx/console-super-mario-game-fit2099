@@ -6,6 +6,8 @@ import game.Status;
 
 /**
  * A class that represents the floor inside a building.
+ *
+ * @author Huang GuoYueYang
  */
 public class Floor extends Ground {
 

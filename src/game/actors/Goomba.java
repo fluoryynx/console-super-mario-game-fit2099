@@ -19,6 +19,8 @@ import java.util.Random;
  * when the player stands in the enemy's surroundings), it will follow the Player.
  * It causes 10 damages to player with 50% hit rate.
  * To make sure the map is clean and not too overcrowded, goomba will has a 10% chance to suicide each round of this game.
+ *
+ * @author Huang GuoYueYang
  */
 public class Goomba extends Enemy {
     /**

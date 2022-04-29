@@ -22,6 +22,8 @@ import java.util.Random;
  * Toad is a class that represents the NPC Toad in the game map. It is a class that extends from the Actor class.
  * Toad is a NPC is friendly (0 hits point) and it will have a conversation with the actor when
  * the actor is beside it.
+ *
+ * @author Huang GuoYueYang
  */
 public class Toad extends Actor {
     /**

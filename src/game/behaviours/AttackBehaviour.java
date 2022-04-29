@@ -9,7 +9,11 @@ import game.Status;
 import game.actions.AttackAction;
 import game.behaviours.Behaviour;
 
-
+/**
+ * A class that figures out a AttackAction that will attack the player automatically
+ *
+ * @author Huang GuoYueYang
+ */
 public class AttackBehaviour implements Behaviour {
 
     public AttackBehaviour (){

@@ -14,6 +14,8 @@ import game.Status;
  * In this class, player can attack enemies with weapon with a corresponding hit rate.
  * If the target(enemies) no longer conscious, all the item of that target will drop and it will be removed from the map(except Koopa).
  * In the end, there is a string will be printed to show how much you hurt the enemies.
+ *
+ * @author Huang GuoYueYang
  */
 public class AttackAction extends Action {
 

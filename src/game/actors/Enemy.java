@@ -25,7 +25,7 @@ import java.util.Random;
  * Enemy is an abstract class represents the enemies in the game. It is a class that extends from the Actor.
  * There are two types of enemies in this game, which is Goomba and Koopa.
  *
- * @author Kuah Jia Chen
+ * @author Kuah Jia Chen, Huang GuoYueYang
  */
 public abstract class Enemy extends Actor implements Resettable {
 

@@ -12,6 +12,8 @@ import java.util.Random;
  * It extends from its parent class Action.
  * When the koopa is defeated and player has capability HAVE_WRENCH,
  * player can use and only this action to smash koopa’s shell in order to get a super mushroom.
+ *
+ * @author Huang GuoYueYang
  */
 public class AttackShellAction extends Action {
 

@@ -19,6 +19,7 @@ import game.items.SuperMushroom;
 /**
  * The main class for the Mario World game.
  *
+ * @author Huang GuoYueYang
  */
 public class Application {
 
