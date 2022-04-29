@@ -10,7 +10,7 @@ import game.Status;
 public class Floor extends Ground {
 
     /**
-     * Character of floor
+     * Character to display for floor on the map
      */
     private static final char FLOOR_CHAR = '_';
 
@@ -20,6 +20,10 @@ public class Floor extends Ground {
     public Floor() {
         super(FLOOR_CHAR);
     }
+
+    /**
+     * A boolean indicating whether it can be entered a particular actor
+     */
     private boolean canEnter = false;
 
 
