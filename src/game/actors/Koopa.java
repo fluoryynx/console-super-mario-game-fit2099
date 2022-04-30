@@ -93,7 +93,7 @@ public class Koopa extends Enemy {
 
     /**
      * Setter of defeated
-     * @param defeated
+     * @param defeated the boolean to assign isDefeated
      */
     public void setDefeated(boolean defeated) {
         isDefeated = defeated;
