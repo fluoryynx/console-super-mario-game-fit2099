@@ -5,20 +5,59 @@ import game.actors.Goomba;
 
 import java.util.Random;
 
+/**
+ * A class that represents the sprout tree in the Game Map. It is a new class that extends Tree.
+ *
+ * @author Kuah Jia Chen
+ */
 public class Sprout extends Tree{
 
+    /**
+     * Random number generator
+     */
     private final Random rand = new Random();
+
+    /**
+     * Character to display for sprout tree on the map
+     */
     private static final char SPROUT_CHAR = '+';
+
+    /**
+     * Success rate to jump on this sprout tree
+     */
     private static final int SPROUT_JUMP_RATE = 90;
+
+    /**
+     * Fall damage done to the actor when the jump is not successful
+     */
     private static final int SPROUT_FALL_DAMAGE = 10;
+
+    /**
+     * The type of this tree
+     */
     private static final String SPROUT_TYPE = "Sprout tree";
+
+    /**
+     * The age when it reached sapling age
+     */
     private static final int REACHED_SAPLING_AGE = 10;
+
+    /**
+     * The rate to spawn goomba
+     */
     private static final int SPAWN_GOOMBA_RATE = 10;
 
+    /**
+     * Constructor
+     */
     public Sprout() {
         super(SPROUT_CHAR, SPROUT_JUMP_RATE, SPROUT_FALL_DAMAGE, SPROUT_TYPE);
     }
 
+    /**
+     * Called once per turn, so that Ground can also experience the joy of time.
+     * @param location The location of the sprout tree
+     */
     @Override
     public void tick(Location location) {
         super.tick(location);
@@ -34,14 +73,26 @@ public class Sprout extends Tree{
         }
     }
 
+    /**
+     * Check if current age of sprout reached sapling age
+     * @return True if it reached sapling age, else false
+     */
     public boolean reachSaplingAge(){
         return this.getAge() == REACHED_SAPLING_AGE;
     }
 
+    /**
+     * Change the ground type of current location to sprout
+     * @param currentLocation The location of the sprout tree
+     */
     public void changeToSapling(Location currentLocation){
         currentLocation.setGround(new Sapling());
     }
 
+    /**
+     * Spawn goomba at this current location
+     * @param currentLocation The location of the sprout tree
+     */
     public void spawnGoomba(Location currentLocation){
         Goomba goomba = new Goomba();
         currentLocation.addActor(goomba);

@@ -12,6 +12,8 @@ import game.actions.JumpAction;
  * A class that represents the high ground in this game. It is a new abstract class that extends
  * Ground and implements Destroyable since it can be destroyed when player is invincible and standing
  * at this location.
+ *
+ * @author Kuah Jia Chen
  */
 public abstract class HighGround extends Ground implements Destroyable {
 

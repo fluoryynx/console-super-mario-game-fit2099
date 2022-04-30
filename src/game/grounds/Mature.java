@@ -8,21 +8,64 @@ import game.actors.Koopa;
 
 import java.util.Random;
 
+/**
+ * A class that represents the mature tree in the Game Map. It is a new class that extends Tree.
+ *
+ * @author Kuah Jia Chen
+ */
 public class Mature extends Tree{
 
+    /**
+     * Random number generator
+     */
     private final Random rand = new Random();
+
+    /**
+     * Character to display for mature tree on the map
+     */
     private static final char MATURE_CHAR = 'T';
+
+    /**
+     * Success rate to jump on this mature tree
+     */
     private static final int MATURE_JUMP_RATE = 70;
+
+    /**
+     * Fall damage done to the actor when the jump is not successful
+     */
     private static final int MATURE_FALL_DAMAGE = 30;
+
+    /**
+     * The type of this tree
+     */
     private static final String MATURE_TYPE = "Mature tree";
+
+    /**
+     * The rate to spawn koopa
+     */
     private static final int SPAWN_KOOPA_RATE = 15;
+
+    /**
+     * Pointer that used to check if it is the right time to spawn sprout
+     */
     private int everyFiveTurnPointer = 0;
+
+    /**
+     * The rate to wither
+     */
     private static final int WITHER_RATE = 20;
 
+    /**
+     * Constructor
+     */
     public Mature() {
         super(MATURE_CHAR, MATURE_JUMP_RATE, MATURE_FALL_DAMAGE, MATURE_TYPE);
     }
 
+    /**
+     * Called once per turn, so that Ground can also experience the joy of time.
+     * @param location The location of the mature tree
+     */
     @Override
     public void tick(Location location) {
         super.tick(location);
@@ -45,16 +88,26 @@ public class Mature extends Tree{
             everyFiveTurnPointer = 0;
         }
 
+        // 20% chance to wither every turn
         if ((rand.nextInt(100) <= WITHER_RATE)){
             changeToDirt(location);
         }
     }
 
+    /**
+     * Spawn koopa at this location
+     * @param currentLocation current location of this mature tree instance
+     */
     public void spawnKoopa(Location currentLocation){
         Koopa koopa = new Koopa();
         currentLocation.addActor(koopa);
     }
 
+    /**
+     * Check there is how many fertile ground in the surrounding of this mature tree
+     * @param currentLocation current location of this mature tree instance
+     * @return an integer represents the number of fertile grounds surrounding this mature tree
+     */
     public int numberOfFertile(Location currentLocation){
         int pointer = 0;
         for (Exit exit: currentLocation.getExits()){
@@ -65,6 +118,10 @@ public class Mature extends Tree{
         return pointer;
     }
 
+    /**
+     * Randomly change one fertile ground that is surrounding this mature tree to sprout
+     * @param currentLocation current location of this mature tree instance
+     */
     public void changeOneFertileToSprout(Location currentLocation){
         boolean changedToSprout = false;
         while (!changedToSprout){
@@ -79,6 +136,10 @@ public class Mature extends Tree{
         }
     }
 
+    /**
+     * Change the ground type of current location of mature tree to dirt
+     * @param currentLocation current location of this mature tree instance
+     */
     public void changeToDirt(Location currentLocation){
         Dirt dirt = new Dirt();
         currentLocation.setGround(dirt);
