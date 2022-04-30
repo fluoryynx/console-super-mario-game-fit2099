@@ -17,7 +17,7 @@ public class SuperMushroom extends MagicalItem {
     /**
      * extra hp to be added to player
      */
-    private static int EXTRA_HP=50;
+    private static final int EXTRA_HP=50;
 
     /**
      * name of super mushroom
