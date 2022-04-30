@@ -1,5 +1,11 @@
 package game.managers;
 
+/**
+ * This class is use to update and keep track of the amount of coins players have,
+ * using static factory method.
+ *
+ * @author Lim Fluoryynx
+ */
 public class Wallet {
 
     private int balance = 0;

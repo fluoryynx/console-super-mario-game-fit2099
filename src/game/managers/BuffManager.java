@@ -6,6 +6,13 @@ import game.items.MagicalItem;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The BuffManager class has dependency with the MagicalItem class
+ * because we need a list consisting of instance from MagicalItem class.
+ * this class is created to get rid of expired magical items consumed by player
+ *
+ * @author Lim Fluoryynx
+ */
 public class BuffManager {
     /**
      * A list of magicalItem instances

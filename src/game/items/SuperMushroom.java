@@ -4,6 +4,13 @@ import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.positions.Location;
 import game.Status;
 
+/**
+ * This class is a subclass of items.
+ * The effect will last until it receives any damage (e.g., hit by the enemy).
+ * Once the effect wears off, the display character returns to normal (lowercase), but the maximum HP stays.
+ *
+ * @author Lim Fluoryynx
+ */
 public class SuperMushroom extends MagicalItem {
 
 

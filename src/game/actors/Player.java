@@ -21,7 +21,7 @@ import java.util.Set;
  * Class representing the Player (i.e., the mario in the game map)
  * This is the actor that will be controlled by the user using the console.
  *
- * @author Kuah Jia Chen, Huang GuoYueYang
+ * @author Kuah Jia Chen, Huang GuoYueYang, Lim Fluoryynx
  */
 public class Player extends Actor implements Resettable {
 

@@ -6,6 +6,15 @@ import edu.monash.fit2099.engine.positions.GameMap;
 import game.managers.Wallet;
 import game.items.Coin;
 
+/**
+ * This class extends the Action class to allow player to pick up coins
+ * add coin value to wallet balance
+ * This class has association relationship with the Coin class
+ * as there will be a coin attribute initialised in the PickCoinAction constructor
+ * so that it knows which coin (of what value) is picked.
+ *
+ * @author lim Fluoryynx
+ */
 public class PickCoinAction extends Action {
     /**
      * the coin pick up by player

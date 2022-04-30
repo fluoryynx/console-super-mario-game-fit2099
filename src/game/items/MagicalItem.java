@@ -7,6 +7,12 @@ import edu.monash.fit2099.engine.positions.Location;
 import game.actions.ConsumeAction;
 import game.Status;
 
+/**
+ * This class is an abstract class extended from the Item class to provide blueprint for magical items
+ * such as Super Mushroom and Power Star classes.
+ *
+ * @author Lim Fluoryynx
+ */
 public abstract class MagicalItem extends Item {
 
     /**

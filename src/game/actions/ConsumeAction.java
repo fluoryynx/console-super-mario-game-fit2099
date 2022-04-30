@@ -6,6 +6,12 @@ import edu.monash.fit2099.engine.positions.GameMap;
 import game.managers.BuffManager;
 import game.items.MagicalItem;
 
+/**
+ * This class is use to update player’s status and remove magical items
+ * from players inventory whenever player consumes the item.
+ *
+ * @author lim Fluoryynx
+ */
 public class ConsumeAction extends Action {
     /**
      * items player can consume

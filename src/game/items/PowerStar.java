@@ -6,9 +6,20 @@ import edu.monash.fit2099.engine.displays.Display;
 import game.Status;
 import game.grounds.Dirt;
 
+/**
+ * This class is a subclass of items.
+ * Players that consume it will be healed by 200 hit points (hp) and become invincible.
+ * The invincible effect replaces fading duration (aka, fading turn's ticker stops), and it lasts for another 10 turns.
+ * It fades and disappears from the game within 10 turns.
+ * Sets the player’s status such that player does not need to jump to higher level ground
+ * make player immune to damage and enable player to attack enemy successfully
+ *
+ * @author Lim Fluoryynx
+ */
 public class PowerStar extends MagicalItem{
 
     /***
+     *
      * Constructor.
      *  @param name the name of this Item
      * @param displayChar the character to use to represent this item if it is on the ground

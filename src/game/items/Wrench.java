@@ -6,6 +6,13 @@ import edu.monash.fit2099.engine.positions.Location;
 import edu.monash.fit2099.engine.weapons.WeaponItem;
 import game.Status;
 
+/**
+ * This class is a subclass of WeaponItem.
+ * It represents the weapon players use in the game to defeat enemies, such as the Koopa’s shell.
+ * It has 80% hit rate and 50 damage.
+ *
+ * @ Author Lim Fluoryynx
+ */
 public class Wrench extends WeaponItem {
 
     /**
