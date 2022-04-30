@@ -8,8 +8,9 @@ import java.util.List;
 
 /**
  * The BuffManager class has dependency with the MagicalItem class
- * because we need a list consisting of instance from MagicalItem class.
- * this class is created to get rid of expired magical items consumed by player
+ * because we need a list consisting of instance from MagicalItem class and for each unexpired
+ * magical items, it will give corresponding buff to the Player. Besides, this
+ * class also will remove all expired magical items consumed by player from the list.
  *
  * @author Lim Fluoryynx
  */
