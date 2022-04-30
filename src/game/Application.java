@@ -12,17 +12,20 @@ import game.actors.Koopa;
 import game.actors.Player;
 import game.actors.Toad;
 import game.grounds.*;
-import game.items.Coin;
 import game.items.PowerStar;
 import game.items.SuperMushroom;
 
 /**
  * The main class for the Mario World game.
  *
- * @author Huang GuoYueYang
+ * @author Huang GuoYueYang, Kuah Jia Chen
  */
 public class Application {
 
+	/**
+	 * The main method to initialize the game map and add necessary instances to the game map
+	 * @param args -
+	 */
 	public static void main(String[] args) {
 
 			World world = new World(new Display());
