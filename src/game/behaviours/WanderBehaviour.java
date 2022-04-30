@@ -14,7 +14,10 @@ import game.behaviours.Behaviour;
  * A class that allows the enemy to wander around the game map
  */
 public class WanderBehaviour implements Behaviour {
-	
+
+	/**
+	 * Random number generator
+	 */
 	private final Random random = new Random();
 
 	/**

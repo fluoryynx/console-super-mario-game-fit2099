@@ -16,6 +16,9 @@ import game.behaviours.Behaviour;
  */
 public class AttackBehaviour implements Behaviour {
 
+    /**
+     * Constructor
+     */
     public AttackBehaviour (){
     }
 

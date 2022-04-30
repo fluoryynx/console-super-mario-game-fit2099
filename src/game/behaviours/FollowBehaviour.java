@@ -15,6 +15,9 @@ import game.behaviours.Behaviour;
  */
 public class FollowBehaviour implements Behaviour {
 
+	/**
+	 * The target Actor
+	 */
 	private final Actor target;
 
 	/**
