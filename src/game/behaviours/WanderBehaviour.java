@@ -10,6 +10,9 @@ import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.Location;
 import game.behaviours.Behaviour;
 
+/**
+ * A class that allows the enemy to wander around the game map
+ */
 public class WanderBehaviour implements Behaviour {
 	
 	private final Random random = new Random();

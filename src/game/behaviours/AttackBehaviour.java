@@ -25,7 +25,6 @@ public class AttackBehaviour implements Behaviour {
      * @param map the GameMap containing the Actor
      * @return an Action that actor can perform, or null if actor can't do this.
      */
-    // TODO: develop and use it to attack the player automatically.
     @Override
     public Action getAction(Actor actor, GameMap map) {
         for (Exit exit : map.locationOf(actor).getExits()) {
