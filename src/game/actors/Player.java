@@ -151,7 +151,7 @@ public class Player extends Actor implements Resettable {
 
 	/**
 	 * to indicate whether player presses the reset hotkey
-	 * @param oneReset
+	 * @param oneReset the boolean to assign oneReset
 	 */
 	public void setOneReset(boolean oneReset) {
 		this.oneReset = oneReset;
