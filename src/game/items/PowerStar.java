@@ -105,7 +105,7 @@ public class PowerStar extends MagicalItem{
      * add INVINCIBLE capability to actor upon consumption of power star
      * reset value of turn to INITIAL_TURN, which is 10
      * heal actor by 200 hp
-     * @param actor
+     * @param actor the consumer who consumed this power star
      */
     @Override
     public void updateStatus(Actor actor) {
@@ -117,10 +117,16 @@ public class PowerStar extends MagicalItem{
 
     /**
      * remove INVINCIBLE capablity when the power star effect wears off ( turn = 0) or when game is reset
-     * @param location
+     * @param location the current location of the consumer
+     * @throws IllegalArgumentException if location is null
      */
     @Override
     public void currentStatus(Location location) {
+
+        if (location == null){
+            throw new IllegalArgumentException("The input parameter (i.e., location) cannot be null");
+        }
+
         turn --;
         if (turn == ZERO_TURN || consumer.hasCapability(Status.RESET_CALLED)){
             consumer.removeCapability(Status.INVINCIBLE);
@@ -133,7 +139,7 @@ public class PowerStar extends MagicalItem{
 
     /**
      * returns string to indicate number of remaining turn before power star disappear from the ground or inventory
-     * @return
+     * @return the string to indicate the number of remaining turn
      */
     @Override
     public String toString() {

@@ -57,15 +57,21 @@ public abstract class MagicalItem extends Item {
 
     /**
      * update actor's status upon consumption of magical item
-     * @param actor
+     * @param actor the actor that consumed the magical item
+     * @throws IllegalArgumentException if actor is null
      */
     public void updateStatus(Actor actor){
+
+        if (actor == null){
+            throw new IllegalArgumentException("The input parameter (i.e., actor) cannot be null");
+        }
+
         this.consumer=actor;
     };
 
     /**
      *  the current status of magical item in actor's inventory
-     * @param location
+     * @param location the location of current actor
      */
     public abstract void currentStatus( Location location);
 
@@ -78,12 +84,17 @@ public abstract class MagicalItem extends Item {
 
     /**
      * set isExpired to true if effect of magical items wear off
-     * @param IsExpired
+     * @param IsExpired indicating the magical item is expired or not
      */
     public void setIsExpired(boolean IsExpired) {
         this.isExpired = IsExpired;
     }
 
+    /**
+     * Create and return an action to drop this Item if it is droppable.
+     * @param actor the actor who currently having this magical item
+     * @return drop action is the magical item is droppable, else return null
+     */
     @Override
     public DropItemAction getDropAction(Actor actor) {
         if (droppable){

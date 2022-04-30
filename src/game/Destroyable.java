@@ -20,8 +20,14 @@ public interface Destroyable {
     /**
      * A default interface method that change the ground type of current location to dirt
      * @param currentLocation the current location of the destroyable instance
+     * @throws IllegalArgumentException if currentLocation is null
      */
     default void breakToDirt(Location currentLocation){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
         currentLocation.setGround(new Dirt());
     }
 
@@ -29,8 +35,23 @@ public interface Destroyable {
      * A default interface method that create a coin instance on that location
      * @param currentLocation the current location of the destroyable instance
      * @param coinValue the value of coin that drop at that location
+     * @throws IllegalArgumentException if currentLocation is null
+     * @throws IllegalArgumentException if coinValue is not 5
      */
     default void convertCoin(Location currentLocation, int coinValue){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
+        // the reason to put this exception is that currently when the high ground is destroyed, the
+        // value of coin should always be 5, hence this is to check if coinValue ever not equal to 5.
+        // This exception will be removed in future if the value of coin to drop at that location can be
+        // different
+        if (coinValue != 5){
+            throw new IllegalArgumentException("The input parameter (i.e., coinValue) is not valid");
+        }
+
         currentLocation.addItem(new Coin(coinValue));
     }
 }

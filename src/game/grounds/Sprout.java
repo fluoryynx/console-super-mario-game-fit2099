@@ -84,16 +84,28 @@ public class Sprout extends Tree{
     /**
      * Change the ground type of current location to sprout
      * @param currentLocation The location of the sprout tree
+     * @throws IllegalArgumentException if currentLocation is null
      */
     public void changeToSapling(Location currentLocation){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
         currentLocation.setGround(new Sapling());
     }
 
     /**
      * Spawn goomba at this current location
      * @param currentLocation The location of the sprout tree
+     * @throws IllegalArgumentException if currentLocation is null
      */
     public void spawnGoomba(Location currentLocation){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
         Goomba goomba = new Goomba();
         currentLocation.addActor(goomba);
     }

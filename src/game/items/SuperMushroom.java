@@ -42,7 +42,7 @@ public class SuperMushroom extends MagicalItem {
     /**
      * add 200 hp to actor when super mushroom is consumed
      * add TALL capability to actor
-     * @param actor
+     * @param actor the consumer who consumed this super mushroom
      */
     @Override
     public void updateStatus(Actor actor) {
@@ -55,10 +55,16 @@ public class SuperMushroom extends MagicalItem {
      * update status of the super mushroom
      * remove effects of super mushroom (TALL capability) from actor after they receive damage
      * set isExpired to true
-     * @param location
+     * @param location the current location of the consumer
+     * @throws IllegalArgumentException if location is null
      */
     @Override
     public void currentStatus(Location location) {
+
+        if (location == null){
+            throw new IllegalArgumentException("The input parameter (i.e., location) cannot be null");
+        }
+
         if (consumer.hasCapability(Status.ATTACKED_BY_ENEMY) || consumer.hasCapability(Status.RESET_CALLED)){
           //  consumer.removeCapability(Status.TALL);
             consumer.removeCapability(Status.ATTACKED_BY_ENEMY);

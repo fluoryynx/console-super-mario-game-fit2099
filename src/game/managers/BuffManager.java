@@ -38,8 +38,15 @@ public class BuffManager {
     /**
      * Remove expired magicalItems by traversing through all the list
      * By doing this way, it will avoid using `instanceof` all over the place.
+     * @param currentLocation the current location of the player
+     * @throws IllegalArgumentException if currentLocation is null
      */
     public void run(Location currentLocation){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
         for (MagicalItem magicalItem: magicalItemList){
             magicalItem.currentStatus(currentLocation);
         }
@@ -60,9 +67,16 @@ public class BuffManager {
 
     /**
      * Add the Resettable instance to the list
+     * @param magicalItem the magical item that consumed by the player
+     * @throws IllegalArgumentException if magicalItem is null
      * FIXME: it does nothing, you need to implement it :)
      */
     public void appendResetInstance(MagicalItem magicalItem){
+
+        if (magicalItem == null){
+            throw new IllegalArgumentException("The input parameter (i.e., magicalItem) cannot be null");
+        }
+
         magicalItemList.add(magicalItem);
     }
 }

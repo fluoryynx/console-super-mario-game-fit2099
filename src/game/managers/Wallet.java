@@ -22,17 +22,27 @@ public class Wallet {
 
     /**
      * add certain value to wallet balance
-     * @param balance
+     * @param balance an integer that indicating the amount of increase in the balance
+     * @throws IllegalArgumentException if balance is 0 or negative
      */
     public void addBalance(int balance) {
+
+        if (balance <= 0){
+            throw new IllegalArgumentException("The balance cannot be 0 or negative");
+        }
+
         this.balance += balance;
     }
 
     /**
      * subtract certain value from wallet balance
-     * @param balance
+     * @param balance an integer that indicating the amount of decrease in the balance
+     * @throws IllegalArgumentException if balance is greater than the remaining balance
      */
     public void minusBalance(int balance) {
+        if (balance > this.balance){
+            throw new IllegalArgumentException("The balance cannot be greater than the remaining balance");
+        }
         this.balance -= balance;
     }
 

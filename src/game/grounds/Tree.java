@@ -76,8 +76,14 @@ public abstract class Tree extends HighGround implements Resettable {
     /**
      * Convert the ground type of current location to dirt
      * @param currentLocation The location of the tree
+     * @throws IllegalArgumentException if currentLocation is null
      */
     public void convertToDirt(Location currentLocation){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
         Dirt dirt = new Dirt();
         currentLocation.setGround(dirt);
     }

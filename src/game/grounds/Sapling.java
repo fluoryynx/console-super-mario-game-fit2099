@@ -90,16 +90,28 @@ public class Sapling extends Tree{
     /**
      * Change the ground type of current location to mature
      * @param currentLocation The location of the sapling tree
+     * @throws IllegalArgumentException if currentLocation is null
      */
     public void changeToMature(Location currentLocation){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
         currentLocation.setGround(new Mature());
     }
 
     /**
      * Spawn coin on this location
      * @param currentLocation The location of the sapling tree
+     * @throws IllegalArgumentException if currentLocation is null
      */
     public void spawnCoin(Location currentLocation){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
         Coin coin = new Coin(SPAWN_COIN_VALUE);
         currentLocation.addItem(coin);
     }

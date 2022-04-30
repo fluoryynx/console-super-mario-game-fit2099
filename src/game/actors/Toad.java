@@ -118,11 +118,19 @@ public class Toad extends Actor {
      * If the removeIndex equals to null, then the currentIndex will be any random
      * number within the size of the toadTalk Array.
      * Else we put the currentIndex as any random number within the size of the toadTalk Array.
-     * If the currentIndex equals to the removeIndex, the currentIndex will jump over that removeIndex,
-     * so the corresponding sentence will not be print.
-     * @param removeIndex the index of the sentence to be remove
+     * If the currentIndex equals to the removeIndex, we will keep looping until the currentIndex
+     * is not equals to the removeIndex (i.e., the sentence is not prohibited), then we return that
+     * string at that index
+     * @param removeIndex the index of the sentence to be removed
+     * @throws ArrayIndexOutOfBoundsException if the value of removeIndex is not valid
+     * (i.e., the value of removeIndex is not within the range 0 to toadTalk.size())
      */
     public String getReplyString(Integer removeIndex){
+
+        if (removeIndex != null && (removeIndex<0 || removeIndex>=toadTalk.size())){
+            throw new ArrayIndexOutOfBoundsException("Incorrect Index to avoid a sentence from toadTalk");
+        }
+
         int currentIndex;
         // check if the removeIndex is null
         if (removeIndex == null){

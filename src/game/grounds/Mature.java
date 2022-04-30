@@ -97,8 +97,14 @@ public class Mature extends Tree{
     /**
      * Spawn koopa at this location
      * @param currentLocation current location of this mature tree instance
+     * @throws IllegalArgumentException if currentLocation is null
      */
     public void spawnKoopa(Location currentLocation){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
         Koopa koopa = new Koopa();
         currentLocation.addActor(koopa);
     }
@@ -107,8 +113,14 @@ public class Mature extends Tree{
      * Check there is how many fertile ground in the surrounding of this mature tree
      * @param currentLocation current location of this mature tree instance
      * @return an integer represents the number of fertile grounds surrounding this mature tree
+     * @throws IllegalArgumentException if currentLocation is null
      */
     public int numberOfFertile(Location currentLocation){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
         int pointer = 0;
         for (Exit exit: currentLocation.getExits()){
             if (exit.getDestination().getGround().hasCapability(Status.IS_FERTILE)){
@@ -121,8 +133,14 @@ public class Mature extends Tree{
     /**
      * Randomly change one fertile ground that is surrounding this mature tree to sprout
      * @param currentLocation current location of this mature tree instance
+     * @throws IllegalArgumentException if currentLocation is null
      */
     public void changeOneFertileToSprout(Location currentLocation){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
         boolean changedToSprout = false;
         while (!changedToSprout){
             int amountOfExit = currentLocation.getExits().size();
@@ -139,8 +157,14 @@ public class Mature extends Tree{
     /**
      * Change the ground type of current location of mature tree to dirt
      * @param currentLocation current location of this mature tree instance
+     * @throws IllegalArgumentException if currentLocation is null
      */
     public void changeToDirt(Location currentLocation){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
         Dirt dirt = new Dirt();
         currentLocation.setGround(dirt);
     }

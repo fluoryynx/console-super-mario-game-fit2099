@@ -54,8 +54,15 @@ public class ResetManager {
 
     /**
      * Add the Resettable instance to the list
+     * @param reset the resettable instance that ready to be append to the resettableList
+     * @throws IllegalArgumentException if reset is null
      */
     public void appendResetInstance(Resettable reset){
+
+        if (reset == null){
+            throw new IllegalArgumentException("The input parameter (i.e., reset) cannot be null");
+        }
+
         this.resettableList.add(reset);
     }
 
