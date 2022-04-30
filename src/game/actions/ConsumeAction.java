@@ -10,7 +10,7 @@ import game.items.MagicalItem;
  * This class is use to update player’s status and remove magical items
  * from players inventory whenever player consumes the item.
  *
- * @author lim Fluoryynx
+ * @author Lim Fluoryynx
  */
 public class ConsumeAction extends Action {
     /**

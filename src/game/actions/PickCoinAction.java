@@ -13,7 +13,7 @@ import game.items.Coin;
  * as there will be a coin attribute initialised in the PickCoinAction constructor
  * so that it knows which coin (of what value) is picked.
  *
- * @author lim Fluoryynx
+ * @author Lim Fluoryynx
  */
 public class PickCoinAction extends Action {
     /**

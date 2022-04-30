@@ -11,7 +11,7 @@ import game.Status;
  * It represents the weapon players use in the game to defeat enemies, such as the Koopa’s shell.
  * It has 80% hit rate and 50 damage.
  *
- * @ Author Lim Fluoryynx
+ * @author Lim Fluoryynx
  */
 public class Wrench extends WeaponItem {
 

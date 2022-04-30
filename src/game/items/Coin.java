@@ -10,7 +10,7 @@ import game.Status;
  * class to represent coin in the game map.
  *  It is currency the player uses to trade for items
  *
- *  @author lim Fluoryynx
+ *  @author Lim Fluoryynx
  */
 public class Coin extends Item implements Resettable {
 

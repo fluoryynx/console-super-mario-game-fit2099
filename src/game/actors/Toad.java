@@ -23,7 +23,7 @@ import java.util.Random;
  * Toad is a NPC is friendly (0 hits point) and it will have a conversation with the actor when
  * the actor is beside it.
  *
- * @author Huang GuoYueYang
+ * @author Huang GuoYueYang, Lim Fluoryynx
  */
 public class Toad extends Actor {
     /**

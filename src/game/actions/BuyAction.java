@@ -11,7 +11,7 @@ import game.managers.Wallet;
  * BuyAction is an action that allows the player to use coin to purchase items from the toad.
  * It is trigger by the Toad class when players approach the toad and enter the purchase item hotkey
  *
- * @author lim Fluoryynx
+ * @author Lim Fluoryynx
  */
 public class BuyAction extends Action {
     /**
