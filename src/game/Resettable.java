@@ -5,6 +5,8 @@ import game.managers.ResetManager;
 /**
  * It is an interface that will be implemented by those classes that will perform corresponding operation
  * when the reset action is executed.
+ *
+ * @author Kuah Jia Chen
  */
 public interface Resettable {
 
