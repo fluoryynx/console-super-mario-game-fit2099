@@ -7,7 +7,6 @@ import java.util.List;
 
 /**
  * A global Singleton manager that does soft-reset on the instances.
- * TODO: you may modify (add or remove) methods in this class if you think they are not necessary.
  * HINT: refer to Bootcamp Week 5 about static factory method.
  * A3: Think about how will you improve this implementation in the future assessment.
  * What could be the drawbacks of this implementation?
@@ -55,7 +54,6 @@ public class ResetManager {
 
     /**
      * Add the Resettable instance to the list
-     * FIXME: it does nothing, you need to implement it :)
      */
     public void appendResetInstance(Resettable reset){
         this.resettableList.add(reset);
@@ -63,8 +61,7 @@ public class ResetManager {
 
 
     /**
-     * Remove a Resettable instance from the list
-     * FIXME: it does nothing, you need to implement it :)
+     * Clear the resettableList
      */
     public void cleanUp(){
         this.resettableList.clear();
