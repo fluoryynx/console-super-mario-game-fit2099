@@ -23,7 +23,7 @@ REQ1: Let it grow!
         -  Date to be completed: 29-Apr-2022
 
     Review:
-    - (1) Guoyueyang Huang
+    - (1) Guoyueyang Huang DONE
     - (2) Lim Fluoryynx DONE
 
 
@@ -41,7 +41,7 @@ REQ2: Jump Up, Super star
         -  Date to be completed: 29-Apr-2022
 
     Review:
-    - (1) Guoyueyang Huang
+    - (1) Guoyueyang Huang DONE
     - (2) Lim Fluoryynx DONE
 
 
@@ -49,13 +49,13 @@ REQ3: Enemies
 
     Responsible person(s): Guoyueyang Huang
 
-    Implementation:
+    Implementation: DONE
     -  Date to be completed: 21-Apr-2022
-        -  Debug: Guoyueyang Huang
+        -  Debug: Guoyueyang Huang DONE
 
-    -  Update Class Diagram:
-    -  Update Interaction Diagram:
-    -  Update Design Rationale:
+    -  Update Class Diagram: DONE
+    -  Update Interaction Diagram: DONE
+    -  Update Design Rationale: DONE
         -  Date to be completed: 29-Apr-2022
 
     Review:
@@ -77,7 +77,7 @@ REQ4: Magical Items
         -  Date to be completed: 29/4/2022
 
     Review:
-    - (1) Guoyueyang Huang
+    - (1) Guoyueyang Huang DONE
     - (2) Kuah Jia Chen DONE
 
 
@@ -95,7 +95,7 @@ REQ5: Trading
         -  Date to be completed: 29/4/2022
 
     Review:
-    - (1) Guoyueyang Huang
+    - (1) Guoyueyang Huang DONE
     - (2) Kuah Jia Chen DONE
 
 
@@ -103,13 +103,13 @@ REQ6: Monologue
 
     Responsible person(s): Guoyueyang Huang
 
-    Implementation:
+    Implementation: DONE
     -  Date to be completed: 21-Apr-2022
-        -  Debug: Guoyueyang Huang
+        -  Debug: Guoyueyang Huang DONE
 
-    -  Update Class Diagram:
-    -  Update Interaction Diagram:
-    -  Update Design Rationale:
+    -  Update Class Diagram: DONE
+    -  Update Interaction Diagram: DONE
+    -  Update Design Rationale: DONE
         -  Date to be completed: 29-Apr-2022
 
     Review:
@@ -124,7 +124,7 @@ REQ7: Reset Game
     Implementation:
     - Kuah Jia Chen DONE
     - Date to be completed: 21-Apr-2022
-        -  Debug: -  Guoyueyang Huang
+        -  Debug: -  Guoyueyang Huang DONE
                   -  Lim Fluoryynx DONE
 
     -  Update Class Diagram: DONE
@@ -133,7 +133,7 @@ REQ7: Reset Game
         -  Date to be completed: 29-Apr-2022
 
     Review:
-    - (1) Guoyueyang Huang
+    - (1) Guoyueyang Huang DONE
     - (2) Kuah Jia Chen DONE
     - (3) Lim Fluoryynx DONE
 
