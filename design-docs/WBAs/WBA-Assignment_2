@@ -24,7 +24,7 @@ REQ1: Let it grow!
 
     Review:
     - (1) Guoyueyang Huang
-    - (2) Lim Fluoryynx
+    - (2) Lim Fluoryynx DONE
 
 
 REQ2: Jump Up, Super star
@@ -42,7 +42,7 @@ REQ2: Jump Up, Super star
 
     Review:
     - (1) Guoyueyang Huang
-    - (2) Lim Fluoryynx
+    - (2) Lim Fluoryynx DONE
 
 
 REQ3: Enemies
@@ -60,20 +60,20 @@ REQ3: Enemies
 
     Review:
     - (1) Kuah Jia Chen DONE
-    - (2) Lim Fluoryynx
+    - (2) Lim Fluoryynx DONE
 
 
 REQ4: Magical Items
 
     Responsible person(s): Lim Fluoryynx
 
-    Implementation:
+    Implementation: DONE
     -  Date to complete: 21/4/2022
-        -   Debug: Lim Fluoryynx
-
-    -  Update Class Diagram:
-    -  Update Interaction Diagram:
-    -  Update Design Rationale:
+        -   Debug: Lim Fluoryynx DONE
+ 
+    -  Update Class Diagram: DONE
+    -  Update Interaction Diagram: DONE
+    -  Update Design Rationale: DONE
         -  Date to be completed: 29/4/2022
 
     Review:
@@ -85,13 +85,13 @@ REQ5: Trading
 
     Responsible person(s): Lim Fluoryynx
 
-    Implementation:
+    Implementation: DONE
     -  Date to complete: 21/4/2022
-        -  Debug: Lim Fluoryynx
+        -  Debug: Lim Fluoryynx DONE
 
-    -  Update Class Diagram:
-    -  Update Interaction Diagram:
-    -  Update Design Rationale:
+    -  Update Class Diagram: DONE
+    -  Update Interaction Diagram: DONE
+    -  Update Design Rationale: DONE
         -  Date to be completed: 29/4/2022
 
     Review:
@@ -114,7 +114,7 @@ REQ6: Monologue
 
     Review:
     - (1) Kuah Jia Chen DONE
-    - (2) Lim Fluoryynx
+    - (2) Lim Fluoryynx DONE
 
 
 REQ7: Reset Game
@@ -125,7 +125,7 @@ REQ7: Reset Game
     - Kuah Jia Chen DONE
     - Date to be completed: 21-Apr-2022
         -  Debug: -  Guoyueyang Huang
-                  -  Lim Fluoryynx
+                  -  Lim Fluoryynx DONE
 
     -  Update Class Diagram: DONE
     -  Update Interaction Diagram: DONE
@@ -135,7 +135,7 @@ REQ7: Reset Game
     Review:
     - (1) Guoyueyang Huang
     - (2) Kuah Jia Chen DONE
-    - (3) Lim Fluoryynx
+    - (3) Lim Fluoryynx DONE
 
 Kuah Jia Chen 32286988: I accept this WBA
 Lim Fluoryynx 32023774: I accepted this WBA
