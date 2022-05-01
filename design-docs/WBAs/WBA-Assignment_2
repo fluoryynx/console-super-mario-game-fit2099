@@ -13,13 +13,13 @@ REQ1: Let it grow!
 
     Responsible person(s): Kuah Jia Chen
 
-    Implementation:
+    Implementation: DONE
     -  Date to be completed: 21-Apr-2022
-        - Debug: Kuah Jia Chen
+        - Debug: Kuah Jia Chen DONE
 
-    -  Update Class Diagram:
-    -  Update Interaction Diagram:
-    -  Update Design Rationale:
+    -  Update Class Diagram: DONE
+    -  Update Interaction Diagram: DONE
+    -  Update Design Rationale: DONE
         -  Date to be completed: 29-Apr-2022
 
     Review:
@@ -31,13 +31,13 @@ REQ2: Jump Up, Super star
 
     Responsible person(s): Kuah Jia Chen
 
-    Implementation:
+    Implementation: DONE
     -  Date to be completed: 21-Apr-2022
-        -  Debug: Kuah Jia Chen
+        -  Debug: Kuah Jia Chen DONE
 
-    -  Update Class Diagram:
-    -  Update Interaction Diagram:
-    -  Update Design Rationale:
+    -  Update Class Diagram: DONE
+    -  Update Interaction Diagram: DONE
+    -  Update Design Rationale: DONE
         -  Date to be completed: 29-Apr-2022
 
     Review:
@@ -59,7 +59,7 @@ REQ3: Enemies
         -  Date to be completed: 29-Apr-2022
 
     Review:
-    - (1) Kuah Jia Chen
+    - (1) Kuah Jia Chen DONE
     - (2) Lim Fluoryynx
 
 
@@ -78,7 +78,7 @@ REQ4: Magical Items
 
     Review:
     - (1) Guoyueyang Huang
-    - (2) Kuah Jia Chen
+    - (2) Kuah Jia Chen DONE
 
 
 REQ5: Trading
@@ -96,7 +96,7 @@ REQ5: Trading
 
     Review:
     - (1) Guoyueyang Huang
-    - (2) Kuah Jia Chen
+    - (2) Kuah Jia Chen DONE
 
 
 REQ6: Monologue
@@ -113,7 +113,7 @@ REQ6: Monologue
         -  Date to be completed: 29-Apr-2022
 
     Review:
-    - (1) Kuah Jia Chen
+    - (1) Kuah Jia Chen DONE
     - (2) Lim Fluoryynx
 
 
@@ -122,19 +122,19 @@ REQ7: Reset Game
     Responsible person(s): All
 
     Implementation:
-    - Kuah Jia Chen
+    - Kuah Jia Chen DONE
     - Date to be completed: 21-Apr-2022
         -  Debug: -  Guoyueyang Huang
                   -  Lim Fluoryynx
 
-    -  Update Class Diagram:
-    -  Update Interaction Diagram:
-    -  Update Design Rationale:
+    -  Update Class Diagram: DONE
+    -  Update Interaction Diagram: DONE
+    -  Update Design Rationale: DONE
         -  Date to be completed: 29-Apr-2022
 
     Review:
     - (1) Guoyueyang Huang
-    - (2) Kuah Jia Chen
+    - (2) Kuah Jia Chen DONE
     - (3) Lim Fluoryynx
 
 Kuah Jia Chen 32286988: I accept this WBA
