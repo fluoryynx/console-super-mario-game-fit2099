@@ -11,7 +11,7 @@ import edu.monash.fit2099.engine.positions.Location;
 import game.behaviours.Behaviour;
 
 /**
- * A class that allows the enemy to wander around the game map
+ * A class that allows the enemy to wander around in the game map
  */
 public class WanderBehaviour implements Behaviour {
 
@@ -31,14 +31,16 @@ public class WanderBehaviour implements Behaviour {
 	@Override
 	public Action getAction(Actor actor, GameMap map) {
 		ArrayList<Action> actions = new ArrayList<Action>();
-		
+
+		// for each available exit, add it to actions
 		for (Exit exit : map.locationOf(actor).getExits()) {
             Location destination = exit.getDestination();
             if (destination.canActorEnter(actor)) {
             	actions.add(exit.getDestination().getMoveAction(actor, "around", exit.getHotKey()));
             }
         }
-		
+
+		// randomly move the actor to one of the exits in the actions
 		if (!actions.isEmpty()) {
 			return actions.get(random.nextInt(actions.size()));
 		}

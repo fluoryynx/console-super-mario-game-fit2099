@@ -58,13 +58,17 @@ public class BuffManager {
         for (MagicalItem magicalItem: magicalItemList){
             magicalItem.currentStatus(currentLocation);
         }
+
+        // remove all expired item by using a temporary list to store unexpired items
         List<MagicalItem> temp = new ArrayList<>();
         for (MagicalItem magicalItem: magicalItemList){
             if (!magicalItem.getIsExpired()){
                 temp.add(magicalItem);
             }
         }
+        // assign magicalItemList to temp, hence now there is no expired item in magicalItemList
         magicalItemList = temp;
+
         // debug purpose
 //        String result = "";
 //        for (MagicalItem magicalItem: magicalItemListList){
@@ -77,9 +81,8 @@ public class BuffManager {
      * Add the Resettable instance to the list
      * @param magicalItem the magical item that consumed by the player
      * @throws IllegalArgumentException if magicalItem is null
-     * FIXME: it does nothing, you need to implement it :)
      */
-    public void appendResetInstance(MagicalItem magicalItem){
+    public void appendMagicalItemInstance(MagicalItem magicalItem){
 
         if (magicalItem == null){
             throw new IllegalArgumentException("The input parameter (i.e., magicalItem) cannot be null");

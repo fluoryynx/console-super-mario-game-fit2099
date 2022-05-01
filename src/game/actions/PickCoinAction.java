@@ -32,7 +32,6 @@ public class PickCoinAction extends Action {
     /**
      * remove coin from the game map after actor picks it up
      * add value of the coin into actor's wallet balance
-     * display updated wallet balance into the console
      * return the value of coin picked up in the menu description
      * @param actor The actor performing the action.
      * @param map The map the actor is on.
@@ -42,7 +41,6 @@ public class PickCoinAction extends Action {
     public String execute(Actor actor, GameMap map) {
         map.locationOf(actor).removeItem(coin);
         Wallet.getInstance().addBalance(coin.getValue());
-        System.out.println("Wallet balance: " + Wallet.getInstance().getBalance());
         return menuDescription(actor);
     }
 

@@ -20,7 +20,7 @@ public class ConsumeAction extends Action {
 
     /**
      * Constructor
-     * @param magicalItem
+     * @param magicalItem the magical item that player allows consuming
      */
     public ConsumeAction(MagicalItem magicalItem) {
         this.magicalItem = magicalItem;
@@ -38,7 +38,7 @@ public class ConsumeAction extends Action {
     public String execute(Actor actor, GameMap map) {
         magicalItem.updateStatus(actor);
         actor.removeItemFromInventory(magicalItem);
-        BuffManager.getInstance().appendResetInstance(magicalItem);
+        BuffManager.getInstance().appendMagicalItemInstance(magicalItem);
         return actor + " consumed the " + magicalItem;
     }
 

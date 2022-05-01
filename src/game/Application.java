@@ -12,6 +12,7 @@ import game.actors.Koopa;
 import game.actors.Player;
 import game.actors.Toad;
 import game.grounds.*;
+import game.items.Coin;
 import game.items.PowerStar;
 import game.items.SuperMushroom;
 

@@ -73,13 +73,13 @@ public abstract class MagicalItem extends Item {
         }
 
         this.consumer=actor;
-    };
+    }
 
     /**
      *  the current status of magical item in actor's inventory
      * @param location the location of current actor
      */
-    public abstract void currentStatus( Location location);
+    public abstract void currentStatus(Location location);
 
     /**
      * @return true if effect of magical items wear off

@@ -18,15 +18,6 @@ import game.grounds.Dirt;
  */
 public class PowerStar extends MagicalItem{
 
-    /***
-     *
-     * Constructor.
-     *  @param name the name of this Item
-     * @param displayChar the character to use to represent this item if it is on the ground
-     * @param portable true if and only if the Item can be picked up
-     * @param droppable true if and only if the Item can be dropped
-     */
-
     /**
      * number of turns
      */
@@ -35,7 +26,7 @@ public class PowerStar extends MagicalItem{
     /**
      * amount of hp to heal the player
      */
-    private static int HEALED_HP=200;
+    private static final int HEALED_HP=200;
 
     /**
      * name of the power star
@@ -91,6 +82,7 @@ public class PowerStar extends MagicalItem{
         super.tick(currentLocation);
         turn--;
         if (turn == ZERO_TURN){
+            // remove from the ground
             currentLocation.removeItem(this);
         }
     }
@@ -107,8 +99,9 @@ public class PowerStar extends MagicalItem{
         super.tick(currentLocation, actor);
         turn--;
         if (turn == ZERO_TURN){
+            // remove from the inventory
             actor.removeItemFromInventory(this);
-            actor.removeCapability(Status.INVINCIBLE);
+            //actor.removeCapability(Status.INVINCIBLE); // this line of code is not needed
         }
     }
 
