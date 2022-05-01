@@ -78,7 +78,7 @@ public class BuffManager {
     }
 
     /**
-     * Add the Resettable instance to the list
+     * Add the MagicalItem instance to the list
      * @param magicalItem the magical item that consumed by the player
      * @throws IllegalArgumentException if magicalItem is null
      */

@@ -11,12 +11,12 @@ public class Wallet {
     private int balance = 0;
 
     /**
-     * A singleton reset manager instance
+     * A singleton wallet instance
      */
     private static Wallet instance;
 
     /**
-     * Get the singleton instance of reset manager
+     * Get the singleton instance of wallet
      * @return ResetManager singleton instance
      */
     public static Wallet getInstance(){
@@ -53,7 +53,7 @@ public class Wallet {
     }
 
     /**
-     * getter to return walet balance
+     * getter to return wallet balance
      * @return wallet balance
      */
     public int getBalance() {
