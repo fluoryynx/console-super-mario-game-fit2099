@@ -11,85 +11,87 @@ Tasks:
 
 REQ1: Lava Zone
 
-Responsible person(s): Kuah Jia Chen
+    Responsible person(s): Kuah Jia Chen
 
-Implementation:
--  Date to be completed: 15-May-2022
+    Implementation:
+        -  Date to be completed: 15-May-2022
 
-Class Diagram:
-Interaction Diagram:
-Design Rationale:
--  Date to be completed: 21-May-2022
+    - Class Diagram:
+    - Interaction Diagram:
+    - Design Rationale:
+        -  Date to be completed: 21-May-2022
 
-Review:
-- (1) Guoyueyang Huang
-- (2) Lim Fluoryynx
+    Review:
+    - (1) Guoyueyang Huang
+    - (2) Lim Fluoryynx
 
 
 REQ2: More allies and enemies!
-Responsible person(s): Guoyueyang Huang
 
-Implementation:
--  Date to be completed: 15-May-2022
+    Responsible person(s): Guoyueyang Huang
 
-Class Diagram:
-Interaction Diagram:
-Design Rationale:
--  Date to be completed: 21-May-2022
+    Implementation:
+        -  Date to be completed: 15-May-2022
 
-Review:
-- (1) Kuah Jia Chen
-- (2) Lim Fluoryynx
+    - Class Diagram:
+    - Interaction Diagram:
+    - Design Rationale:
+        -  Date to be completed: 21-May-2022
+
+    Review:
+    - (1) Kuah Jia Chen
+    - (2) Lim Fluoryynx
 
 
 REQ3: Magical fountain + Challenge task
 
-Responsible person(s): Lim Fluoryynx
+    Responsible person(s): Lim Fluoryynx
 
-Implementation:
--  Date to be completed: 15-May-2022
+    Implementation:
+        -  Date to be completed: 15-May-2022
 
-Class Diagram:
-Interaction Diagram:
-Design Rationale:
--  Date to be completed: 21-May-2022
+    - Class Diagram:
+    - Interaction Diagram:
+    - Design Rationale:
+        -  Date to be completed: 21-May-2022
 
-Review:
-- (1) Kuah Jia Chen
-- (2) Guoyueyang Huang
+    Review:
+    - (1) Kuah Jia Chen
+    - (2) Guoyueyang Huang
 
 
 REQ4: Flowers (Structured Mode)
-Responsible person(s): Kuah Jia Chen
 
-Implementation:
-Date to complete: 15-May-2022
+    Responsible person(s): Kuah Jia Chen
 
-Class Diagram:
-Interaction Diagram:
-Design Rationale:
-Date to be completed: 21-May-2022
+    Implementation:
+        - Date to complete: 15-May-2022
 
-Review:
-- (1) Guoyueyang Huang
-- (2) Lim Fluoryynx
+    - Class Diagram:
+    - Interaction Diagram:
+    - Design Rationale:
+        - Date to be completed: 21-May-2022
+
+    Review:
+    - (1) Guoyueyang Huang
+    - (2) Lim Fluoryynx
 
 
 REQ5: Speaking (Structured Mode)
 
-Responsible person(s): Guoyueyang Huang
+    Responsible person(s): Guoyueyang Huang
 
-Implementation:
-Date to complete: 15-May-2022
+    Implementation:
+        - Date to complete: 15-May-2022
 
-Class Diagram:
-Interaction Diagram:
-Design Rationale:
-Date to be completed: 21-May-2022
+    - Class Diagram:
+    - Interaction Diagram:
+    - Design Rationale:
+        - Date to be completed: 21-May-2022
 
-Review:
-- (1) Lim Fluoryynx
-- (2) Kuah Jia Chen
+    Review:
+    - (1) Lim Fluoryynx
+    - (2) Kuah Jia Chen
 
 Kuah Jia Chen 32286988: I accept this WBA
 HuangGuoYueYang 32022891: I accepted this WBA
