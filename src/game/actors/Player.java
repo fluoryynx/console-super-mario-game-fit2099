@@ -58,11 +58,14 @@ public class Player extends Actor implements Resettable {
 		this.addCapability(Status.HOSTILE_TO_ENEMY);
 		this.addCapability(Status.BUY);
 		this.addCapability(Status.SPEAK);
+		this.addCapability(Status.TELEPORT);
+		this.addCapability(Status.FIRST_MAP);
 		this.registerInstance(); // append to the array list in ResetManager
 		// add permanent status to statusPermanent
 		statusPermanent.add(Status.HOSTILE_TO_ENEMY);
 		statusPermanent.add(Status.BUY);
 		statusPermanent.add(Status.SPEAK);
+		statusPermanent.add(Status.TELEPORT);
 		// assign the instance of BuffManager to buffManager
 		this.buffManager = BuffManager.getInstance();
 	}
@@ -135,7 +138,8 @@ public class Player extends Actor implements Resettable {
 		for (Enum<?> currentStatus: this.capabilitiesList()){
 			// remove status that are not permanent to the user (i.e., other than HOSTILE_TO_ENEMY,
 			// BUY and SPEAK
-			if (!statusPermanent.contains(currentStatus)){
+			if (!statusPermanent.contains(currentStatus) &&
+					!currentStatus.equals(Status.FIRST_MAP) && !currentStatus.equals(Status.SECOND_MAP)){
 				this.removeCapability(currentStatus);
 			}
 		}

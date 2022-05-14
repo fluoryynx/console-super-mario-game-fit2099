@@ -20,4 +20,7 @@ public enum Status {
     BUY, // use this status to indicate that the actor is able to buy
     SPEAK, // use this status to indicate that can speak to toad
     RESET_CALLED, // use this status to indicate that player enters the reset hotkey
+    TELEPORT,
+    FIRST_MAP,
+    SECOND_MAP
 }
