@@ -66,7 +66,7 @@ public class Goomba extends Enemy {
     /**
      * Constructor.
      */
-    public Goomba() { super(GOOMBA_NAME,GOOMBA_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE); }
+    public Goomba() { super(GOOMBA_NAME,GOOMBA_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE,11,13); }
 
     /**
      * Make Goomba can be attacked by Player.

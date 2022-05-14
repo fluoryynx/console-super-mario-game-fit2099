@@ -74,7 +74,7 @@ public abstract class HighGround extends Ground implements Destroyable {
      */
     @Override
     public boolean canActorEnter(Actor actor) {
-        return actor.hasCapability(Status.CAN_JUMP) || actor.hasCapability(Status.INVINCIBLE) ;
+        return actor.hasCapability(Status.CAN_JUMP) || actor.hasCapability(Status.INVINCIBLE) || actor.hasCapability(Status.CAN_FLY) ;
     }
 
     /**

@@ -12,6 +12,7 @@ import edu.monash.fit2099.engine.weapons.IntrinsicWeapon;
 import game.Resettable;
 import game.Status;
 import game.actions.AttackAction;
+import game.actions.FireAttackAction;
 import game.behaviours.AttackBehaviour;
 import game.behaviours.Behaviour;
 import game.behaviours.FollowBehaviour;
@@ -71,6 +72,11 @@ public abstract class Enemy extends Actor implements Resettable {
      * Random number generator
      */
     protected Random rand = new Random();
+    protected int currentTurn;
+
+    protected int monologueIndexLowerBound;
+
+    protected int monologueIndexUpperBound;
 
     /**
      * Constructor.
@@ -82,7 +88,7 @@ public abstract class Enemy extends Actor implements Resettable {
      * @param verb        the attack verb of enemy
      * @param hitRate     the possibility of enemy hit actor
      */
-    public Enemy(String name, char displayChar, int hitPoints, int damage, String verb, int hitRate) {
+    public Enemy(String name, char displayChar, int hitPoints, int damage, String verb, int hitRate, int monologueIndexLowerBound, int monologueIndexUpperBound) {
         super(name, displayChar, hitPoints);
         this.damage = damage;
         this.behaviours.put(THIRD_PRIORITY,new WanderBehaviour());
@@ -90,6 +96,8 @@ public abstract class Enemy extends Actor implements Resettable {
         this.addCapability(Status.IS_ENEMY);
         this.hitRate = hitRate;
         this.registerInstance(); // append to the array list in ResetManager
+        this.monologueIndexLowerBound = monologueIndexLowerBound;
+        this.monologueIndexUpperBound = monologueIndexUpperBound;
     }
 
     /**
@@ -106,6 +114,11 @@ public abstract class Enemy extends Actor implements Resettable {
      */
     @Override
     public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
+        currentTurn ++;
+//        if (timeToSpeak(currentTurn)){
+//            display.println(this + " : " +
+//                    generateMonologue(monologueIndexLowerBound,monologueIndexUpperBound));
+//        }
 
         // when the enemy has this capability, it means the reset action is selected by the user
         // hence it will be removed from the map
@@ -122,10 +135,7 @@ public abstract class Enemy extends Actor implements Resettable {
                 behaviours.put(SECOND_PRIORITY,new FollowBehaviour(destination.getActor()));
             }
         }
-        // If under successful hit rate, enemy will attack actor in first priority
-        if(rand.nextInt(100)<=hitRate){
-            this.behaviours.put(FIRST_PRIORITY,new AttackBehaviour());
-        }
+        this.behaviours.put(FIRST_PRIORITY,new AttackBehaviour());
         // If the action list of enemy is null, enemy do nothing
         for(Behaviour behaviour : behaviours.values()) {
             Action action = behaviour.getAction(this, map);
@@ -147,7 +157,10 @@ public abstract class Enemy extends Actor implements Resettable {
     public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
         ActionList actions = new ActionList();
         // it can be attacked only by the HOSTILE opponent, and this action will not attack the HOSTILE enemy back.
-        if(otherActor.hasCapability(Status.HOSTILE_TO_ENEMY) && this.isConscious()) {
+        if (otherActor.hasCapability(Status.FIRE_ATTACK) && this.isConscious()){
+            actions.add(new FireAttackAction(this,direction));
+        }
+        else if(otherActor.hasCapability(Status.HOSTILE_TO_ENEMY) && this.isConscious()) {
             actions.add(new AttackAction(this,direction));
         }
         return actions;

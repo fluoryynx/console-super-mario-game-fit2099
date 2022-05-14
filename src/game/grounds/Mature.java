@@ -4,6 +4,7 @@ import edu.monash.fit2099.engine.positions.Exit;
 import edu.monash.fit2099.engine.positions.Ground;
 import edu.monash.fit2099.engine.positions.Location;
 import game.Status;
+import game.actors.FlyingKoopa;
 import game.actors.Koopa;
 
 import java.util.Random;
@@ -43,7 +44,9 @@ public class Mature extends Tree{
     /**
      * The rate to spawn koopa
      */
-    private static final int SPAWN_KOOPA_RATE = 15;
+    private static final int SPAWN_GENERAL_KOOPA_RATE = 15;
+
+    private static final int SPAWN_NORMAL_KOOPA_RATE = 50;
 
     /**
      * Pointer that used to check if it is the right time to spawn sprout
@@ -73,8 +76,12 @@ public class Mature extends Tree{
         everyFiveTurnPointer++;
 
         // 15 % to spawn koopa if there is no actor at this location
-        if ((rand.nextInt(100) <= SPAWN_KOOPA_RATE) && !location.containsAnActor()){
-            spawnKoopa(location);
+        if ((rand.nextInt(100) <= SPAWN_GENERAL_KOOPA_RATE) && !location.containsAnActor()){
+            if ((rand.nextInt(100) <= SPAWN_NORMAL_KOOPA_RATE)) {
+                spawnKoopa(location);
+            }else{
+                spawnFlyingKoopa(location);
+            }
         }
 
         if (everyFiveTurnPointer == 5){
@@ -107,6 +114,16 @@ public class Mature extends Tree{
 
         Koopa koopa = new Koopa();
         currentLocation.addActor(koopa);
+    }
+
+    public void spawnFlyingKoopa(Location currentLocation){
+
+        if (currentLocation == null){
+            throw new IllegalArgumentException("The input parameter (i.e., currentLocation) cannot be null");
+        }
+
+        FlyingKoopa flyingKoopa = new FlyingKoopa();
+        currentLocation.addActor(flyingKoopa);
     }
 
     /**

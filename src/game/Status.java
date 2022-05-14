@@ -22,5 +22,10 @@ public enum Status {
     RESET_CALLED, // use this status to indicate that player enters the reset hotkey
     TELEPORT,
     FIRST_MAP,
-    SECOND_MAP
+    SECOND_MAP,
+    HAVE_KEY,
+    DROP_KEY,
+    CAN_FLY,
+    FIRE_ATTACK,
+    FIRE_DAMAGE,
 }

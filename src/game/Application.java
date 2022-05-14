@@ -8,9 +8,7 @@ import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.positions.FancyGroundFactory;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.World;
-import game.actors.Koopa;
-import game.actors.Player;
-import game.actors.Toad;
+import game.actors.*;
 import game.grounds.*;
 import game.items.Coin;
 import game.items.PowerStar;
@@ -84,7 +82,10 @@ public class Application {
 		firstGameMap.at(44, 10).addItem(new Coin(10000));
 		firstGameMap.at(42, 11).addActor(new Toad());
 		firstGameMap.at(35, 10).addActor(new Koopa());
-
+		//firstGameMap.at(45, 10).addItem(new FireFlower());
+		secondGameMap.at(3,3).addActor(new PrincessPeach());
+		secondGameMap.at(3,4).addActor(new Bowser());
+		firstGameMap.at(48,9).addActor(new FlyingKoopa());
 		world.run();
 
 	}

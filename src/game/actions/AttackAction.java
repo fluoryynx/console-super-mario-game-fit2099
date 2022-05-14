@@ -6,8 +6,10 @@ import edu.monash.fit2099.engine.actions.ActionList;
 import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.items.Item;
+import edu.monash.fit2099.engine.positions.Location;
 import edu.monash.fit2099.engine.weapons.Weapon;
 import game.Status;
+import game.items.Key;
 
 /**
  * AttackAction is a class which used by player to attack the enemies, it extends from its parent class Action class.
@@ -64,6 +66,10 @@ public class AttackAction extends Action {
 
 		// instantly kill enemy
 		if (actor.hasCapability(Status.INVINCIBLE)){
+			if (target.hasCapability(Status.DROP_KEY)){
+				Location currentLocationOfTarget = map.locationOf(target);
+				currentLocationOfTarget.addItem(new Key());
+			}
 			map.removeActor(target);
 			return target + " is killed.";
 		}
@@ -91,7 +97,7 @@ public class AttackAction extends Action {
 			for (Action drop : dropActions)
 				drop.execute(target, map);
 			// remove actor
-			if(!target.hasCapability(Status.HIDE_IN_SHELL)){
+			if(!target.hasCapability(Status.HIDE_IN_SHELL) && !target.hasCapability(Status.DROP_KEY)){
 				map.removeActor(target);
 			}
 			result += System.lineSeparator() + target + " is killed.";
