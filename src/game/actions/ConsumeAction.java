@@ -4,7 +4,7 @@ import edu.monash.fit2099.engine.actions.Action;
 import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.positions.GameMap;
 import game.managers.BuffManager;
-import game.items.MagicalItem;
+import game.items.magicalitems.MagicalItem;
 
 /**
  * This class is use to update player’s status and remove magical items

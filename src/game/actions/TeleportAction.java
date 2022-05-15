@@ -5,7 +5,7 @@ import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.positions.GameMap;
 import game.Application;
 import game.Status;
-import game.grounds.WarpPipe;
+import game.grounds.highgrounds.WarpPipe;
 import game.managers.TeleportManager;
 
 public class TeleportAction extends Action {

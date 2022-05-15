@@ -11,8 +11,8 @@ import game.Status;
 import game.actions.BuyAction;
 import game.actions.GetBottleAction;
 import game.actions.SpeakAction;
-import game.items.PowerStar;
-import game.items.SuperMushroom;
+import game.items.magicalitems.PowerStar;
+import game.items.magicalitems.SuperMushroom;
 import game.items.Wrench;
 
 import java.util.ArrayList;

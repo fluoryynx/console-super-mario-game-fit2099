@@ -11,12 +11,10 @@ import game.Resettable;
 import game.Status;
 import game.actions.DrinkWaterAction;
 import game.items.Bottle;
-import game.items.MagicalItem;
 import game.managers.Wallet;
 import game.actions.ResetAction;
 import game.managers.BuffManager;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 

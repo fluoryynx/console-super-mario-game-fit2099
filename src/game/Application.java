@@ -9,13 +9,20 @@ import edu.monash.fit2099.engine.positions.FancyGroundFactory;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.World;
 import game.actors.*;
+import game.actors.enemies.Bowser;
+import game.actors.enemies.koopas.FlyingKoopa;
+import game.actors.enemies.koopas.Koopa;
 import game.grounds.*;
 import game.grounds.fountains.HealthFountain;
 import game.grounds.fountains.PowerFountain;
+import game.grounds.highgrounds.*;
+import game.grounds.highgrounds.trees.Mature;
+import game.grounds.highgrounds.trees.Sapling;
+import game.grounds.highgrounds.trees.Sprout;
 import game.items.Coin;
-import game.items.FireFlower;
-import game.items.PowerStar;
-import game.items.SuperMushroom;
+import game.items.magicalitems.FireFlower;
+import game.items.magicalitems.PowerStar;
+import game.items.magicalitems.SuperMushroom;
 
 /**
  * The main class for the Mario World game.
