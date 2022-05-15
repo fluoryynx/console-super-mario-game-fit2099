@@ -8,11 +8,11 @@ public class VictoryAction extends Action {
     @Override
     public String execute(Actor actor, GameMap map) {
         map.removeActor(actor);
-        return "Victory!!!!!!!!!!!!";
+        return "From then on, Mario and the princess lived a happy life ~!!";
     }
 
     @Override
     public String menuDescription(Actor actor) {
-        return "Do you want to end this game?";
+        return "Dear Mario! you finally came!!! Let's escape from here! <END GAME> ";
     }
 }

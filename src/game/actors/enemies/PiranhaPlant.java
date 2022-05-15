@@ -45,7 +45,7 @@ public class PiranhaPlant extends Enemy {
      */
     public PiranhaPlant() {
         super(PIRANHAPLANT_NAME,PIRANHAPLANT_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE,17,18);
-        this.behaviours.remove(THIRD_PRIORITY);
+        this.behaviours.remove(FOURTH_PRIORITY);
     }
 
     @Override
