@@ -6,8 +6,11 @@ import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.displays.Menu;
+import edu.monash.fit2099.engine.weapons.IntrinsicWeapon;
 import game.Resettable;
 import game.Status;
+import game.actions.DrinkWaterAction;
+import game.items.Bottle;
 import game.items.MagicalItem;
 import game.managers.Wallet;
 import game.actions.ResetAction;
@@ -46,6 +49,10 @@ public class Player extends Actor implements Resettable {
 	 */
 	private BuffManager buffManager;
 
+	private int baseDamage=5;
+
+	private static final int EXTRA_DAMAGE=15;
+
 	/**
 	 * Constructor.
 	 * @param name        Name to call the player in the UI
@@ -70,6 +77,11 @@ public class Player extends Actor implements Resettable {
 		this.buffManager = BuffManager.getInstance();
 	}
 
+	@Override
+	protected IntrinsicWeapon getIntrinsicWeapon() {
+		return new IntrinsicWeapon(baseDamage , "punches");
+	}
+
 	/**
 	 * run every turn of the player
 	 * @param actions    collection of possible Actions for this Actor
@@ -90,9 +102,20 @@ public class Player extends Actor implements Resettable {
 			display.println("Mario is INVINCIBLE!");
 		}
 
+
+		if (this.hasCapability(Status.HAS_BOTTLE) && Bottle.getInstance().getContent().size()!=0){
+			actions.add(new DrinkWaterAction());
+		}
+
 		// call the run method in BuffManager once in every turn
 		buffManager.run(map.locationOf(this));
 
+		if (this.hasCapability(Status.POWER_WATER)) {
+			baseDamage+=EXTRA_DAMAGE;
+			this.removeCapability(Status.POWER_WATER);
+		}
+
+		display.println("base damage: " + this.getIntrinsicWeapon().damage() + "");
 		// debug purpose
 //		for (Enum<?> currentStatus: this.capabilitiesList()){
 //			display.println(currentStatus+"");

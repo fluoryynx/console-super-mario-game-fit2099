@@ -10,6 +10,8 @@ import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.World;
 import game.actors.*;
 import game.grounds.*;
+import game.grounds.fountains.HealthFountain;
+import game.grounds.fountains.PowerFountain;
 import game.items.Coin;
 import game.items.PowerStar;
 import game.items.SuperMushroom;
@@ -75,17 +77,25 @@ public class Application {
 		world.addGameMap(secondGameMap);
 
 
-		Actor mario = new Player("Mario", 'm', 100);
+		Actor mario = new Player("Mario", 'm', 10000);
 		world.addPlayer(mario, firstGameMap.at(42, 10));
 		firstGameMap.at(44, 10).addItem(new PowerStar());
 		firstGameMap.at(45, 10).addItem(new SuperMushroom());
 		firstGameMap.at(44, 10).addItem(new Coin(10000));
 		firstGameMap.at(42, 11).addActor(new Toad());
 		firstGameMap.at(35, 10).addActor(new Koopa());
+		firstGameMap.at(42,12).setGround(new HealthFountain());
+		firstGameMap.at(42,12).addActor(new Koopa());
+		firstGameMap.at(42,14).setGround(new HealthFountain());
+		firstGameMap.at(42,15).setGround(new PowerFountain());
 		//firstGameMap.at(45, 10).addItem(new FireFlower());
 		secondGameMap.at(3,3).addActor(new PrincessPeach());
 		secondGameMap.at(3,4).addActor(new Bowser());
+		secondGameMap.at(3,5).setGround(new HealthFountain());
+		secondGameMap.at(3,6).setGround(new HealthFountain());
+		secondGameMap.at(4,7).setGround(new PowerFountain());
 		firstGameMap.at(48,9).addActor(new FlyingKoopa());
+
 		world.run();
 
 	}

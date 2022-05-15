@@ -28,4 +28,11 @@ public enum Status {
     CAN_FLY,
     FIRE_ATTACK,
     FIRE_DAMAGE,
+    HAS_BOTTLE,
+    POWER_WATER,
+    IS_FOUNTAIN,
+    INCREASE_HEALTH,
+    INCREASE_BASE_DAMAGE,
+    DRANK_BY_ENEMY,
+    IS_EMPTY
 }
