@@ -11,6 +11,16 @@ import game.actors.PiranhaPlant;
 
 public class WarpPipe extends HighGround implements Resettable {
 
+    private static final char WARP_PIPE_CHAR = 'C';
+
+    private static final int WARP_PIPE_JUMP_RATE = 100;
+
+    private static final int WARP_PIPE_FALL_DAMAGE = 0;
+
+    private static final String WARP_PIPE_TYPE = "Warp Pipe";
+
+    private static final int INCREASE_PLANT_HP = 50;
+
     private int currentXCoordinate;
     private int currentYCoordinate;
     private boolean spawnedPiranhaPlant = false; // use this in tick method
@@ -18,7 +28,7 @@ public class WarpPipe extends HighGround implements Resettable {
     // also can be use for the reset thing (i.e., set this to false again when reset action is called)
 
     public WarpPipe() {
-        super('C',100,0,"Warp Pipe");
+        super(WARP_PIPE_CHAR,WARP_PIPE_JUMP_RATE,WARP_PIPE_FALL_DAMAGE,WARP_PIPE_TYPE);
         this.registerInstance();
     }
 
@@ -27,7 +37,7 @@ public class WarpPipe extends HighGround implements Resettable {
         if (this.hasCapability(Status.RESET_CALLED)){
             if (location.containsAnActor()){
                 if (location.getActor().hasCapability(Status.IS_ENEMY)){
-                    location.getActor().increaseMaxHp(50);
+                    location.getActor().increaseMaxHp(INCREASE_PLANT_HP);
                 }
             }else {
                 setSpawnedPiranhaPlant(false);

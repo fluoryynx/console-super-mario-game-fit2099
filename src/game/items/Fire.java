@@ -8,11 +8,16 @@ import game.Status;
 
 public class Fire extends Item {
 
+    private static final String ITEM_NAME = "Fire";
+    private static final char ITEM_CHAR = 'v';
+    private static final boolean ITEM_PORTABLE = false;
+    private static final int DAMAGE_PER_TURN = 20;
+
     private int remainingTurn = 3;
 
     public Fire() {
         // cannot extend WeaponItem because it is not portable
-        super("Fire", 'v', false);
+        super(ITEM_NAME, ITEM_CHAR, ITEM_PORTABLE);
         this.addCapability(Status.FIRE_DAMAGE);
     }
 
@@ -25,7 +30,7 @@ public class Fire extends Item {
         Actor currentActor = currentLocation.getActor();
         if (currentActor != null){
             if (!currentActor.hasCapability(Status.HIDE_IN_SHELL) && !currentActor.hasCapability(Status.DROP_KEY)){
-                currentActor.hurt(20);
+                currentActor.hurt(DAMAGE_PER_TURN);
                 if (!currentActor.isConscious()){
                     GameMap map = currentLocation.map();
                     map.removeActor(currentActor);

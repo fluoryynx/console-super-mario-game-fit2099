@@ -8,15 +8,19 @@ import game.Status;
 
 public class Lava extends Ground {
 
+    private static final char LAVA_CHAR = 'L';
+
+    private static final char DAMAGE_PER_TURN = 15;
+
     public Lava() {
-        super('L');
+        super(LAVA_CHAR);
     }
 
     @Override
     public void tick(Location location) {
         Actor currentActor = location.getActor();
         if (currentActor != null){
-            currentActor.hurt(15);
+            currentActor.hurt(DAMAGE_PER_TURN);
             if (currentActor.hasCapability(Status.HOSTILE_TO_ENEMY)){
                 if(currentActor.hasCapability(Status.TALL)){
                     currentActor.removeCapability(Status.TALL);
