@@ -9,6 +9,7 @@ import edu.monash.fit2099.engine.items.Item;
 import edu.monash.fit2099.engine.positions.GameMap;
 import game.Status;
 import game.actions.BuyAction;
+import game.actions.GetBottleAction;
 import game.actions.SpeakAction;
 import game.items.PowerStar;
 import game.items.SuperMushroom;
@@ -172,7 +173,7 @@ public class Toad extends Actor {
      * @param direction  String representing the direction of the other Actor
      * @param map        current GameMap
      * @return list of actions
-     * @see Status#HOSTILE_TO_ENEMY
+     * @see Status #HOSTILE_TO_ENEMY
      */
     @Override
     public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
@@ -184,6 +185,9 @@ public class Toad extends Actor {
         // allow player to speak with toad
         if(otherActor.hasCapability(Status.SPEAK)) {
             actions.add(new SpeakAction(this));
+        }
+        if(! otherActor.hasCapability(Status.HAS_BOTTLE)) {
+            actions.add(new GetBottleAction());
         }
         return actions;
     }

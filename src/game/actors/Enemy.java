@@ -13,10 +13,7 @@ import game.Resettable;
 import game.Status;
 import game.actions.AttackAction;
 import game.actions.FireAttackAction;
-import game.behaviours.AttackBehaviour;
-import game.behaviours.Behaviour;
-import game.behaviours.FollowBehaviour;
-import game.behaviours.WanderBehaviour;
+import game.behaviours.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,19 +36,22 @@ public abstract class Enemy extends Actor implements Resettable {
      * A constant integer that will be used as a key in the hash map to indicate which
      * behaviour is the first priority
      */
-    protected static final int FIRST_PRIORITY = 1; // key of hashmap
+    protected static final int FIRST_PRIORITY = 1; // key of hashmap attack
 
     /**
      * A constant integer that will be used as a key in the hash map to indicate which
      * behaviour is the second priority
      */
-    protected static final int SECOND_PRIORITY = 2; // key of hashmap
+    protected static final int SECOND_PRIORITY = 2; // key of hashmap drink water
 
     /**
      * A constant integer that will be used as a key in the hash map to indicate which
      * behaviour is the third priority
      */
-    protected static final int THIRD_PRIORITY = 3; // key of hashmap
+    protected static final int THIRD_PRIORITY = 3; // key of hashmap follow
+
+
+    protected static final int FOURTH_PRIORITY = 4; // wander
 
     /**
      * Damage done by this enemy instance
@@ -67,6 +67,8 @@ public abstract class Enemy extends Actor implements Resettable {
      * The hit rate of this enemy instance
      */
     private int hitRate; // Possibility of enemy hit actor
+
+    private static final int EXTRA_DAMAGE=15;
 
     /**
      * Random number generator
@@ -91,7 +93,7 @@ public abstract class Enemy extends Actor implements Resettable {
     public Enemy(String name, char displayChar, int hitPoints, int damage, String verb, int hitRate, int monologueIndexLowerBound, int monologueIndexUpperBound) {
         super(name, displayChar, hitPoints);
         this.damage = damage;
-        this.behaviours.put(THIRD_PRIORITY,new WanderBehaviour());
+        this.behaviours.put(FOURTH_PRIORITY,new WanderBehaviour());
         this.verb = verb;
         this.addCapability(Status.IS_ENEMY);
         this.hitRate = hitRate;
@@ -120,6 +122,12 @@ public abstract class Enemy extends Actor implements Resettable {
 //                    generateMonologue(monologueIndexLowerBound,monologueIndexUpperBound));
 //        }
 
+        if (this.hasCapability(Status.POWER_WATER)) {
+            this.damage+=EXTRA_DAMAGE;
+            this.removeCapability(Status.POWER_WATER);
+        }
+      //  display.println("enemy damage: " + this.damage+ "");
+
         // when the enemy has this capability, it means the reset action is selected by the user
         // hence it will be removed from the map
         if (this.hasCapability(Status.RESET_CALLED)){
@@ -132,10 +140,20 @@ public abstract class Enemy extends Actor implements Resettable {
             // If the destination has an actor with capability HOSTILE_TO_ENEMY
             if (destination.getActor()!=null && destination.getActor().hasCapability(Status.HOSTILE_TO_ENEMY)){
                 // Enemy follow the actor
-                behaviours.put(SECOND_PRIORITY,new FollowBehaviour(destination.getActor()));
+                behaviours.put(THIRD_PRIORITY,new FollowBehaviour(destination.getActor()));
             }
         }
         this.behaviours.put(FIRST_PRIORITY,new AttackBehaviour());
+        this.behaviours.put(SECOND_PRIORITY,new DrinkWaterBehaviour());
+
+        if (map.locationOf(this).getGround().hasCapability(Status.IS_EMPTY)){
+            this.behaviours.remove(SECOND_PRIORITY);
+        }
+
+//        for(Behaviour behaviour : behaviours.values()) {
+//            System.out.println(behaviour);
+//        }
+
         // If the action list of enemy is null, enemy do nothing
         for(Behaviour behaviour : behaviours.values()) {
             Action action = behaviour.getAction(this, map);
