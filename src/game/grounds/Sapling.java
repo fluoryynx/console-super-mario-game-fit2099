@@ -2,6 +2,7 @@ package game.grounds;
 
 import edu.monash.fit2099.engine.positions.Location;
 import game.items.Coin;
+import game.items.FireFlower;
 
 import java.util.Random;
 
@@ -71,6 +72,9 @@ public class Sapling extends Tree{
         // change to mature when its age reached 10
         if (reachMatureAge()){
             changeToMature(location);
+            if ((rand.nextInt(100) <= 50)){
+                spawnFireFlower(location);
+            }
         }
 
         // 10 % to spawn coin at this location

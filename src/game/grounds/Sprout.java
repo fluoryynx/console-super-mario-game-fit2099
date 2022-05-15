@@ -2,6 +2,7 @@ package game.grounds;
 
 import edu.monash.fit2099.engine.positions.Location;
 import game.actors.Goomba;
+import game.items.FireFlower;
 
 import java.util.Random;
 
@@ -65,6 +66,9 @@ public class Sprout extends Tree{
         // change to sapling when its age reached 10
         if (reachSaplingAge()){
             changeToSapling(location);
+            if ((rand.nextInt(100) <= 50)){
+                spawnFireFlower(location);
+            }
         }
 
         // 10 % to spawn goomba if there is no actor at this location

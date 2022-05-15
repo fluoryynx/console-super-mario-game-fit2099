@@ -63,11 +63,6 @@ public class Bowser extends Enemy{
     }
 
     @Override
-    public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
-        return super.allowableActions(otherActor,direction,map);
-    }
-
-    @Override
     public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
         Location currentLocation = map.locationOf(this);
         List<Item> items = currentLocation.getItems();

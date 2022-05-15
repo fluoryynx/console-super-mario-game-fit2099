@@ -175,7 +175,7 @@ public abstract class Enemy extends Actor implements Resettable {
     public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
         ActionList actions = new ActionList();
         // it can be attacked only by the HOSTILE opponent, and this action will not attack the HOSTILE enemy back.
-        if (otherActor.hasCapability(Status.FIRE_ATTACK) && this.isConscious()){
+        if (otherActor.hasCapability(Status.HOSTILE_TO_ENEMY) && otherActor.hasCapability(Status.FIRE_ATTACK) && this.isConscious()){
             actions.add(new FireAttackAction(this,direction));
         }
         else if(otherActor.hasCapability(Status.HOSTILE_TO_ENEMY) && this.isConscious()) {

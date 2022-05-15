@@ -77,11 +77,6 @@ public class Player extends Actor implements Resettable {
 		this.buffManager = BuffManager.getInstance();
 	}
 
-	@Override
-	protected IntrinsicWeapon getIntrinsicWeapon() {
-		return new IntrinsicWeapon(baseDamage , "punches");
-	}
-
 	/**
 	 * run every turn of the player
 	 * @param actions    collection of possible Actions for this Actor
@@ -102,6 +97,11 @@ public class Player extends Actor implements Resettable {
 			display.println("Mario is INVINCIBLE!");
 		}
 
+		// print the following message if player has fire attack
+		if (this.hasCapability(Status.FIRE_ATTACK)){
+			display.println("Mario can use FIRE ATTACK!");
+		}
+
 
 		if (this.hasCapability(Status.HAS_BOTTLE) && Bottle.getInstance().getContent().size()!=0){
 			actions.add(new DrinkWaterAction());
@@ -115,7 +115,7 @@ public class Player extends Actor implements Resettable {
 			this.removeCapability(Status.POWER_WATER);
 		}
 
-		display.println("base damage: " + this.getIntrinsicWeapon().damage() + "");
+		display.println("Base damage: " + this.getIntrinsicWeapon().damage());
 		// debug purpose
 //		for (Enum<?> currentStatus: this.capabilitiesList()){
 //			display.println(currentStatus+"");
@@ -182,5 +182,10 @@ public class Player extends Actor implements Resettable {
 	 */
 	public void setOneReset(boolean oneReset) {
 		this.oneReset = oneReset;
+	}
+
+	@Override
+	protected IntrinsicWeapon getIntrinsicWeapon() {
+		return new IntrinsicWeapon(baseDamage , "punches");
 	}
 }

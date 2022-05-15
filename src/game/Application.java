@@ -13,6 +13,7 @@ import game.grounds.*;
 import game.grounds.fountains.HealthFountain;
 import game.grounds.fountains.PowerFountain;
 import game.items.Coin;
+import game.items.FireFlower;
 import game.items.PowerStar;
 import game.items.SuperMushroom;
 
@@ -81,6 +82,7 @@ public class Application {
 		world.addPlayer(mario, firstGameMap.at(42, 10));
 		firstGameMap.at(44, 10).addItem(new PowerStar());
 		firstGameMap.at(45, 10).addItem(new SuperMushroom());
+		firstGameMap.at(45, 10).addItem(new FireFlower());
 		firstGameMap.at(44, 10).addItem(new Coin(10000));
 		firstGameMap.at(42, 11).addActor(new Toad());
 		firstGameMap.at(35, 10).addActor(new Koopa());

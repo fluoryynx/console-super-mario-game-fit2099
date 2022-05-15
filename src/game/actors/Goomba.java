@@ -69,19 +69,6 @@ public class Goomba extends Enemy {
     public Goomba() { super(GOOMBA_NAME,GOOMBA_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE,11,13); }
 
     /**
-     * Make Goomba can be attacked by Player.
-     * @param otherActor the Actor that might perform an action.
-     * @param direction  String representing the direction of the other Actor
-     * @param map        current GameMap
-     * @return list of actions
-     * @see Status#HOSTILE_TO_ENEMY
-     */
-    @Override
-    public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
-        return super.allowableActions(otherActor,direction,map);
-    }
-
-    /**
      * Select and return an action to perform on the current turn.
      * Goomba has 10% suicide rate in each turn of this game.
      * @param actions    collection of possible Actions for this Actor

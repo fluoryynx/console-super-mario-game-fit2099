@@ -2,6 +2,7 @@ package game.grounds;
 
 import edu.monash.fit2099.engine.positions.Location;
 import game.*;
+import game.items.FireFlower;
 
 import java.util.Random;
 
@@ -86,5 +87,10 @@ public abstract class Tree extends HighGround implements Resettable {
 
         Dirt dirt = new Dirt();
         currentLocation.setGround(dirt);
+    }
+
+    public void spawnFireFlower(Location currentLocation){
+        FireFlower fireFlower = new FireFlower();
+        currentLocation.addItem(fireFlower);
     }
 }
