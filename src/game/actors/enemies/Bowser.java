@@ -64,6 +64,12 @@ public class Bowser extends Enemy {
 
     @Override
     public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
+        currentTurn ++;
+        if (timeToSpeak(currentTurn)){
+            display.println(this + " : " +
+                    generateMonologue(monologueIndexLowerBound,monologueIndexUpperBound));
+        }
+
         Location currentLocation = map.locationOf(this);
         List<Item> items = currentLocation.getItems();
         int fireCounter = 0;

@@ -7,6 +7,7 @@ import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.items.Item;
 import edu.monash.fit2099.engine.positions.GameMap;
+import game.Speakable;
 import game.Status;
 import game.actions.BuyAction;
 import game.actions.GetBottleAction;
@@ -26,26 +27,12 @@ import java.util.Random;
  *
  * @author Huang GuoYueYang, Lim Fluoryynx
  */
-public class Toad extends Actor {
-    /**
-     * ArrayList of string to store the sentences
-     */
-    private ArrayList<String> toadTalk = new ArrayList<>();
+public class Toad extends Actor implements Speakable {
 
     /**
      * Hashmap to store sale items and their price
      */
     private HashMap<Item,Integer> saleItem=new HashMap<>();
-
-    /**
-     * Index of the sentence about power star
-     */
-    private static final int POWER_STAR_INDEX = 1;
-
-    /**
-     * Index of the sentence about wrench
-     */
-    private static final int WRENCH_INDEX = 0;
 
     /**
      * price of super mushroom
@@ -65,7 +52,7 @@ public class Toad extends Actor {
     /**
      * Name of toad
      */
-    private static final String ACTOR_NAME = "toad";
+    private static final String ACTOR_NAME = "Toad";
 
     /**
      * Character of toad
@@ -82,72 +69,38 @@ public class Toad extends Actor {
      */
     private Random rand = new Random();
 
+    private int currentTurn;
+
     /**
      * Constructor.
      * Four sentences of toad added here
      */
     public Toad() {
-        super(ACTOR_NAME, DISPLAY_CHAR, HIT_POINT);
-        toadTalk.add("You might need a wrench to smash Koopa's hard shells.");
-        toadTalk.add("You better get back to finding the Power Stars.");
-        toadTalk.add("The Princess is depending on you! You are our only hope.");
-        toadTalk.add("Being imprisoned in these walls can drive a fungus crazy :(");
-    }
+        super(ACTOR_NAME, DISPLAY_CHAR, HIT_POINT); }
 
     /**
      * Give any sentences from the arraylist
      */
     public String giveRandomTalk() {
-        return getReplyString(null);
+        return generateMonologue(3,6);
     }
 
     /**
      * Give any sentences from the arraylist except the sentence about the power star
      */
     public String noTalkPowerStar() {
-        return getReplyString(POWER_STAR_INDEX);
+        return generateMonologue(3,5);
     }
 
     /**
      * Give any sentences from the arraylist except the sentence about the wrench
      */
     public String noTalkWrench() {
-        return getReplyString(WRENCH_INDEX);
+        return generateMonologue(4,6);
     }
 
-    /**
-     * If the removeIndex equals to null, then the currentIndex will be any random
-     * number within the size of the toadTalk Array.
-     * Else we put the currentIndex as any random number within the size of the toadTalk Array.
-     * If the currentIndex equals to the removeIndex, we will keep looping until the currentIndex
-     * is not equals to the removeIndex (i.e., the sentence is not prohibited), then we return that
-     * string at that index
-     * @param removeIndex the index of the sentence to be removed
-     * @throws ArrayIndexOutOfBoundsException if the value of removeIndex is not valid
-     * (i.e., the value of removeIndex is not within the range 0 to toadTalk.size())
-     */
-    public String getReplyString(Integer removeIndex){
+    public String noTalkPowerStarAndWrench() { return generateMonologue(4,5);}
 
-        if (removeIndex != null && (removeIndex<0 || removeIndex>=toadTalk.size())){
-            throw new ArrayIndexOutOfBoundsException("Incorrect Index to avoid a sentence from toadTalk");
-        }
-
-        int currentIndex;
-        // check if the removeIndex is null
-        if (removeIndex == null){
-            // Any sentence from the arraylist can be print
-            currentIndex = rand.nextInt(toadTalk.size());
-        } else {
-            currentIndex = rand.nextInt(toadTalk.size());
-            // check if currentIndex equals to the input removeIndex
-            while (currentIndex == removeIndex){ // 1 == 1
-                // jump over it
-                currentIndex = rand.nextInt(toadTalk.size());
-            }
-        }
-        // give the corresponding sentences
-        return toadTalk.get(currentIndex);
-    }
 
     /**
      * add items into the sale item list , clear the list every turn
@@ -159,6 +112,11 @@ public class Toad extends Actor {
      */
     @Override
     public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
+        currentTurn ++;
+        if (timeToSpeak(currentTurn)){
+            display.println(this + " : " + generateMonologue(3,6));
+        }
+
         saleItem.clear();
         saleItem.put(new PowerStar(),POWER_STAR_PRICE);
         saleItem.put(new SuperMushroom(),SUPER_MUSHROOM_PRICE);

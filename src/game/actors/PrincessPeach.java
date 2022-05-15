@@ -39,9 +39,9 @@ public class PrincessPeach extends Actor implements Speakable {
     @Override
     public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
         currentTurn ++;
-//        if (timeToSpeak(currentTurn)){
-//            display.println(this + " : " + generateMonologue(0,2));
-//        }
+        if (timeToSpeak(currentTurn)){
+            display.println(this + " : " + generateMonologue(0,2));
+        }
         return new DoNothingAction();
     }
 

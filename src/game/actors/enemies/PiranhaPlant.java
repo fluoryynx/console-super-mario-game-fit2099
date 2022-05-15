@@ -51,10 +51,10 @@ public class PiranhaPlant extends Enemy {
     @Override
     public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
         currentTurn ++;
-//        if (timeToSpeak(currentTurn)){
-//            display.println(this + " : " +
-//                    generateMonologue(monologueIndexLowerBound,monologueIndexUpperBound));
-//        }
+        if (timeToSpeak(currentTurn)){
+            display.println(this + " : " +
+                    generateMonologue(monologueIndexLowerBound,monologueIndexUpperBound));
+        }
         this.behaviours.put(FIRST_PRIORITY,new AttackBehaviour());
         // If the action list of enemy is null, enemy do nothing
         for(Behaviour behaviour : behaviours.values()) {

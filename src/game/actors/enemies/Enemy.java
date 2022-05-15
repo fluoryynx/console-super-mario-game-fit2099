@@ -10,6 +10,7 @@ import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.Location;
 import edu.monash.fit2099.engine.weapons.IntrinsicWeapon;
 import game.Resettable;
+import game.Speakable;
 import game.Status;
 import game.actions.AttackAction;
 import game.actions.FireAttackAction;
@@ -25,7 +26,7 @@ import java.util.Random;
  *
  * @author Kuah Jia Chen, Huang GuoYueYang
  */
-public abstract class Enemy extends Actor implements Resettable {
+public abstract class Enemy extends Actor implements Resettable, Speakable {
 
     /**
      * Hashmap to store behaviors.
@@ -117,10 +118,10 @@ public abstract class Enemy extends Actor implements Resettable {
     @Override
     public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
         currentTurn ++;
-//        if (timeToSpeak(currentTurn)){
-//            display.println(this + " : " +
-//                    generateMonologue(monologueIndexLowerBound,monologueIndexUpperBound));
-//        }
+        if (timeToSpeak(currentTurn)){
+            display.println(this + " : " +
+                    generateMonologue(monologueIndexLowerBound,monologueIndexUpperBound));
+        }
 
         if (this.hasCapability(Status.POWER_WATER)) {
             this.damage+=EXTRA_DAMAGE;
