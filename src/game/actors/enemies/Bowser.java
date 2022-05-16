@@ -12,6 +12,7 @@ import game.Application;
 import game.Status;
 import game.actors.enemies.Enemy;
 import game.behaviours.Behaviour;
+import game.behaviours.DrinkWaterBehaviour;
 import game.behaviours.FireAttackBehaviour;
 import game.behaviours.FollowBehaviour;
 import game.items.Key;
@@ -58,7 +59,7 @@ public class Bowser extends Enemy {
      */
     public Bowser() {
         super(BOWSER_NAME,BOWSER_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE,7,10);
-        this.behaviours.remove(THIRD_PRIORITY);
+        this.behaviours.remove(FOURTH_PRIORITY);
         this.addCapability(Status.DROP_KEY);
     }
 
@@ -68,6 +69,11 @@ public class Bowser extends Enemy {
         if (timeToSpeak(currentTurn)){
             display.println(this + " : " +
                     generateMonologue(monologueIndexLowerBound,monologueIndexUpperBound));
+        }
+
+        if (this.hasCapability(Status.POWER_WATER)) {
+            this.damage+=EXTRA_DAMAGE;
+            this.removeCapability(Status.POWER_WATER);
         }
 
         Location currentLocation = map.locationOf(this);
@@ -91,14 +97,20 @@ public class Bowser extends Enemy {
             // If the destination has an actor with capability HOSTILE_TO_ENEMY
             if (destination.getActor()!=null && destination.getActor().hasCapability(Status.HOSTILE_TO_ENEMY)){
                 // Enemy follow the actor
-                behaviours.put(SECOND_PRIORITY,new FollowBehaviour(destination.getActor()));
+                behaviours.put(THIRD_PRIORITY,new FollowBehaviour(destination.getActor()));
             }
         }
         if (this.hasCapability(Status.RESET_CALLED)){
-            behaviours.remove(SECOND_PRIORITY);
+            behaviours.remove(THIRD_PRIORITY);
         }
         this.removeCapability(Status.RESET_CALLED);
         this.behaviours.put(FIRST_PRIORITY,new FireAttackBehaviour());
+        this.behaviours.put(SECOND_PRIORITY,new DrinkWaterBehaviour());
+
+        if (map.locationOf(this).getGround().hasCapability(Status.IS_EMPTY)){
+            this.behaviours.remove(SECOND_PRIORITY);
+        }
+
 
         // If the action list of enemy is null, enemy do nothing
         for(Behaviour behaviour : behaviours.values()) {

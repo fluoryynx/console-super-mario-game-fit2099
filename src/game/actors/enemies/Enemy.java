@@ -57,7 +57,7 @@ public abstract class Enemy extends Actor implements Resettable, Speakable {
     /**
      * Damage done by this enemy instance
      */
-    private int damage;  // deduct in hit point of enemy
+    protected int damage;  // deduct in hit point of enemy
 
     /**
      * Attack verb
@@ -69,7 +69,7 @@ public abstract class Enemy extends Actor implements Resettable, Speakable {
      */
     private int hitRate; // Possibility of enemy hit actor
 
-    private static final int EXTRA_DAMAGE=15;
+    protected static final int EXTRA_DAMAGE=15;
 
     /**
      * Random number generator
