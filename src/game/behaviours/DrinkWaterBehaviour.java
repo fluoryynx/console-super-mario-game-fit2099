@@ -7,11 +7,25 @@ import edu.monash.fit2099.engine.positions.Ground;
 import game.Status;
 import game.actions.DrinkWaterAction;
 
+/**
+ * class that allows enemies to drink water from the fountain
+ *
+ * @author Lim Fluoryynx
+ */
 public class DrinkWaterBehaviour implements Behaviour{
 
+    /**
+     * empty constructor
+     */
     public DrinkWaterBehaviour() {;
     }
 
+    /**
+     * return DrinkWaterAction if enemies stand on the fountain
+     * @param actor the Actor acting
+     * @param map the GameMap containing the Actor
+     * @return
+     */
     @Override
     public Action getAction(Actor actor, GameMap map) {
         Ground currentGround = map.locationOf(actor).getGround();
