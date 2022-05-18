@@ -34,6 +34,7 @@ public class Application {
 	private static GameMap firstGameMap;
 	private static GameMap secondGameMap;
 
+
 	/**
 	 * The main method to initialize the game map and add necessary instances to the game map
 	 * @param args -
