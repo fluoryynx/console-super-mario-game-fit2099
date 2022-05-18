@@ -8,16 +8,32 @@ import game.grounds.fountains.Fountain;
 import game.items.Bottle;
 import game.waters.Water;
 
+/**
+ * this class is use to enable player to refil water from fountains into water bottle
+ *
+ * @Author Lim Fluoryynx
+ */
 public class TakeWaterAction extends Action {
 
     private Water water;
     private Fountain fountain;
 
+    /**
+     * constructor
+     * @param water - water of the fountain
+     * @param fountain - fountain in the game map
+     */
     public TakeWaterAction(Water water,Fountain fountain){
         this.water=water;
         this.fountain=fountain;
     }
 
+    /**
+     * if player has a bottle, add one slot of water into player's bottle and minus one slot of water from the fountain
+     * @param actor The actor performing the action.
+     * @param map The map the actor is on.
+     * @return a string. For example: Mario refills Healing water from Health fountain
+     */
     @Override
     public String execute(Actor actor, GameMap map) {
         if (actor.hasCapability(Status.HAS_BOTTLE)) {
@@ -27,6 +43,11 @@ public class TakeWaterAction extends Action {
         return menuDescription(actor);
     }
 
+    /**
+     * Describe the take water action in a format suitable for displaying in the menu.
+     * @param actor The actor performing the action.
+     * @return a string. For example: Mario refills Healing water from Health fountain
+     */
     @Override
     public String menuDescription(Actor actor) {
         return actor + " refills " + water + " from " + fountain ;
