@@ -8,6 +8,8 @@ import game.items.Bottle;
 /**
  * this class is use to enable player to obtain bottle from the toad
  * add bottle into player's inventory
+ *
+ * @Author Lim Fluoryynx
  */
 public class GetBottleAction extends Action {
 

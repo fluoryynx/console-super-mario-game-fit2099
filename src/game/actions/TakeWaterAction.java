@@ -10,6 +10,8 @@ import game.waters.Water;
 
 /**
  * this class is use to enable player to refil water from fountains into water bottle
+ *
+ * @Author Lim Fluoryynx
  */
 public class TakeWaterAction extends Action {
 
