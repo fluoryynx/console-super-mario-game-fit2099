@@ -43,6 +43,8 @@ public class SpeakAction extends Action {
     public String execute(Actor actor, GameMap map) {
         if (!actor.hasCapability(Status.INVINCIBLE)&&(!actor.hasCapability(Status.HAVE_WRENCH))){
             return "Toad said: " + toad.giveRandomTalk();
+        }else if(actor.hasCapability(Status.INVINCIBLE)&&(actor.hasCapability(Status.HAVE_WRENCH))){
+            return "Toad said: " + toad.noTalkPowerStarAndWrench();
         }
         else if (actor.hasCapability(Status.INVINCIBLE)){
             return "Toad said: " + toad.noTalkPowerStar();
