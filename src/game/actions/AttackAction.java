@@ -13,8 +13,8 @@ import game.items.Key;
 
 /**
  * AttackAction is a class which used by player to attack the enemies, it extends from its parent class Action class.
- * In this class, player can attack enemies with weapon with a corresponding hit rate.
- * If the target(enemies) no longer conscious, all the item of that target will drop and it will be removed from the map(except Koopa).
+ * In this class, player can attack enemies with weapon with a corresponding hit rate and damage.
+ * If the target(enemies) no longer conscious, all the item of that target will drop and it will be removed from the map(except all Koopas).
  * In the end, there is a string will be printed to show how much you hurt the enemies.
  *
  * @author Huang GuoYueYang
@@ -51,6 +51,7 @@ public class AttackAction extends Action {
 	 * This method is used to attack targets under different hit rate depends on different weapons.
 	 * When actor has certain capability(INVINCIBLE), actor can attack any target with full hit rate and
 	 * the damage caused by the target will become zero.
+	 * When actor has capability(TALL), once it attack by target, the capability will be remove.
 	 * @param actor The actor performing the action.
 	 * @param map The map the actor is on.
 	 * @return a description of what happened that can be displayed to the user.
@@ -59,36 +60,43 @@ public class AttackAction extends Action {
 	public String execute(Actor actor, GameMap map) {
 
 		Weapon weapon = actor.getWeapon();
-
+		// Set the hit rate of different weapon
 		if (!(rand.nextInt(100) <= weapon.chanceToHit())) {
 			return actor + " misses " + target + ".";
 		}
 
-		// instantly kill enemy
+		// Instantly kill enemy when have power star
 		if (actor.hasCapability(Status.INVINCIBLE)){
+
+			// When the Bowser is killed, a key is dropped
 			if (target.hasCapability(Status.DROP_KEY)){
 				Location currentLocationOfTarget = map.locationOf(target);
 				currentLocationOfTarget.addItem(new Key());
 			}
+
+			// Other enemy will be remove directly
 			map.removeActor(target);
 			return target + " is killed.";
 		}
 
-		// enemy attack become useless
+		// Power star make enemy's attack become useless
 		int damage;
 		if (target.hasCapability(Status.INVINCIBLE)){
 			damage = 0;
 		} else{
 			damage = weapon.damage();
 		}
-
 		String result = actor + " " + weapon.verb() + " " + target + " for " + damage + " damage.";
 		target.hurt(damage);
+
+		// When attack by enemy, super mushroom effect disappear
 		if (target.hasCapability(Status.HOSTILE_TO_ENEMY)){
 			if(target.hasCapability(Status.TALL)){
 				target.removeCapability(Status.TALL);
 			}
 		}
+
+		// When target is die, all items will drop
 		if (!target.isConscious()) {
 			ActionList dropActions = new ActionList();
 			// drop all items
