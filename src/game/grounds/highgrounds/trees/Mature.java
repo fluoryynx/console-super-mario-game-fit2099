@@ -43,10 +43,13 @@ public class Mature extends Tree {
     private static final String MATURE_TYPE = "Mature tree";
 
     /**
-     * The rate to spawn koopa
+     * The rate to spawn general koopa
      */
     private static final int SPAWN_GENERAL_KOOPA_RATE = 15;
 
+    /**
+     * The rate to spawn normal koopa
+     */
     private static final int SPAWN_NORMAL_KOOPA_RATE = 50;
 
     /**
@@ -117,6 +120,11 @@ public class Mature extends Tree {
         currentLocation.addActor(koopa);
     }
 
+    /**
+     * Spawn FlyingKoopa at this location
+     * @param currentLocation current location of this mature tree instance
+     * @throws IllegalArgumentException if currentLocation is null
+     */
     public void spawnFlyingKoopa(Location currentLocation){
 
         if (currentLocation == null){
