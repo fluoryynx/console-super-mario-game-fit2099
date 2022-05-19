@@ -7,10 +7,10 @@ import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.Location;
 import game.Status;
 import game.actions.AttackAction;
-import game.behaviours.Behaviour;
 
 /**
- * A class that figures out a AttackAction that will attack the player automatically
+ * A class that figures out a AttackAction that will attack the player automatically.
+ * It implements Behaviour class.
  *
  * @author Huang GuoYueYang
  */
@@ -23,7 +23,7 @@ public class AttackBehaviour implements Behaviour {
     }
 
     /**
-     * For each exits in this game, if the player is around the enemy, enemy will attack the player automatically
+     * For each exits in this game, if the player is around the enemy, enemy will attack the player by using AttackAction automatically
      * @param actor the Actor acting
      * @param map the GameMap containing the Actor
      * @return an Action that actor can perform, or null if actor can't do this.
