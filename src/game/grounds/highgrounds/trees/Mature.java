@@ -13,7 +13,7 @@ import java.util.Random;
 /**
  * A class that represents the mature tree in the Game Map. It is a new class that extends Tree.
  *
- * @author Kuah Jia Chen
+ * @author Kuah Jia Chen, Huang GuoYueYang
  */
 public class Mature extends Tree {
 
