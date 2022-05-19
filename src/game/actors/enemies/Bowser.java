@@ -125,8 +125,10 @@ public class Bowser extends Enemy {
     public void resetInstance() {
         super.resetInstance();
         GameMap currentMap = Application.getSecondGameMap();
-        if (!currentMap.at(X_COORDINATE,Y_COORDINATE).containsAnActor()){
-            currentMap.moveActor(this, currentMap.at(X_COORDINATE,Y_COORDINATE));
+        Location targetLocation = currentMap.at(X_COORDINATE,Y_COORDINATE);
+        boolean hasActor = targetLocation.containsAnActor();
+        if (!hasActor){
+            currentMap.moveActor(this, targetLocation);
         }
         // Heal the Bowser to maximum
         this.heal(this.getMaxHp());
