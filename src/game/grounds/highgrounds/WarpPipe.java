@@ -56,12 +56,10 @@ public class WarpPipe extends HighGround implements Resettable {
 
     @Override
     public ActionList allowableActions(Actor actor, Location location, String direction) {
-        if (!location.containsAnActor()) {
-            return new ActionList(new JumpAction(location, direction, this));
-        } else if (location.getActor().hasCapability(Status.TELEPORT)) {
+        if (location.containsAnActor() && location.getActor().hasCapability(Status.TELEPORT)) {
             return new ActionList(new TeleportAction(this));
         }
-        return new ActionList();
+        return super.allowableActions(actor,location,direction);
     }
 
     public int getCurrentXCoordinate() {
