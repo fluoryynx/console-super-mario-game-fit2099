@@ -30,20 +30,22 @@ public class TeleportManager {
     }
 
     public void run(Actor actor, GameMap targetMap, boolean onFirstMap){
-        Location currentLocation;
+        Location targetLocation;
         if (onFirstMap){
-            currentLocation = targetMap.at(SECOND_MAP_WARP_PIPE_X,SECOND_MAP_WARP_PIPE_Y);
+            targetLocation = targetMap.at(SECOND_MAP_WARP_PIPE_X,SECOND_MAP_WARP_PIPE_Y);
             actor.addCapability(Status.SECOND_MAP);
             actor.removeCapability(Status.FIRST_MAP);
         } else { // if (actor.hasCapability(Status.SECOND_MAP))
-            currentLocation = targetMap.at(firstMapWarpPipe.getCurrentXCoordinate(),firstMapWarpPipe.getCurrentYCoordinate());
+            targetLocation = targetMap.at(firstMapWarpPipe.getCurrentXCoordinate(),firstMapWarpPipe.getCurrentYCoordinate());
             actor.addCapability(Status.FIRST_MAP);
             actor.removeCapability(Status.SECOND_MAP);
         }
-        if (currentLocation.containsAnActor()){
-            targetMap.removeActor(currentLocation.getActor());
+        // remove the actor if any actor is currently at the target location
+        if (targetLocation.containsAnActor()){
+            Actor targetActor = targetLocation.getActor();
+            targetMap.removeActor(targetActor);
         }
-        targetMap.moveActor(actor,currentLocation);
+        targetMap.moveActor(actor,targetLocation);
     }
 
 }
