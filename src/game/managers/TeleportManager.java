@@ -30,24 +30,20 @@ public class TeleportManager {
     }
 
     public void run(Actor actor, GameMap targetMap){
+        Location currentLocation;
         if (actor.hasCapability(Status.FIRST_MAP)){
-            Location currentLocation = targetMap.at(SECOND_MAP_WARP_PIPE_X,SECOND_MAP_WARP_PIPE_Y);
-            if (currentLocation.containsAnActor()){
-                targetMap.removeActor(currentLocation.getActor());
-            }
-            targetMap.moveActor(actor,targetMap.at(SECOND_MAP_WARP_PIPE_X,SECOND_MAP_WARP_PIPE_Y));
+            currentLocation = targetMap.at(SECOND_MAP_WARP_PIPE_X,SECOND_MAP_WARP_PIPE_Y);
             actor.addCapability(Status.SECOND_MAP);
             actor.removeCapability(Status.FIRST_MAP);
-        } else if (actor.hasCapability(Status.SECOND_MAP)){
-            Location currentLocation = targetMap.at(firstMapWarpPipe.getCurrentXCoordinate(),firstMapWarpPipe.getCurrentYCoordinate());
-            if (currentLocation.containsAnActor()){
-                targetMap.removeActor(currentLocation.getActor());
-            }
-            targetMap.moveActor(actor,
-                    targetMap.at(firstMapWarpPipe.getCurrentXCoordinate(),firstMapWarpPipe.getCurrentYCoordinate()));
+        } else { // if (actor.hasCapability(Status.SECOND_MAP))
+            currentLocation = targetMap.at(firstMapWarpPipe.getCurrentXCoordinate(),firstMapWarpPipe.getCurrentYCoordinate());
             actor.addCapability(Status.FIRST_MAP);
             actor.removeCapability(Status.SECOND_MAP);
         }
+        if (currentLocation.containsAnActor()){
+            targetMap.removeActor(currentLocation.getActor());
+        }
+        targetMap.moveActor(actor,currentLocation);
     }
 
 }
