@@ -75,8 +75,7 @@ public class Sapling extends Tree {
         if (reachMatureAge()){
             changeToMature(location);
             if ((rand.nextInt(100) <= 50)){
-                FireFlower fireFlower = new FireFlower();
-                location.addItem(fireFlower);
+                location.addItem(new FireFlower());
             }
         }
 

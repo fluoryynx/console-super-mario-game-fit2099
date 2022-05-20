@@ -67,8 +67,7 @@ public class Sprout extends Tree {
         if (reachSaplingAge()){
             changeToSapling(location);
             if ((rand.nextInt(100) <= 50)){
-                FireFlower fireFlower = new FireFlower();
-                location.addItem(fireFlower);
+                location.addItem(new FireFlower());
             }
         }
 
