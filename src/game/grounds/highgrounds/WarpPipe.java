@@ -53,7 +53,7 @@ public class WarpPipe extends HighGround implements Resettable {
         // super.tick(location); // so it is not destroyable
         currentXCoordinate = location.x();
         currentYCoordinate = location.y();
-        if (!spawnedPiranhaPlant){
+        if (!spawnedPiranhaPlant && !location.containsAnActor()){
             location.addActor(new PiranhaPlant());
             setSpawnedPiranhaPlant(true);
         }
