@@ -29,7 +29,9 @@ public class Fire extends Item {
         remainingTurn --;
         Actor currentActor = currentLocation.getActor();
         if (currentActor != null){
-            if (!currentActor.hasCapability(Status.HIDE_IN_SHELL) && !currentActor.hasCapability(Status.DROP_KEY)){
+            boolean canHideShell = currentActor.hasCapability(Status.HIDE_IN_SHELL);
+            boolean canDropKey = currentActor.hasCapability(Status.DROP_KEY);
+            if (!canHideShell && !canDropKey){
                 currentActor.hurt(DAMAGE_PER_TURN);
                 if (!currentActor.isConscious()){
                     GameMap map = currentLocation.map();
