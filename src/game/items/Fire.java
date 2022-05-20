@@ -33,7 +33,8 @@ public class Fire extends Item {
             boolean canDropKey = currentActor.hasCapability(Status.DROP_KEY);
             if (!canHideShell && !canDropKey){
                 currentActor.hurt(DAMAGE_PER_TURN);
-                if (!currentActor.isConscious()){
+                boolean isActorConscious = currentActor.isConscious();
+                if (!isActorConscious){
                     GameMap map = currentLocation.map();
                     map.removeActor(currentActor);
                 }
