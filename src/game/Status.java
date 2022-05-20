@@ -23,9 +23,9 @@ public enum Status {
     TELEPORT,
     FIRST_MAP,
     SECOND_MAP,
-    HAVE_KEY,
-    DROP_KEY,
-    CAN_FLY,
+    HAVE_KEY, // use this status to indicate that player has key or not
+    DROP_KEY, // use this status to indicate that the actor is Bowser or not
+    CAN_FLY, // use this status to indicate tha the actor is Flying Koopa or not
     FIRE_ATTACK,
     FIRE_DAMAGE,
     HAS_BOTTLE,

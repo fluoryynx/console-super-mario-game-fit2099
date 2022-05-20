@@ -9,6 +9,11 @@ import game.actions.JumpAction;
 import game.actions.TeleportAction;
 import game.actors.enemies.PiranhaPlant;
 
+/**
+ * A class that
+ *
+ * @author Kuah Jia Chen, Huang GuoYueYang
+ */
 public class WarpPipe extends HighGround implements Resettable {
 
     private static final char WARP_PIPE_CHAR = 'C';

@@ -13,7 +13,7 @@ import game.actions.JumpAction;
  * Ground and implements Destroyable since it can be destroyed when player is invincible and standing
  * at this location.
  *
- * @author Kuah Jia Chen
+ * @author Kuah Jia Chen, Huang GuoYueYang
  */
 public abstract class HighGround extends Ground implements Destroyable {
 
