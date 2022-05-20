@@ -4,6 +4,7 @@ import edu.monash.fit2099.engine.positions.Location;
 import game.grounds.highgrounds.trees.Mature;
 import game.grounds.highgrounds.trees.Tree;
 import game.items.Coin;
+import game.items.magicalitems.FireFlower;
 
 import java.util.Random;
 
@@ -74,7 +75,8 @@ public class Sapling extends Tree {
         if (reachMatureAge()){
             changeToMature(location);
             if ((rand.nextInt(100) <= 50)){
-                spawnFireFlower(location);
+                FireFlower fireFlower = new FireFlower();
+                location.addItem(fireFlower);
             }
         }
 

@@ -2,6 +2,7 @@ package game.grounds.highgrounds.trees;
 
 import edu.monash.fit2099.engine.positions.Location;
 import game.actors.enemies.Goomba;
+import game.items.magicalitems.FireFlower;
 
 import java.util.Random;
 
@@ -66,7 +67,8 @@ public class Sprout extends Tree {
         if (reachSaplingAge()){
             changeToSapling(location);
             if ((rand.nextInt(100) <= 50)){
-                spawnFireFlower(location);
+                FireFlower fireFlower = new FireFlower();
+                location.addItem(fireFlower);
             }
         }
 
