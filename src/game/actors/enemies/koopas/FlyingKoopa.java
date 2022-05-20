@@ -28,7 +28,7 @@ public class FlyingKoopa extends GeneralKoopa {
     /**
      * HitPoint of FlyingKoopa
      */
-    private static final int HIT_POINT = 5;
+    private static final int HIT_POINT = 150;
 
     /**
      * Constructor.
