@@ -29,9 +29,9 @@ public class TeleportManager {
         this.firstMapWarpPipe = firstMapWarpPipe;
     }
 
-    public void run(Actor actor, GameMap targetMap){
+    public void run(Actor actor, GameMap targetMap, boolean onFirstMap){
         Location currentLocation;
-        if (actor.hasCapability(Status.FIRST_MAP)){
+        if (onFirstMap){
             currentLocation = targetMap.at(SECOND_MAP_WARP_PIPE_X,SECOND_MAP_WARP_PIPE_Y);
             actor.addCapability(Status.SECOND_MAP);
             actor.removeCapability(Status.FIRST_MAP);

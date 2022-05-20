@@ -29,7 +29,7 @@ public class TeleportAction extends Action {
             targetMap = Application.getFirstMap();
             result = "Teleported back to the first map";
         }
-        TeleportManager.getInstance().run(actor,targetMap);
+        TeleportManager.getInstance().run(actor,targetMap,onFirstMap);
         return result;
     }
 
