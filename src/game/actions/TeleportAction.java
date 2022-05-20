@@ -20,7 +20,8 @@ public class TeleportAction extends Action {
     public String execute(Actor actor, GameMap map) {
         GameMap targetMap;
         String result;
-        if (actor.hasCapability(Status.FIRST_MAP)) {
+        boolean onFirstMap = actor.hasCapability(Status.FIRST_MAP);
+        if (onFirstMap) {
             targetMap = Application.getSecondGameMap();
             TeleportManager.getInstance().setFirstMapWarpPipe(currentWarpPipe);
             result = "Teleported to Lava Zone";
