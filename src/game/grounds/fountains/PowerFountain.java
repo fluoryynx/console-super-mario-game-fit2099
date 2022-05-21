@@ -10,8 +10,6 @@ import game.waters.Water;
  */
 public class PowerFountain extends Fountain {
 
-    private PowerWater powerWater;
-
     /**
      * name of the fountain
      */
@@ -35,7 +33,7 @@ public class PowerFountain extends Fountain {
      */
     @Override
     public Water getWater() {
-        powerWater = new PowerWater();
+        PowerWater powerWater = new PowerWater();
         return powerWater;
     }
 }

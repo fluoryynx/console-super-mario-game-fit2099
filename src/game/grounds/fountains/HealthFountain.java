@@ -1,7 +1,6 @@
 package game.grounds.fountains;
 
 import game.Status;
-import game.grounds.fountains.Fountain;
 import game.waters.HealingWater;
 import game.waters.Water;
 
@@ -10,8 +9,6 @@ import game.waters.Water;
  * @author Lim Fluoryynx
  */
 public class HealthFountain extends Fountain {
-
-    private HealingWater healingWater;
 
     /**
      * name of the fountain
@@ -37,7 +34,7 @@ public class HealthFountain extends Fountain {
      */
     @Override
     public Water getWater() {
-        healingWater = new HealingWater();
+        HealingWater healingWater = new HealingWater();
         return healingWater;
     }
 }
