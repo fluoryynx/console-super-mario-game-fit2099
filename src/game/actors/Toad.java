@@ -77,22 +77,44 @@ public class Toad extends Actor implements Speakable {
     /**
      * First monologue of Toad
      */
-    private int FIRST_SENTENCE = 3;
-
-    /**
-     * Second monologue of Toad
-     */
-    private int SECOND_SENTENCE = 4;
-
-    /**
-     * Third monologue of Toad
-     */
-    private int THIRD_SENTENCE = 5;
+    private int RANDOM_TALK_LOWER_BOUND = 3;
 
     /**
      * Fourth monologue of Toad
      */
-    private int FOURTH_SENTENCE = 6;
+    private int RANDOM_TALK_UPPER_BOUND = 6;
+
+    /**
+     * First monologue of Toad
+     */
+    private int NO_POWER_STAR_LOWER_BOUND = 3;
+
+    /**
+     * Third monologue of Toad
+     */
+    private int NO_POWER_STAR_UPPER_BOUND = 5;
+
+    /**
+     * Second monologue of Toad
+     */
+    private int NO_WRENCH_LOWER_BOUND = 4;
+
+    /**
+     * Fourth monologue of Toad
+     */
+    private int NO_WRENCH_UPPER_BOUND = 6;
+
+    /**
+     * Second monologue of Toad
+     */
+    private int NO_POWER_STAR_WRENCH_LOWER_BOUND = 4;
+
+    /**
+     * Third monologue of Toad
+     */
+    private int NO_POWER_STAR_WRENCH_UPPER_BOUND = 5;
+
+
 
 
     /**
@@ -106,7 +128,7 @@ public class Toad extends Actor implements Speakable {
      * The sentences is generate by index of Monologue
      */
     public String giveRandomTalk() {
-        return generateMonologue(FIRST_SENTENCE,FOURTH_SENTENCE);
+        return generateMonologue(RANDOM_TALK_LOWER_BOUND,RANDOM_TALK_UPPER_BOUND);
     }
 
     /**
@@ -114,7 +136,7 @@ public class Toad extends Actor implements Speakable {
      * The sentences is generate by index of Monologue
      */
     public String noTalkPowerStar() {
-        return generateMonologue(FIRST_SENTENCE,THIRD_SENTENCE);
+        return generateMonologue(NO_POWER_STAR_LOWER_BOUND,NO_POWER_STAR_UPPER_BOUND);
     }
 
     /**
@@ -122,14 +144,14 @@ public class Toad extends Actor implements Speakable {
      * The sentences is generate by index of Monologue
      */
     public String noTalkWrench() {
-        return generateMonologue(SECOND_SENTENCE,FOURTH_SENTENCE);
+        return generateMonologue(NO_WRENCH_LOWER_BOUND,NO_WRENCH_UPPER_BOUND);
     }
 
     /**
      * Give any sentences from the arraylist except the sentence about the wrench and power star when Player interact with toad
      * The sentences is generate by index of Monologue
      */
-    public String noTalkPowerStarAndWrench() { return generateMonologue(SECOND_SENTENCE,THIRD_SENTENCE);}
+    public String noTalkPowerStarAndWrench() { return generateMonologue(NO_POWER_STAR_WRENCH_LOWER_BOUND,NO_POWER_STAR_WRENCH_UPPER_BOUND);}
 
 
     /**
