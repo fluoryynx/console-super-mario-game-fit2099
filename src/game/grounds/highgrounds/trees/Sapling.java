@@ -10,6 +10,8 @@ import java.util.Random;
 
 /**
  * A class that represents the sapling tree in the Game Map. It is a new class that extends Tree.
+ * It has a 10% chance to produce/spawn a coin ($20) on its location at every turn.
+ * It takes another 10 turns to grow into a tall tree/Mature
  *
  * @author Kuah Jia Chen
  */

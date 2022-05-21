@@ -8,7 +8,8 @@ import game.Status;
 import game.actions.DrinkWaterAction;
 
 /**
- * class that allows enemies to drink water from the fountain
+ * class that allows enemies to drink water from the fountain It will only be available if the fountain
+ * is not empty
  *
  * @author Lim Fluoryynx
  */
@@ -24,7 +25,7 @@ public class DrinkWaterBehaviour implements Behaviour{
      * return DrinkWaterAction if enemies stand on the fountain
      * @param actor the Actor acting
      * @param map the GameMap containing the Actor
-     * @return
+     * @return DrinkWaterAction instance if the ground is fountain, else null
      */
     @Override
     public Action getAction(Actor actor, GameMap map) {

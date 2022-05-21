@@ -10,7 +10,10 @@ import game.actions.TeleportAction;
 import game.actors.enemies.PiranhaPlant;
 
 /**
- * A class that
+ * A class that represents the warp  pipe in the game map. It will spawn PiranhaPlant on its location.
+ * The player only can jump on it once the Piranha Plant is killed. However, if the reset action is
+ * called, the warp pipe will respawn a new PiranhaPlant on its location. Resetting also will increase
+ * alive/existing Piranha Plants hit points by an additional 50 hit points and heal to the maximum.
  *
  * @author Kuah Jia Chen, Huang GuoYueYang
  */

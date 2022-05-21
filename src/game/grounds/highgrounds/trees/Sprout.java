@@ -8,6 +8,8 @@ import java.util.Random;
 
 /**
  * A class that represents the sprout tree in the Game Map. It is a new class that extends Tree.
+ * It has a 10% chance to spawn Goomba on its position in every turn.
+ * In addition, it takes 10 turns to grow into a small tree/Sapling
  *
  * @author Kuah Jia Chen
  */

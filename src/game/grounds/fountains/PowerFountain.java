@@ -5,7 +5,8 @@ import game.waters.PowerWater;
 import game.waters.Water;
 
 /**
- * class that represents power fountain in the game
+ * Class that represents power fountain in the game
+ * When the water from this fountain is consumed, it increases the drinker's base/intrinsic attack damage by 15.
  * @author Lim Fluoryynx
  */
 public class PowerFountain extends Fountain {

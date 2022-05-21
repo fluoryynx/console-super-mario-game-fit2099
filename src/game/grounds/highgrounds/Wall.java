@@ -4,6 +4,8 @@ import game.grounds.highgrounds.HighGround;
 
 /**
  * A class that represents the wall in this game. It extends HighGround as it is jumpable by the Player.
+ * The sucess rate to jump on the wall is 80%, and its fall damage will be 20. Besides, wall can block
+ * thrown objects.
  *
  * @author Kuah Jia Chen
  */

@@ -5,7 +5,8 @@ import game.waters.HealingWater;
 import game.waters.Water;
 
 /**
- * class that represents health fountain in the game
+ * Class that represents health fountain in the game.
+ * Drinking the water from this fountain will increase the drinker's hit points/healing by 50 hit points.
  * @author Lim Fluoryynx
  */
 public class HealthFountain extends Fountain {

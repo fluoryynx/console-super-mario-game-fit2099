@@ -12,6 +12,9 @@ import java.util.Random;
 
 /**
  * A class that represents the mature tree in the Game Map. It is a new class that extends Tree.
+ * It has a 15% chance to spawn Koopa or FlyingKoopa in every turn. For every 5 turns, It can grow a new sprout
+ * in one of the surrounding fertile squares, randomly. If there is no available fertile square,
+ * it will stop growing sprouts. Besides, that, It has 20% to wither and die (becomes Dirt) in every turn.
  *
  * @author Kuah Jia Chen, Huang GuoYueYang
  */
