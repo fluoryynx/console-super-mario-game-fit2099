@@ -41,6 +41,16 @@ public class PrincessPeach extends Actor implements Speakable {
     private int currentTurn;
 
     /**
+     * The lower bound index for the monologue of PrincessPeach
+     */
+    private static final int MONOLOGUE_INDEX_LOWER_BOUND = 0;
+
+    /**
+     * The upper bound index for the monologue of PrincessPeach
+     */
+    private static final int MONOLOGUE_INDEX_UPPER_BOUND = 2;
+
+    /**
      * Constructor.
      */
     public PrincessPeach() {
@@ -62,7 +72,7 @@ public class PrincessPeach extends Actor implements Speakable {
         // Generate monologue of PrincessPeach when even turn
         currentTurn ++;
         if (timeToSpeak(currentTurn)){
-            display.println(this + " : " + generateMonologue(0,2));
+            display.println(this + " : " + generateMonologue(MONOLOGUE_INDEX_LOWER_BOUND,MONOLOGUE_INDEX_UPPER_BOUND));
         }
         return new DoNothingAction();
     }
