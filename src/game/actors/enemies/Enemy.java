@@ -162,11 +162,10 @@ public abstract class Enemy extends Actor implements Resettable, Speakable {
                 behaviours.put(THIRD_PRIORITY,new FollowBehaviour(destination.getActor()));
             }
         }
-        this.behaviours.put(FIRST_PRIORITY,new AttackBehaviour());
 
-        // if the enemy missed, then remove AttackBehaviour
-        if (!(rand.nextInt(100) <= this.hitRate)){
-            this.behaviours.remove(FIRST_PRIORITY);
+        // If under successful hit rate, enemy will attack actor in first priority
+        if(rand.nextInt(100) <= this.hitRate){
+            this.behaviours.put(FIRST_PRIORITY,new AttackBehaviour());
         }
 
 
