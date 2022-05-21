@@ -26,10 +26,18 @@ public class TeleportManager {
     }
 
     public void setFirstMapWarpPipe(WarpPipe firstMapWarpPipe) {
+        if (firstMapWarpPipe == null){
+            throw new IllegalArgumentException("The input parameter (i.e., firstMapWarpPipe) cannot be null");
+        }
+
         this.firstMapWarpPipe = firstMapWarpPipe;
     }
 
     public void run(Actor actor, GameMap targetMap, boolean onFirstMap){
+        if (actor == null || targetMap == null){
+            throw new IllegalArgumentException("The input parameter (i.e., actor and targetMap) cannot be null");
+        }
+
         Location targetLocation;
         if (onFirstMap){
             targetLocation = targetMap.at(SECOND_MAP_WARP_PIPE_X,SECOND_MAP_WARP_PIPE_Y);

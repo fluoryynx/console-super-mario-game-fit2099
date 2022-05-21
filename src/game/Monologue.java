@@ -70,6 +70,10 @@ public class Monologue {
      * @return Return the corresponding monologue of specific actor
      */
     public String getMonologue(int monologueIndexLowerBound, int monologueIndexUpperBound) {
+        if (monologueIndexLowerBound < 0 || monologueIndexUpperBound >= allMonologue.size()){
+            throw new IllegalArgumentException("The value of upper bound and lower bound must be a valid index to retrieve string from allMonologue");
+        }
+
         int currentIndex = monologueIndexLowerBound +
                 rand.nextInt((monologueIndexUpperBound - monologueIndexLowerBound) + 1);
         String currentString = allMonologue.get(currentIndex);
