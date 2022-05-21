@@ -68,6 +68,10 @@ public class Bottle extends Item {
      * @param water
      */
     public void addContent(Water water) {
+        if (water == null){
+            throw new IllegalArgumentException("The input parameter (i.e., water) cannot be null");
+        }
+
         this.content.add(water);
     }
 
@@ -77,6 +81,10 @@ public class Bottle extends Item {
      * @param actor
      */
     public void minusContent(Actor actor) {
+        if (actor == null){
+            throw new IllegalArgumentException("The input parameter (i.e., actor) cannot be null");
+        }
+
         Water drankWater=content.get(content.size()-1);
         drankWater.updateStatus(actor);
         this.content.remove(drankWater);

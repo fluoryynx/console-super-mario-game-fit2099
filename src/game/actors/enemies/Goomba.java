@@ -6,17 +6,18 @@ import edu.monash.fit2099.engine.actions.ActionList;
 import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.actions.DoNothingAction;
 import edu.monash.fit2099.engine.positions.GameMap;
-import game.actors.enemies.Enemy;
-
 import java.util.Random;
 
 /**
- * Goomba class is a class represents the enemies in this game. It is a class that extends from the Enemy class.
- * Goomba can move around in the game map but cannot enter floor.
- * Once goomba is engaged in a fight (the Player attacks the enemy or the enemy attacks player --
+ * Goomba class is a class represents the one kind of the enemies in this game.
+ * It is a class that extends from the Enemy class.
+ * Goomba will move around in the game map if no player is beside it but it cannot enter floor.
+ * Once Goomba is engaged in a fight (the Player attacks the enemy or the enemy attacks player --
  * when the player stands in the enemy's surroundings), it will follow the Player.
+ * It starts with 20 hit points.
  * It causes 10 damages to player with 50% hit rate.
- * To make sure the map is clean and not too overcrowded, goomba will has a 10% chance to suicide each round of this game.
+ * In every turn, it has a 10% chance to be removed from the map (suicide). The main purpose is to clean up the map.
+ * Besides, Goomba also speak every even turn automatically.
  *
  * @author Huang GuoYueYang
  */
@@ -63,12 +64,14 @@ public class Goomba extends Enemy {
 
     /**
      * Constructor.
+     * The monologue belongs to Goomba will be print by using index.
      */
     public Goomba() { super(GOOMBA_NAME,GOOMBA_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE,11,13); }
 
     /**
      * Select and return an action to perform on the current turn.
      * Goomba has 10% suicide rate in each turn of this game.
+     * Once Goomba suicide, it will be remove from the map automatically.
      * @param actions    collection of possible Actions for this Actor
      * @param lastAction The Action this Actor took last turn. Can do interesting things in conjunction with Action.getNextAction()
      * @param map        the map containing the Actor

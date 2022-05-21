@@ -12,6 +12,7 @@ import game.behaviours.Behaviour;
 
 /**
  * A class that allows the enemy to wander around in the game map
+ * It implements Behaviour class.
  */
 public class WanderBehaviour implements Behaviour {
 

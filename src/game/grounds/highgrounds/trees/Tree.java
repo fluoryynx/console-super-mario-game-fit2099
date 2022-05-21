@@ -90,9 +90,4 @@ public abstract class Tree extends HighGround implements Resettable {
         Dirt dirt = new Dirt();
         currentLocation.setGround(dirt);
     }
-
-    public void spawnFireFlower(Location currentLocation){
-        FireFlower fireFlower = new FireFlower();
-        currentLocation.addItem(fireFlower);
-    }
 }

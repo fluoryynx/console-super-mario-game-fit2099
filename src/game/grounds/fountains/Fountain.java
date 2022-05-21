@@ -58,10 +58,6 @@ public abstract class Fountain extends Ground {
     private static final int EMPTY_INDICATOR=-1;
 
     /**
-     *
-     */
-
-    /**
      * constructor
      * @param displayChar - display character of fountain
      * @param name - name of fountain
@@ -142,8 +138,8 @@ public abstract class Fountain extends Ground {
     }
 
     /**
-     * to set the content of the fountian
-     * @param newContent
+     * to set the content of the fountain
+     * @param newContent the number of water for the fountain
      */
     public void setContent(int newContent){
         this.content=newContent;
@@ -157,7 +153,7 @@ public abstract class Fountain extends Ground {
     }
 
     /**
-     * return a string including the fountain name and ramaining content
+     * return a string including the fountain name and remaining content
      * @return a string . for example " Health fountain (10/10)"
      */
     @Override

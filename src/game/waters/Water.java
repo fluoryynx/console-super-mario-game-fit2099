@@ -26,6 +26,10 @@ public abstract class Water {
      * @param actor
      */
     public void updateStatus(Actor actor){
+        if (actor == null){
+            throw new IllegalArgumentException("The input parameter (i.e., actor) cannot be null");
+        }
+
         this.consumer=actor;
     }
 

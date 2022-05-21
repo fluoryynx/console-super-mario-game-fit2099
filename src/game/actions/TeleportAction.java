@@ -18,16 +18,19 @@ public class TeleportAction extends Action {
 
     @Override
     public String execute(Actor actor, GameMap map) {
-        if (actor.hasCapability(Status.FIRST_MAP)) {
-            GameMap secondMap = Application.getSecondGameMap();
+        GameMap targetMap;
+        String result;
+        boolean onFirstMap = actor.hasCapability(Status.FIRST_MAP);
+        if (onFirstMap) {
+            targetMap = Application.getSecondGameMap();
             TeleportManager.getInstance().setFirstMapWarpPipe(currentWarpPipe);
-            TeleportManager.getInstance().run(actor,secondMap);
-            return "Teleported to Lava Zone";
+            result = "Teleported to Lava Zone";
         } else{ // actor is now on the second map
-            GameMap firstMap = Application.getFirstMap();
-            TeleportManager.getInstance().run(actor,firstMap);
-            return "Teleported back to the first map";
+            targetMap = Application.getFirstMap();
+            result = "Teleported back to the first map";
         }
+        TeleportManager.getInstance().run(actor,targetMap,onFirstMap);
+        return result;
     }
 
     @Override

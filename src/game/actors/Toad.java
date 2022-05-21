@@ -15,15 +15,15 @@ import game.actions.SpeakAction;
 import game.items.magicalitems.PowerStar;
 import game.items.magicalitems.SuperMushroom;
 import game.items.Wrench;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
 /**
- * Toad is a class that represents the NPC Toad in the game map. It is a class that extends from the Actor class.
- * Toad is a NPC is friendly (0 hits point) and it will have a conversation with the actor when
- * the actor is beside it.
+ * Toad is a class that represents the NPC Toad in the game map.
+ * It is a class that extends from the Actor class.
+ * Toad is a NPC is friendly (0 hits point) and it will have a conversation with the actor when the actor is beside it
+ * and interact with it.
+ * Besides, toad also speak every even turn automatically.
  *
  * @author Huang GuoYueYang, Lim Fluoryynx
  */
@@ -69,41 +69,53 @@ public class Toad extends Actor implements Speakable {
      */
     private Random rand = new Random();
 
+    /**
+     * Current turn of this game
+     */
     private int currentTurn;
 
     /**
      * Constructor.
-     * Four sentences of toad added here
      */
     public Toad() {
         super(ACTOR_NAME, DISPLAY_CHAR, HIT_POINT); }
 
     /**
-     * Give any sentences from the arraylist
+     * Give any sentences from the arraylist when Player interact with toad
+     * The sentences is generate by index of Monologue
      */
     public String giveRandomTalk() {
         return generateMonologue(3,6);
     }
 
     /**
-     * Give any sentences from the arraylist except the sentence about the power star
+     * Give any sentences from the arraylist except the sentence about the power star when Player interact with toad
+     * The sentences is generate by index of Monologue
      */
     public String noTalkPowerStar() {
         return generateMonologue(3,5);
     }
 
     /**
-     * Give any sentences from the arraylist except the sentence about the wrench
+     * Give any sentences from the arraylist except the sentence about the wrench when Player interact with toad
+     * The sentences is generate by index of Monologue
      */
     public String noTalkWrench() {
         return generateMonologue(4,6);
     }
 
+    /**
+     * Give any sentences from the arraylist except the sentence about the wrench and power star when Player interact with toad
+     * The sentences is generate by index of Monologue
+     */
     public String noTalkPowerStarAndWrench() { return generateMonologue(4,5);}
 
 
     /**
-     * add items into the sale item list , clear the list every turn
+     * In each turn of this game, the current turn counter will increase by 1.
+     * When the current turn is divisible by 2, Toad will speak automatically.
+     * The monologue belongs to Toad will be print by using index.
+     * Add items into the sale item list , clear the list every turn
      * @param actions    collection of possible Actions for this Actor
      * @param lastAction The Action this Actor took last turn. Can do interesting things in conjunction with Action.getNextAction()
      * @param map        the map containing the Actor
@@ -112,6 +124,7 @@ public class Toad extends Actor implements Speakable {
      */
     @Override
     public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
+        // Generate monologue of Toad when even turn
         currentTurn ++;
         if (timeToSpeak(currentTurn)){
             display.println(this + " : " + generateMonologue(3,6));
@@ -125,8 +138,8 @@ public class Toad extends Actor implements Speakable {
     }
 
     /**
-     * Make Toad can speak to Player. Besides, this also allow to Player can buy the three item
-     * from Toad.
+     * Make Toad can speak to Player.
+     * Besides, this also allow to Player can buy the three items from Toad.
      * @param otherActor the Actor that might perform an action.
      * @param direction  String representing the direction of the other Actor
      * @param map        current GameMap

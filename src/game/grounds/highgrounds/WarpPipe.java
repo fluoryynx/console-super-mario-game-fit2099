@@ -9,6 +9,11 @@ import game.actions.JumpAction;
 import game.actions.TeleportAction;
 import game.actors.enemies.PiranhaPlant;
 
+/**
+ * A class that
+ *
+ * @author Kuah Jia Chen, Huang GuoYueYang
+ */
 public class WarpPipe extends HighGround implements Resettable {
 
     private static final char WARP_PIPE_CHAR = 'C';
@@ -48,7 +53,7 @@ public class WarpPipe extends HighGround implements Resettable {
         // super.tick(location); // so it is not destroyable
         currentXCoordinate = location.x();
         currentYCoordinate = location.y();
-        if (!spawnedPiranhaPlant){
+        if (!spawnedPiranhaPlant && !location.containsAnActor()){
             location.addActor(new PiranhaPlant());
             setSpawnedPiranhaPlant(true);
         }
@@ -56,12 +61,10 @@ public class WarpPipe extends HighGround implements Resettable {
 
     @Override
     public ActionList allowableActions(Actor actor, Location location, String direction) {
-        if (!location.containsAnActor()) {
-            return new ActionList(new JumpAction(location, direction, this));
-        } else if (location.getActor().hasCapability(Status.TELEPORT)) {
+        if (location.containsAnActor() && location.getActor().hasCapability(Status.TELEPORT)) {
             return new ActionList(new TeleportAction(this));
         }
-        return new ActionList();
+        return super.allowableActions(actor,location,direction);
     }
 
     public int getCurrentXCoordinate() {

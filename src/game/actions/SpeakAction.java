@@ -7,9 +7,9 @@ import game.Status;
 import game.actors.Toad;
 
 /**
- * SpeakAction class is a class that allows the actor to have a conversation with a toad (friendly NPC) to
+ * SpeakAction class is a class that allows the actor to have a conversation with toad (friendly NPC) to
  * get some useful information.
- * It is a new class that extends the Action class.
+ * It is extends from its parent class Action.
  *
  * @author Huang GuoYueYang
  */
@@ -30,11 +30,12 @@ public class SpeakAction extends Action {
 
     /**
      * Perform the Action.
-     * This method is used to have conversation with toad
-     * When actor has/doesn't have certain capability(HAVE_WRENCH/INVINCIBLE), actor can have different conversation with toad
-     * Without HAVE_WRENCH&&INVINCIBLE, toad speak any sentence from the default 4 sentences
-     * With HAVE_WRENCH, toad speak any sentence from the default 4 sentences except the sentence about wrench
-     * With INVINCIBLE, toad speak any sentence from the default 4 sentences except the sentence about power star
+     * This method is used to have conversation with toad.
+     * When actor has/doesn't have certain capability(HAVE_WRENCH/INVINCIBLE), actor can have different conversation with toad.
+     * Without HAVE_WRENCH && INVINCIBLE, toad speak any sentence from the default 4 sentences.
+     * With HAVE_WRENCH && INVINCIBLE, toad speak any sentence from the default 4 sentences except the sentence about wrench and power star.
+     * With HAVE_WRENCH, toad speak any sentence from the default 4 sentences except the sentence about wrench.
+     * With INVINCIBLE, toad speak any sentence from the default 4 sentences except the sentence about power star.
      * @param actor The actor performing the action.
      * @param map The map the actor is on.
      * @return a description of what happened that can be displayed to the user.

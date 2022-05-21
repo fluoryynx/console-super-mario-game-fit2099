@@ -26,28 +26,34 @@ public class TeleportManager {
     }
 
     public void setFirstMapWarpPipe(WarpPipe firstMapWarpPipe) {
+        if (firstMapWarpPipe == null){
+            throw new IllegalArgumentException("The input parameter (i.e., firstMapWarpPipe) cannot be null");
+        }
+
         this.firstMapWarpPipe = firstMapWarpPipe;
     }
 
-    public void run(Actor actor, GameMap targetMap){
-        if (actor.hasCapability(Status.FIRST_MAP)){
-            Location currentLocation = targetMap.at(SECOND_MAP_WARP_PIPE_X,SECOND_MAP_WARP_PIPE_Y);
-            if (currentLocation.containsAnActor()){
-                targetMap.removeActor(currentLocation.getActor());
-            }
-            targetMap.moveActor(actor,targetMap.at(SECOND_MAP_WARP_PIPE_X,SECOND_MAP_WARP_PIPE_Y));
+    public void run(Actor actor, GameMap targetMap, boolean onFirstMap){
+        if (actor == null || targetMap == null){
+            throw new IllegalArgumentException("The input parameter (i.e., actor and targetMap) cannot be null");
+        }
+
+        Location targetLocation;
+        if (onFirstMap){
+            targetLocation = targetMap.at(SECOND_MAP_WARP_PIPE_X,SECOND_MAP_WARP_PIPE_Y);
             actor.addCapability(Status.SECOND_MAP);
             actor.removeCapability(Status.FIRST_MAP);
-        } else if (actor.hasCapability(Status.SECOND_MAP)){
-            Location currentLocation = targetMap.at(firstMapWarpPipe.getCurrentXCoordinate(),firstMapWarpPipe.getCurrentYCoordinate());
-            if (currentLocation.containsAnActor()){
-                targetMap.removeActor(currentLocation.getActor());
-            }
-            targetMap.moveActor(actor,
-                    targetMap.at(firstMapWarpPipe.getCurrentXCoordinate(),firstMapWarpPipe.getCurrentYCoordinate()));
+        } else { // if (actor.hasCapability(Status.SECOND_MAP))
+            targetLocation = targetMap.at(firstMapWarpPipe.getCurrentXCoordinate(),firstMapWarpPipe.getCurrentYCoordinate());
             actor.addCapability(Status.FIRST_MAP);
             actor.removeCapability(Status.SECOND_MAP);
         }
+        // remove the actor if any actor is currently at the target location
+        if (targetLocation.containsAnActor()){
+            Actor targetActor = targetLocation.getActor();
+            targetMap.removeActor(targetActor);
+        }
+        targetMap.moveActor(actor,targetLocation);
     }
 
 }

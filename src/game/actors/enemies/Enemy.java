@@ -15,14 +15,16 @@ import game.Status;
 import game.actions.AttackAction;
 import game.actions.FireAttackAction;
 import game.behaviours.*;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
 /**
- * Enemy is an abstract class represents the enemies in the game. It is a class that extends from the Actor.
- * There are two types of enemies in this game, which is Goomba and Koopa.
+ * Enemy is an abstract class represents the enemies' base of this game.
+ * It is a class that extends from the Actor.
+ * Enemy will attack and follow player automatically, when no player is beside, they will wander around.
+ * There are five types of enemies in this game, which is Goomba, PiranhaPlant, Bowser, Flying Koopa and Koopa.
+ * Besides, all enemies also speak every even turn automatically.
  *
  * @author Kuah Jia Chen, Huang GuoYueYang
  */
@@ -51,8 +53,11 @@ public abstract class Enemy extends Actor implements Resettable, Speakable {
      */
     protected static final int THIRD_PRIORITY = 3; // key of hashmap follow
 
-
-    protected static final int FOURTH_PRIORITY = 4; // wander
+    /**
+     * A constant integer that will be used as a key in the hash map to indicate which
+     * behaviour is the forth priority
+     */
+    protected static final int FOURTH_PRIORITY = 4; // key of hashmap wander around
 
     /**
      * Damage done by this enemy instance
@@ -69,21 +74,31 @@ public abstract class Enemy extends Actor implements Resettable, Speakable {
      */
     private int hitRate; // Possibility of enemy hit actor
 
+
     protected static final int EXTRA_DAMAGE=15;
 
     /**
      * Random number generator
      */
     protected Random rand = new Random();
+
+    /**
+     * Current turn of this game
+     */
     protected int currentTurn;
 
+    /**
+     * Lower boundary of monologue index
+     */
     protected int monologueIndexLowerBound;
 
+    /**
+     * Upper boundary of monologue index
+     */
     protected int monologueIndexUpperBound;
 
     /**
      * Constructor.
-     *
      * @param name        the name of the Actor
      * @param displayChar the character that will represent the Actor in the display
      * @param hitPoints   the Actor's starting hit point
@@ -104,11 +119,14 @@ public abstract class Enemy extends Actor implements Resettable, Speakable {
     }
 
     /**
-     * Select and return an action to perform on the current turn.
+     * In each turn of this game, the current turn counter will increase by 1.
+     * When the current turn is divisible by 2, Enemies will speak automatically.
+     * The monologue belongs to corresponding Enemies will be print by using index.
      * For each exits in this game, if the destination is not null and the actor around the enemy has capability HOSTILE_TO_ENEMY,
-     * the enemy will follow the actor in second priority.
+     * the enemy will follow the actor in third priority.
      * If the actor is around enemy, enemy will attack actor in first priority.
-     * Other than that, enemy will wander around then return do nothing action
+     * If the fountain is around enemy, enemy will drink water in second priority.
+     * Other than that, enemy will wander around in forth priority then return do nothing action
      * @param actions    collection of possible Actions for this Actor
      * @param lastAction The Action this Actor took last turn. Can do interesting things in conjunction with Action.getNextAction()
      * @param map        the map containing the Actor
@@ -166,7 +184,8 @@ public abstract class Enemy extends Actor implements Resettable, Speakable {
 
     /**
      * Returns a new collection of the Actions that the otherActor can do to the current Actor.
-     * Enemy is allowed to be attack by the actor with capability HOSTILE_TO_ENEMY
+     * Enemy is allowed to be attack by the actor with capability HOSTILE_TO_ENEMY.
+     * If actor has capability FIRE_ATTACK, enemy is allowed to be attacked by fire attack action.
      * @param otherActor the Actor that might be performing attack
      * @param direction  String representing the direction of the other Actor
      * @param map        current GameMap

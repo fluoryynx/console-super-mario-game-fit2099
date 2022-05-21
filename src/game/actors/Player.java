@@ -14,7 +14,6 @@ import game.items.Bottle;
 import game.managers.Wallet;
 import game.actions.ResetAction;
 import game.managers.BuffManager;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -47,6 +46,9 @@ public class Player extends Actor implements Resettable {
 	 */
 	private BuffManager buffManager;
 
+	/**
+	 * Base damage of Player
+	 */
 	private int baseDamage=5;
 
 	private static final int EXTRA_DAMAGE=15;
