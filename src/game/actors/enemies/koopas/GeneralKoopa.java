@@ -42,7 +42,7 @@ public abstract class GeneralKoopa extends Enemy {
     /**
      * HitRate of GeneralKoopa
      */
-    private static final int HIT_RATE = 0;
+    private static final int HIT_RATE = 50;
 
     /**
      * Damage of GeneralKoopa
