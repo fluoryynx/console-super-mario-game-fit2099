@@ -76,8 +76,7 @@ public class Monologue {
 
         int currentIndex = monologueIndexLowerBound +
                 rand.nextInt((monologueIndexUpperBound - monologueIndexLowerBound) + 1);
-        String currentString = allMonologue.get(currentIndex);
-        return currentString;
+        return allMonologue.get(currentIndex);
     }
 }
 
