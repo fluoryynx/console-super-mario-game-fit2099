@@ -1,0 +1,44 @@
+Design rationale 
+
+Player Class
+This class represents players in the game. Player class extends Actor class. It is associated with the Vendor class to allow players to purchase magical items. Player class uses PickUpAction ( which extends the Action class) to pick up magical items, which are Super Mushroom and Power Star. 
+
+PickUpAction class
+This class extends the Action class to allow players to pick up Super Mushroom and Power Star
+
+BuyAction class
+This class extends the Action class to allow players to use coins to purchase magical items from the vendor
+
+Vendor class
+This class extends the Actor class and sells magical items to players. Vendor is associated with BuyAction as players can purchase magical items from the vendor. 
+Description of method:
+tradeItem method that subtract a certain amount of coins from player’s wallet and provide items to player if there is sufficient amount of coin in the player’s wallet
+
+
+PowerStar class
+This class is a subclass of items. Players that consume it will be healed by 200 hit points (hp) and become invincible. The invincible effect replaces fading duration (aka, fading turn's ticker stops), and it lasts for another 10 turns. It fades and disappears from the game within 10 turns. 
+updateStatus method sets the player’s status such that player does not need to jump to higher level ground, add 5 coins into player’s wallet for every destroyed ground, make player immune to damage and enable player to attack enemy successfully 
+
+
+SuperMushroom class
+This class is a subclass of items. The effect will last until it receives any damage (e.g., hit by the enemy). Once the effect wears off, the display character returns to normal (lowercase), but the maximum HP stays. 
+updateStatus method set the player’s status such that:
+the display character evolves to the uppercase letter (e.g., from m to M).
+it can jump freely with a 100% success rate and no fall damage.
+ increase max HP by 50
+
+
+Coin class
+This class is a subclass of  Items. It is currency the player uses to trade for magical  items. A coin has an integer value that determines the actual value of the money. Coins will spawn randomly from the Sapling (t). The collected coins can be traded with Toad (Vendor class)  for Wrench, Power Star and Super Mushroom. 
+addToWallet method adds the amount of coins collected by player into the player’s wallet if player reaches location that contains coins
+
+
+Wallet class
+This class is used to store and keep track of the amount of coins players have. 
+Description of method:
+getWalletBalance method returns the current amount of coins in player’s wallet
+
+SwapAction class
+This class extends the action class and it is used when players trade Power Star for coins. 
+Description of method:
+convertToCoins method takes the Power Star picked up by player and add coins into the player’s wallet 
