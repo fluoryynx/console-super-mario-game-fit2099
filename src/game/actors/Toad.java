@@ -75,6 +75,27 @@ public class Toad extends Actor implements Speakable {
     private int currentTurn;
 
     /**
+     * First monologue of Toad
+     */
+    private int FIRST_SENTENCE = 3;
+
+    /**
+     * Second monologue of Toad
+     */
+    private int SECOND_SENTENCE = 4;
+
+    /**
+     * Third monologue of Toad
+     */
+    private int THIRD_SENTENCE = 5;
+
+    /**
+     * Fourth monologue of Toad
+     */
+    private int FOURTH_SENTENCE = 6;
+
+
+    /**
      * Constructor.
      */
     public Toad() {
@@ -85,7 +106,7 @@ public class Toad extends Actor implements Speakable {
      * The sentences is generate by index of Monologue
      */
     public String giveRandomTalk() {
-        return generateMonologue(3,6);
+        return generateMonologue(FIRST_SENTENCE,FOURTH_SENTENCE);
     }
 
     /**
@@ -93,7 +114,7 @@ public class Toad extends Actor implements Speakable {
      * The sentences is generate by index of Monologue
      */
     public String noTalkPowerStar() {
-        return generateMonologue(3,5);
+        return generateMonologue(FIRST_SENTENCE,THIRD_SENTENCE);
     }
 
     /**
@@ -101,14 +122,14 @@ public class Toad extends Actor implements Speakable {
      * The sentences is generate by index of Monologue
      */
     public String noTalkWrench() {
-        return generateMonologue(4,6);
+        return generateMonologue(SECOND_SENTENCE,FOURTH_SENTENCE);
     }
 
     /**
      * Give any sentences from the arraylist except the sentence about the wrench and power star when Player interact with toad
      * The sentences is generate by index of Monologue
      */
-    public String noTalkPowerStarAndWrench() { return generateMonologue(4,5);}
+    public String noTalkPowerStarAndWrench() { return generateMonologue(SECOND_SENTENCE,THIRD_SENTENCE);}
 
 
     /**
