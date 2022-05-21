@@ -42,7 +42,7 @@ public abstract class GeneralKoopa extends Enemy {
     /**
      * HitRate of GeneralKoopa
      */
-    private static final int HIT_RATE = 50;
+    private static final int HIT_RATE = 0;
 
     /**
      * Damage of GeneralKoopa
@@ -107,6 +107,8 @@ public abstract class GeneralKoopa extends Enemy {
      */
     @Override
     public Action playTurn(ActionList actions, Action lastAction, GameMap map, Display display) {
+
+        // get the damage deal by fire
         Location currentLocation = map.locationOf(this);
         List<Item> items = currentLocation.getItems();
         int fireCounter = 0;
@@ -118,7 +120,9 @@ public abstract class GeneralKoopa extends Enemy {
         if (fireCounter>0){
             this.hurt(20*fireCounter);
         }
-        if(!this.isConscious()){ // 20
+
+        // change it to dormant state if it is not conscious
+        if(!this.isConscious()){
             setDefeated(true);
             this.setDisplayChar(SHELL_CHAR);
             behaviours.remove(FIRST_PRIORITY);

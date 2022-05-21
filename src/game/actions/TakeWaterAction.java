@@ -9,13 +9,22 @@ import game.items.Bottle;
 import game.waters.Water;
 
 /**
- * this class is use to enable player to refil water from fountains into water bottle
+ * This class is used to enable player to refil water from fountains into water bottle
+ * Hence, whenever the user perform this action, it will add that particular water instance
+ * on player's bottle
  *
- * @Author Lim Fluoryynx
+ * @author Lim Fluoryynx
  */
 public class TakeWaterAction extends Action {
 
+    /**
+     * The water instance that will be added to player's bottle
+     */
     private Water water;
+
+    /**
+     * The fountain that provide the water
+     */
     private Fountain fountain;
 
     /**

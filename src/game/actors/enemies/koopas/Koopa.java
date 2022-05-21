@@ -27,11 +27,21 @@ public class Koopa extends GeneralKoopa {
     private static final int HIT_POINT = 100;
 
     /**
+     * The lower bound index for the monologue of Koopa
+     */
+    private static final int MONOLOGUE_INDEX_LOWER_BOUND = 14;
+
+    /**
+     * The upper bound index for the monologue of Koopa
+     */
+    private static final int MONOLOGUE_INDEX_UPPER_BOUND = 15;
+
+    /**
      * Constructor.
      * The monologue belongs to Koopa will be print by using index.
      */
     public Koopa() {
-        super(KOOPA_NAME,KOOPA_CHAR,HIT_POINT,14,15);
+        super(KOOPA_NAME,KOOPA_CHAR,HIT_POINT,MONOLOGUE_INDEX_LOWER_BOUND,MONOLOGUE_INDEX_UPPER_BOUND);
     }
 
 }

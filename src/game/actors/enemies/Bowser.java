@@ -72,13 +72,23 @@ public class Bowser extends Enemy {
      */
     private static final int Y_COORDINATE = 4;
 
+    /**
+     * The lower bound index for the monologue of Bowser
+     */
+    private static final int MONOLOGUE_INDEX_LOWER_BOUND = 7;
+
+    /**
+     * The upper bound index for the monologue of Bowser
+     */
+    private static final int MONOLOGUE_INDEX_UPPER_BOUND = 10;
+
 
     /**
      * Constructor.
      * The monologue belongs to Bowser will be print by using index.
      */
     public Bowser() {
-        super(BOWSER_NAME,BOWSER_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE,7,10);
+        super(BOWSER_NAME,BOWSER_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE,MONOLOGUE_INDEX_LOWER_BOUND,MONOLOGUE_INDEX_UPPER_BOUND);
         this.behaviours.remove(FOURTH_PRIORITY);
         this.addCapability(Status.DROP_KEY);
     }
@@ -110,6 +120,7 @@ public class Bowser extends Enemy {
             this.removeCapability(Status.POWER_WATER);
         }
 
+        // get the damage deal by fire
         Location currentLocation = map.locationOf(this);
         List<Item> items = currentLocation.getItems();
         int fireCounter = 0;

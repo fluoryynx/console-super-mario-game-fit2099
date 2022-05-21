@@ -63,10 +63,22 @@ public class Goomba extends Enemy {
     private Random rand = new Random();
 
     /**
+     * The lower bound index for the monologue of Goomba
+     */
+    private static final int MONOLOGUE_INDEX_LOWER_BOUND = 11;
+
+    /**
+     * The upper bound index for the monologue of Goomba
+     */
+    private static final int MONOLOGUE_INDEX_UPPER_BOUND = 13;
+
+    /**
      * Constructor.
      * The monologue belongs to Goomba will be print by using index.
      */
-    public Goomba() { super(GOOMBA_NAME,GOOMBA_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE,11,13); }
+    public Goomba() {
+        super(GOOMBA_NAME,GOOMBA_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE,MONOLOGUE_INDEX_LOWER_BOUND,MONOLOGUE_INDEX_UPPER_BOUND);
+    }
 
     /**
      * Select and return an action to perform on the current turn.

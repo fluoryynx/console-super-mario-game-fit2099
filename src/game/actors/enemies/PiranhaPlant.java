@@ -53,11 +53,21 @@ public class PiranhaPlant extends Enemy {
     private static final String HIT_VERB = "chomps";
 
     /**
+     * The lower bound index for the monologue of PiranhaPlant
+     */
+    private static final int MONOLOGUE_INDEX_LOWER_BOUND = 17;
+
+    /**
+     * The upper bound index for the monologue of PiranhaPlant
+     */
+    private static final int MONOLOGUE_INDEX_UPPER_BOUND = 18;
+
+    /**
      * Constructor.
      * The monologue belongs to PiranhaPlant will be print by using index.
      */
     public PiranhaPlant() {
-        super(PIRANHAPLANT_NAME,PIRANHAPLANT_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE,17,18);
+        super(PIRANHAPLANT_NAME,PIRANHAPLANT_CHAR,HIT_POINT,DAMAGE,HIT_VERB,HIT_RATE,MONOLOGUE_INDEX_LOWER_BOUND,MONOLOGUE_INDEX_UPPER_BOUND);
         this.behaviours.remove(FOURTH_PRIORITY);
     }
 

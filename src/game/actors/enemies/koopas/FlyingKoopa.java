@@ -31,11 +31,21 @@ public class FlyingKoopa extends GeneralKoopa {
     private static final int HIT_POINT = 150;
 
     /**
+     * The lower bound index for the monologue of FlyingKoopa
+     */
+    private static final int MONOLOGUE_INDEX_LOWER_BOUND = 14;
+
+    /**
+     * The upper bound index for the monologue of FlyingKoopa
+     */
+    private static final int MONOLOGUE_INDEX_UPPER_BOUND = 16;
+
+    /**
      * Constructor.
      * The monologue belongs to FlyingKoopa will be print by using index.
      */
     public FlyingKoopa() {
-        super(FLYINGKOOPA_NAME,FLYINGKOOPA_CHAR,HIT_POINT,14,16);
+        super(FLYINGKOOPA_NAME,FLYINGKOOPA_CHAR,HIT_POINT,MONOLOGUE_INDEX_LOWER_BOUND,MONOLOGUE_INDEX_UPPER_BOUND);
         this.addCapability(Status.CAN_FLY);
     }
 }

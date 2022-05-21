@@ -20,17 +20,17 @@ public class AttackShellAction extends Action {
     /**
      * The Actor that is to be attacked
      */
-    protected Actor target;
+    private Actor target;
 
     /**
-     * The direction of incoming attack.
+     * The direction of incoming attack
      */
-    protected String direction;
+    private String direction;
 
     /**
      * Random number generator
      */
-    protected Random rand = new Random();
+    private Random rand = new Random();
 
     /**
      * Constructor.

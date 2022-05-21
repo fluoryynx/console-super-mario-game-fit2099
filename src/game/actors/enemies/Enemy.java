@@ -163,8 +163,16 @@ public abstract class Enemy extends Actor implements Resettable, Speakable {
             }
         }
         this.behaviours.put(FIRST_PRIORITY,new AttackBehaviour());
+
+        // if the enemy missed, then remove AttackBehaviour
+        if (!(rand.nextInt(100) <= this.hitRate)){
+            this.behaviours.remove(FIRST_PRIORITY);
+        }
+
+
         this.behaviours.put(SECOND_PRIORITY,new DrinkWaterBehaviour());
 
+        // if the fountain is empty, then remove DrinkWaterBehaviour
         if (map.locationOf(this).getGround().hasCapability(Status.IS_EMPTY)){
             this.behaviours.remove(SECOND_PRIORITY);
         }

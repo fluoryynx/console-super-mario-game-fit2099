@@ -16,7 +16,7 @@ public class VictoryAction extends Action {
 
     /**
      * Perform the Action.
-     * When player end this game, the actor will be remove from this map.
+     * When player end this game, the actor will be removed from this map.
      * A descriptive ending message is displayed.
      * @param actor The actor performing the action.
      * @param map The map the actor is on.
@@ -29,7 +29,7 @@ public class VictoryAction extends Action {
     }
 
     /**
-     * Returns a descriptive string to ask Player whether want to end this game or not.
+     * Returns a descriptive string to ask Player whether we want to end this game or not.
      * @param actor The actor performing the action.
      * @return the text we put on the menu
      */

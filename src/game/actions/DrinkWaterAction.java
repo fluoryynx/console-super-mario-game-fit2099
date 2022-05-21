@@ -11,7 +11,7 @@ import game.items.Bottle;
  * this class is to update actor's status upon drinking water 
  * enemies drink water directly from the fountain while player drinks water from bottle
  *
- * @Author Lim Fluoryynx
+ * @author Lim Fluoryynx
  */
 public class DrinkWaterAction extends Action {
 
