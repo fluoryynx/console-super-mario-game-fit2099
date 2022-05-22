@@ -28,8 +28,9 @@ public abstract class Water {
     }
 
     /**
-     *  update actor's status upon consumption of water
+     * update actor's status upon consumption of water
      * @param actor the actor that consumed the water
+     * @throws IllegalArgumentException if the actor is null
      */
     public void updateStatus(Actor actor){
         if (actor == null){

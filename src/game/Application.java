@@ -31,7 +31,14 @@ import game.items.magicalitems.SuperMushroom;
  */
 public class Application {
 
+	/**
+	 * the GameMap instance for the first map
+	 */
 	private static GameMap firstGameMap;
+
+	/**
+	 * the GameMap instance for the second map
+	 */
 	private static GameMap secondGameMap;
 
 
@@ -110,10 +117,18 @@ public class Application {
 
 	}
 
+	/**
+	 * Getter for firstGameMap
+	 * @return the GameMap instance for the first game map
+	 */
 	public static GameMap getFirstMap() {
 		return firstGameMap;
 	}
 
+	/**
+	 * Getter for secondGameMap
+	 * @return the GameMap instance for the second game map
+	 */
 	public static GameMap getSecondGameMap() {
 		return secondGameMap;
 	}

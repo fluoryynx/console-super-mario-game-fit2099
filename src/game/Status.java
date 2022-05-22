@@ -20,14 +20,14 @@ public enum Status {
     BUY, // use this status to indicate that the actor is able to buy
     SPEAK, // use this status to indicate that can speak to toad
     RESET_CALLED, // use this status to indicate that player enters the reset hotkey
-    TELEPORT,
-    FIRST_MAP,
-    SECOND_MAP,
+    TELEPORT, // use this status to indicate an actor can teleport
+    FIRST_MAP, // use this status to indicate the actor is currently on the first map
+    SECOND_MAP, // use this status to indicate the actor is currently on the second map
     HAVE_KEY, // use this status to indicate that player has key or not
     DROP_KEY, // use this status to indicate that the actor is Bowser or not
     CAN_FLY, // use this status to indicate tha the actor is Flying Koopa or not
-    FIRE_ATTACK,
-    FIRE_DAMAGE,
+    FIRE_ATTACK, // use this status to indicate the actor can use fire attack
+    FIRE_DAMAGE, // use this status to indicate a particular ground can do fire damage
     HAS_BOTTLE,
     POWER_WATER,
     IS_FOUNTAIN,

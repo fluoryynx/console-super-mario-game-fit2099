@@ -66,6 +66,7 @@ public class Bottle extends Item {
     /**
      * push water into the list of content
      * @param water the water instance that needed to be added to the content
+     * @throws IllegalArgumentException if the water is null
      */
     public void addContent(Water water) {
         if (water == null){
@@ -79,6 +80,7 @@ public class Bottle extends Item {
      * pop water from list of content
      * update status of player according to type of water to give player effects
      * @param actor the actor that consumed the water
+     * @throws IllegalArgumentException if the actor is null
      */
     public void minusContent(Actor actor) {
         if (actor == null){

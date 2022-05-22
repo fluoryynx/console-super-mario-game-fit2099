@@ -68,6 +68,7 @@ public class Monologue {
      * @param monologueIndexLowerBound Lower boundary of index
      * @param monologueIndexUpperBound Upper boundary of index
      * @return Return the corresponding monologue of specific actor
+     * @throws IllegalArgumentException if the value of upper bound or lower bound is not a valid index
      */
     public String getMonologue(int monologueIndexLowerBound, int monologueIndexUpperBound) {
         if (monologueIndexLowerBound < 0 || monologueIndexUpperBound >= allMonologue.size()){
