@@ -24,8 +24,8 @@ public enum Status {
     FIRST_MAP, // use this status to indicate the actor is currently on the first map
     SECOND_MAP, // use this status to indicate the actor is currently on the second map
     HAVE_KEY, // use this status to indicate that player has key or not
-    DROP_KEY, // use this status to indicate that the actor is Bowser or not
-    CAN_FLY, // use this status to indicate tha the actor is Flying Koopa or not
+    DROP_KEY, // use this status to indicate that the actor has capability to drop the key or not
+    CAN_FLY, // use this status to indicate tha the actor has capability of fly or not
     FIRE_ATTACK, // use this status to indicate the actor can use fire attack
     FIRE_DAMAGE, // use this status to indicate a particular ground can do fire damage
     HAS_BOTTLE,
