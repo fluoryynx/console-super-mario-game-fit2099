@@ -3,14 +3,20 @@ package game.waters;
 import edu.monash.fit2099.engine.actors.Actor;
 
 /**
- * represents water in the fountain
+ * It is an abstract class that functions as a base class for subclasses (e.g. HealingWater and PowerWater).
  *
  * @author Lim Fluoryynx
  */
 public abstract class Water {
 
-
+    /**
+     * the consumer that consumed the water
+     */
     protected Actor consumer;
+
+    /**
+     * the name of the water
+     */
     private String name;
 
     /**
@@ -23,7 +29,7 @@ public abstract class Water {
 
     /**
      *  update actor's status upon consumption of water
-     * @param actor
+     * @param actor the actor that consumed the water
      */
     public void updateStatus(Actor actor){
         if (actor == null){

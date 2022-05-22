@@ -5,7 +5,8 @@ import edu.monash.fit2099.engine.actors.Actor;
 import game.Status;
 
 /**
- * represents power water in the power fountain
+ * This class represents power water in the power fountain The effect of power water is to increase the base damage
+ * to the consumer by 15
  *
  * @author Lim Fluoryynx
  */
@@ -25,7 +26,7 @@ public class PowerWater extends Water{
 
     /**
      * give consumer POWER_WATER capability upon consumption
-     * @param actor
+     * @param actor the actor that consumed the power water
      */
     @Override
     public void updateStatus(Actor actor) {
