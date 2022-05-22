@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * represents magical bottle in the game that can contains unlimited water
+ *  This class represents magical bottle in the game that can contains unlimited water
  *  permanent item that cannot be dropped or picked up.
- *   This bottle can be filled with water, and player can drink/consume the water inside the bottle.
- *   Each water will give a unique effect depending on its original source
+ *  This bottle can be filled with water, and player can drink/consume the water inside the bottle.
+ *  Each water will give a unique effect depending on its original source
  *
- *   @Author Lim Fluoryynx
+ *   @author Lim Fluoryynx
  */
 public class Bottle extends Item {
 
@@ -65,7 +65,7 @@ public class Bottle extends Item {
 
     /**
      * push water into the list of content
-     * @param water
+     * @param water the water instance that needed to be added to the content
      */
     public void addContent(Water water) {
         if (water == null){
@@ -78,7 +78,7 @@ public class Bottle extends Item {
     /**
      * pop water from list of content
      * update status of player according to type of water to give player effects
-     * @param actor
+     * @param actor the actor that consumed the water
      */
     public void minusContent(Actor actor) {
         if (actor == null){
@@ -92,7 +92,7 @@ public class Bottle extends Item {
 
     /**
      * return list of content of the bottle
-     * @return content
+     * @return return the list of waters of the bottle
      */
     public List<Water> getContent() {
         return this.content;
@@ -100,14 +100,13 @@ public class Bottle extends Item {
 
     /**
      * get the last water from the list of content
-     * @return
+     * @return the last water instance from the content
      */
     public Water getLast(){
         return this.content.get(content.size()-1);
     }
 
     /**
-     *
      * @return a String . for example: " Bottle [Healing water, Power water]"
      */
     @Override

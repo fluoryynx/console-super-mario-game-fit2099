@@ -6,7 +6,7 @@ import game.Status;
 import game.items.magicalitems.MagicalItem;
 
 /**
- * This class is a subclass of items.
+ * This class is a subclass of MagicalItems.
  * Players that consume it will be healed by 200 hit points (hp) and become invincible.
  * The invincible effect replaces fading duration (aka, fading turn's ticker stops), and it lasts for another 10 turns.
  * It fades and disappears from the game within 10 turns.
@@ -119,7 +119,7 @@ public class PowerStar extends MagicalItem {
     }
 
     /**
-     * remove INVINCIBLE capablity when the power star effect wears off ( turn = 0) or when game is reset
+     * remove INVINCIBLE capability when the power star effect wears off ( turn = 0) or when game is reset
      * @param location the current location of the consumer
      * @throws IllegalArgumentException if location is null
      */

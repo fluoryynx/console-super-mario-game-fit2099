@@ -7,8 +7,8 @@ import game.Resettable;
 import game.Status;
 
 /**
- * class to represent coin in the game map.
- *  It is currency the player uses to trade for items
+ * A class to represent coin in the game map.
+ * It is currency the player uses to trade for items
  *
  *  @author Lim Fluoryynx, Kuah Jia Chen
  */

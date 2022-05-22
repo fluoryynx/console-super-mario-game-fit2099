@@ -6,7 +6,7 @@ import game.Status;
 import game.items.magicalitems.MagicalItem;
 
 /**
- * This class is a subclass of items.
+ * This class is a subclass of MagicalItems.
  * The effect will last until it receives any damage (e.g., hit by the enemy).
  * Once the effect wears off, the display character returns to normal (lowercase), but the maximum HP stays.
  *
