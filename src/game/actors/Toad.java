@@ -65,11 +65,6 @@ public class Toad extends Actor implements Speakable {
     private static final int HIT_POINT = 0;
 
     /**
-     * Random number generator
-     */
-    private Random rand = new Random();
-
-    /**
      * Current turn of this game
      */
     private int currentTurn;
