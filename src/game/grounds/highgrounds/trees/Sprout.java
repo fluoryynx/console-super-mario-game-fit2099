@@ -51,6 +51,11 @@ public class Sprout extends Tree {
     private static final int SPAWN_GOOMBA_RATE = 10;
 
     /**
+     * The spawn fire flower rate
+     */
+    private static final int SPAWN_FIRE_FLOWER_RATE = 50;
+
+    /**
      * Constructor
      */
     public Sprout() {
@@ -68,7 +73,7 @@ public class Sprout extends Tree {
         // change to sapling when its age reached 10
         if (reachSaplingAge()){
             changeToSapling(location);
-            if ((rand.nextInt(100) <= 50)){
+            if ((rand.nextInt(100) <= SPAWN_FIRE_FLOWER_RATE)){
                 location.addItem(new FireFlower());
             }
         }

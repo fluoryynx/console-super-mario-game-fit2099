@@ -57,6 +57,11 @@ public class Sapling extends Tree {
      */
     private static final int SPAWN_COIN_VALUE = 20;
 
+    /**
+     * The spawn fire flower rate
+     */
+    private static final int SPAWN_FIRE_FLOWER_RATE = 50;
+
 
     /**
      * Constructor
@@ -76,7 +81,7 @@ public class Sapling extends Tree {
         // change to mature when its age reached 10
         if (reachMatureAge()){
             changeToMature(location);
-            if ((rand.nextInt(100) <= 50)){
+            if ((rand.nextInt(100) <= SPAWN_FIRE_FLOWER_RATE)){
                 location.addItem(new FireFlower());
             }
         }
