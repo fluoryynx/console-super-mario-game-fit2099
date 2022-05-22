@@ -75,6 +75,9 @@ public abstract class Enemy extends Actor implements Resettable, Speakable {
     private int hitRate; // Possibility of enemy hit actor
 
 
+    /**
+     * Extra damage gained
+     */
     protected static final int EXTRA_DAMAGE=15;
 
     /**
@@ -105,6 +108,8 @@ public abstract class Enemy extends Actor implements Resettable, Speakable {
      * @param damage      the deduction in hit point of enemy
      * @param verb        the attack verb of enemy
      * @param hitRate     the possibility of enemy hit actor
+     * @param monologueIndexLowerBound   the upper bound of monologue index
+     * @param monologueIndexUpperBound   the lower bound of monologue index
      */
     public Enemy(String name, char displayChar, int hitPoints, int damage, String verb, int hitRate, int monologueIndexLowerBound, int monologueIndexUpperBound) {
         super(name, displayChar, hitPoints);

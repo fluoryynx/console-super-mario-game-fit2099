@@ -147,6 +147,7 @@ public abstract class Fountain extends Ground {
 
     /**
      * return true if fountain content is <=0
+     * @return true if fountain content is less than or equal to 0
      */
     public boolean isEmpty(){
         return this.content<=0;

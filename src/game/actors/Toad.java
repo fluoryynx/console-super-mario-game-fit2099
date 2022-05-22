@@ -121,6 +121,7 @@ public class Toad extends Actor implements Speakable {
     /**
      * Give any sentences from the arraylist when Player interact with toad
      * The sentences is generate by index of Monologue
+     * @return a monologue string retrieve from generateMonologue method
      */
     public String giveRandomTalk() {
         return generateMonologue(RANDOM_TALK_LOWER_BOUND,RANDOM_TALK_UPPER_BOUND);
@@ -129,6 +130,7 @@ public class Toad extends Actor implements Speakable {
     /**
      * Give any sentences from the arraylist except the sentence about the power star when Player interact with toad
      * The sentences is generate by index of Monologue
+     * @return a monologue string retrieve from generateMonologue method
      */
     public String noTalkPowerStar() {
         return generateMonologue(NO_POWER_STAR_LOWER_BOUND,NO_POWER_STAR_UPPER_BOUND);
@@ -137,6 +139,7 @@ public class Toad extends Actor implements Speakable {
     /**
      * Give any sentences from the arraylist except the sentence about the wrench when Player interact with toad
      * The sentences is generate by index of Monologue
+     * @return a monologue string retrieve from generateMonologue method
      */
     public String noTalkWrench() {
         return generateMonologue(NO_WRENCH_LOWER_BOUND,NO_WRENCH_UPPER_BOUND);
@@ -145,6 +148,7 @@ public class Toad extends Actor implements Speakable {
     /**
      * Give any sentences from the arraylist except the sentence about the wrench and power star when Player interact with toad
      * The sentences is generate by index of Monologue
+     * @return a monologue string retrieve from generateMonologue method
      */
     public String noTalkPowerStarAndWrench() {
         return generateMonologue(NO_POWER_STAR_WRENCH_LOWER_BOUND,NO_POWER_STAR_WRENCH_UPPER_BOUND);
