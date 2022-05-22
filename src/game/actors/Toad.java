@@ -75,44 +75,44 @@ public class Toad extends Actor implements Speakable {
     private int currentTurn;
 
     /**
-     * First monologue of Toad
+     * The lower bound index for the monologue of Toad when random talk
      */
-    private int RANDOM_TALK_LOWER_BOUND = 3;
+    private static final int RANDOM_TALK_LOWER_BOUND = 3;
 
     /**
-     * Fourth monologue of Toad
+     * The upper bound index for the monologue of Toad when random talk
      */
-    private int RANDOM_TALK_UPPER_BOUND = 6;
+    private static final int RANDOM_TALK_UPPER_BOUND = 6;
 
     /**
-     * First monologue of Toad
+     * The lower bound index for the monologue of Toad when no power star talk
      */
-    private int NO_POWER_STAR_LOWER_BOUND = 3;
+    private static final int NO_POWER_STAR_LOWER_BOUND = 3;
 
     /**
-     * Third monologue of Toad
+     * The upper bound index for the monologue of Toad when no power star talk
      */
-    private int NO_POWER_STAR_UPPER_BOUND = 5;
+    private static final int NO_POWER_STAR_UPPER_BOUND = 5;
 
     /**
-     * Second monologue of Toad
+     * The lower bound index for the monologue of Toad when no wrench talk
      */
-    private int NO_WRENCH_LOWER_BOUND = 4;
+    private static final int NO_WRENCH_LOWER_BOUND = 4;
 
     /**
-     * Fourth monologue of Toad
+     * The upper bound index for the monologue of Toad when no wrench talk
      */
-    private int NO_WRENCH_UPPER_BOUND = 6;
+    private static final int NO_WRENCH_UPPER_BOUND = 6;
 
     /**
-     * Second monologue of Toad
+     * The lower bound index for the monologue of Toad when no wrench and power star talk
      */
-    private int NO_POWER_STAR_WRENCH_LOWER_BOUND = 4;
+    private static final int NO_POWER_STAR_WRENCH_LOWER_BOUND = 4;
 
     /**
-     * Third monologue of Toad
+     * The upper bound index for the monologue of Toad when no wrench and power star talk
      */
-    private int NO_POWER_STAR_WRENCH_UPPER_BOUND = 5;
+    private static final int NO_POWER_STAR_WRENCH_UPPER_BOUND = 5;
 
 
 
@@ -151,7 +151,9 @@ public class Toad extends Actor implements Speakable {
      * Give any sentences from the arraylist except the sentence about the wrench and power star when Player interact with toad
      * The sentences is generate by index of Monologue
      */
-    public String noTalkPowerStarAndWrench() { return generateMonologue(NO_POWER_STAR_WRENCH_LOWER_BOUND,NO_POWER_STAR_WRENCH_UPPER_BOUND);}
+    public String noTalkPowerStarAndWrench() {
+        return generateMonologue(NO_POWER_STAR_WRENCH_LOWER_BOUND,NO_POWER_STAR_WRENCH_UPPER_BOUND);
+    }
 
 
     /**
@@ -170,7 +172,7 @@ public class Toad extends Actor implements Speakable {
         // Generate monologue of Toad when even turn
         currentTurn ++;
         if (timeToSpeak(currentTurn)){
-            display.println(this + " : " + generateMonologue(3,6));
+            display.println(this + " : " + generateMonologue(RANDOM_TALK_LOWER_BOUND,RANDOM_TALK_UPPER_BOUND));
         }
 
         saleItem.clear();
