@@ -93,7 +93,7 @@ public class Application {
 		world.addGameMap(secondGameMap);
 
 
-		Actor mario = new Player("Mario", 'm', 10000);
+		Actor mario = new Player("Mario", 'm', 100);
 		world.addPlayer(mario, firstGameMap.at(42, 10));
 		firstGameMap.at(44, 10).addItem(new PowerStar());
 		firstGameMap.at(45, 10).addItem(new SuperMushroom());
