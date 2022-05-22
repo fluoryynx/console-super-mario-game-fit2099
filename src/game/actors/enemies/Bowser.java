@@ -10,10 +10,7 @@ import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.Location;
 import game.Application;
 import game.Status;
-import game.behaviours.Behaviour;
-import game.behaviours.DrinkWaterBehaviour;
-import game.behaviours.FireAttackBehaviour;
-import game.behaviours.FollowBehaviour;
+import game.behaviours.*;
 import game.items.Key;
 import java.util.List;
 
@@ -154,7 +151,12 @@ public class Bowser extends Enemy {
         }
 
         this.removeCapability(Status.RESET_CALLED);
-        this.behaviours.put(FIRST_PRIORITY,new FireAttackBehaviour());
+
+        // If under successful hit rate, enemy will attack actor in first priority
+        if(rand.nextInt(100) <= HIT_RATE){
+            this.behaviours.put(FIRST_PRIORITY,new FireAttackBehaviour());
+        }
+
         this.behaviours.put(SECOND_PRIORITY,new DrinkWaterBehaviour());
 
         if (map.locationOf(this).getGround().hasCapability(Status.IS_EMPTY)){
