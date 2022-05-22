@@ -91,6 +91,7 @@ public class Mature extends Tree {
             }
         }
 
+        //  for every five turn
         if (everyFiveTurnPointer == 5){
             int noFertileAvailable = numberOfFertile(location);
             if (noFertileAvailable > 0){

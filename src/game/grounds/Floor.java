@@ -5,8 +5,9 @@ import edu.monash.fit2099.engine.positions.Ground;
 import game.Status;
 
 /**
- * A class that represents the floor inside a building.
- * It extends from Ground class.
+ * A class that represents the floor inside a building
+ * It extends from Ground class It only can be entered by actors that are not
+ * hostile to enemy, enemies are not allowed to enter
  *
  * @author Huang GuoYueYang
  */

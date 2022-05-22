@@ -4,7 +4,8 @@ import edu.monash.fit2099.engine.positions.Ground;
 import game.Status;
 
 /**
- * A class that represents bare dirt.
+ * A class that represents bare dirt Currently, it is the only fertile ground in this game It is a class that
+ * extends Ground
  *
  * @author Kuah Jia Chen
  */

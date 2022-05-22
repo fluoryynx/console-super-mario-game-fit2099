@@ -58,6 +58,8 @@ public abstract class HighGround extends Ground implements Destroyable {
     @Override
     public void tick(Location location) {
         super.tick(location);
+
+        // destroyed if current actor standing on it has the capability invincible
         Actor actor = location.getActor();
         if (actor != null){
             if (actor.hasCapability(Status.INVINCIBLE)){
@@ -86,6 +88,7 @@ public abstract class HighGround extends Ground implements Destroyable {
      */
     @Override
     public ActionList allowableActions(Actor actor, Location location, String direction) {
+        // if there is no actor currently standing on it and the actor is not invincible, return JumpAction
         if (!location.containsAnActor() && !actor.hasCapability(Status.INVINCIBLE)) {
             return new ActionList(new JumpAction(location, direction, this));
         }
