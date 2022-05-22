@@ -23,7 +23,7 @@ REQ1: Lava Zone
 
     Review:
     - (1) Guoyueyang Huang DONE
-    - (2) Lim Fluoryynx
+    - (2) Lim Fluoryynx DONE
 
 
 REQ2: More allies and enemies!
@@ -40,19 +40,19 @@ REQ2: More allies and enemies!
 
     Review:
     - (1) Kuah Jia Chen DONE
-    - (2) Lim Fluoryynx
+    - (2) Lim Fluoryynx DONE
 
 
 REQ3: Magical fountain + Challenge task
 
     Responsible person(s): Lim Fluoryynx
 
-    Implementation:
+    Implementation: DONE
         -  Date to be completed: 15-May-2022
 
-    - Class Diagram:
-    - Interaction Diagram:
-    - Design Rationale:
+    - Class Diagram: DONE
+    - Interaction Diagram: DONE
+    - Design Rationale: DONE
         -  Date to be completed: 21-May-2022
 
     Review:
@@ -74,7 +74,7 @@ REQ4: Flowers (Structured Mode)
 
     Review:
     - (1) Guoyueyang Huang DONE
-    - (2) Lim Fluoryynx
+    - (2) Lim Fluoryynx DONE
 
 
 REQ5: Speaking (Structured Mode)
@@ -90,7 +90,7 @@ REQ5: Speaking (Structured Mode)
         - Date to be completed: 21-May-2022
 
     Review:
-    - (1) Lim Fluoryynx
+    - (1) Lim Fluoryynx DONE
     - (2) Kuah Jia Chen DONE
 
 Kuah Jia Chen 32286988: I accept this WBA

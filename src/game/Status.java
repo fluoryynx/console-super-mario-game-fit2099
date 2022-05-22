@@ -28,11 +28,11 @@ public enum Status {
     CAN_FLY, // use this status to indicate tha the actor has capability of fly or not
     FIRE_ATTACK, // use this status to indicate the actor can use fire attack
     FIRE_DAMAGE, // use this status to indicate a particular ground can do fire damage
-    HAS_BOTTLE,
-    POWER_WATER,
-    IS_FOUNTAIN,
-    INCREASE_HEALTH,
-    INCREASE_BASE_DAMAGE,
-    DRANK_BY_ENEMY,
-    IS_EMPTY
+    HAS_BOTTLE, // use this status to indicate actor had a bottle in inventory
+    POWER_WATER, // use this status to indicate actor drank power water
+    IS_FOUNTAIN, // use this status to indicate the ground is a fountain
+    INCREASE_HEALTH, // use this status to indicate the ground is a health fountain
+    INCREASE_BASE_DAMAGE, //use this status to indicate the ground is a power fountain
+    DRANK_BY_ENEMY, // use this status to indicate water in the fountain is drank by enemies
+    IS_EMPTY // use this status to indicate fountain is empty
 }
