@@ -60,6 +60,8 @@ public abstract class GeneralKoopa extends Enemy {
      * @param name        the name of the Actor
      * @param displayChar the character that will represent the Actor in the display
      * @param hitPoints   the Actor's starting hit point
+     * @param monologueIndexLowerBound   the upper bound of monologue index
+     * @param monologueIndexUpperBound   the lower bound of monologue index
      */
     public GeneralKoopa(String name, char displayChar, int hitPoints, int monologueIndexLowerBound, int monologueIndexUpperBound) {
         super(name, displayChar, hitPoints, DAMAGE, HIT_VERB, HIT_RATE,monologueIndexLowerBound,monologueIndexUpperBound);
@@ -68,7 +70,7 @@ public abstract class GeneralKoopa extends Enemy {
 
     /**
      * Make GeneralKoopa can be attacked by Player.
-     * When GeneralKoopa is not conscious(defeated), it will hide in shell and only the actor with capability HOSTILE_TO_ENEMY && HAVE_WRENCH
+     * When GeneralKoopa is not conscious(defeated), it will hide in shell and only the actor with capability HOSTILE_TO_ENEMY and HAVE_WRENCH
      * is allowed to smash its shell in order to get a super mushroom.
      * @param otherActor the Actor that might perform an action.
      * @param direction  String representing the direction of the other Actor

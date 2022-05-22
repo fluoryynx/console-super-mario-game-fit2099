@@ -33,7 +33,10 @@ public abstract class Tree extends HighGround implements Resettable {
 
     /**
      * Constructor.
-     *
+     * @param displayChar the display character of the tree
+     * @param fallDamage the fall damage done by the tree
+     * @param jumpRate the success rate to jump to the tree
+     * @param treeType the type of the tree
      */
     public Tree(char displayChar, int jumpRate, int fallDamage, String treeType) {
         super(displayChar, jumpRate, fallDamage, treeType);
