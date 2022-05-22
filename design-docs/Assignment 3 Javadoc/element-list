@@ -1,0 +1,14 @@
+game
+game.actions
+game.actors
+game.actors.enemies
+game.actors.enemies.koopas
+game.behaviours
+game.grounds
+game.grounds.fountains
+game.grounds.highgrounds
+game.grounds.highgrounds.trees
+game.items
+game.items.magicalitems
+game.managers
+game.waters
